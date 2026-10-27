@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CEPEx VII – Memória, Ciência e Futuro</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;800&family=Newsreader:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{--noite:#1a110c;--terra:#2b1b12;--ouro:#e0a82e;--laranja:#e2711d;--verde:#4a8a3f;--vermelho:#c23b2e;--creme:#f3e6cf}
+*{box-sizing:border-box}
+body{margin:0;background:var(--noite);color:var(--creme);font:18px/1.6 Newsreader,Georgia,serif}
+h1,h2,h3,button,.btn,label{font-family:"Bricolage Grotesque",system-ui,sans-serif}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--ouro);outline-offset:3px}
+.faixa{height:22px;background:
+ conic-gradient(from 45deg at 50% 50%,var(--ouro) 25%,var(--laranja) 0 50%,var(--verde) 0 75%,var(--vermelho) 0) 0 0/22px 22px}
+.wrap{max-width:900px;margin:0 auto;padding:0 20px}
+header{padding:48px 0 36px;display:grid;grid-template-columns:1fr auto;gap:24px;align-items:end}
+header h1{margin:0;font-size:clamp(2.4rem,8vw,4.6rem);line-height:.95;font-weight:800;color:var(--ouro)}
+header p{margin:12px 0 0;max-width:34ch}
+.tema{font-size:1.5rem;color:var(--creme);font-style:italic}
+header svg{width:150px;height:auto}
+section{padding:32px 0;border-top:1px solid #4a3426}
+h2{font-size:1.7rem;margin:0 0 6px;color:var(--ouro)}
+.sub{margin:0 0 20px;opacity:.85}
+.links{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
+.btn{display:block;text-decoration:none;padding:18px 20px;background:var(--terra);border-left:8px solid var(--laranja);font-weight:600;font-size:1.05rem}
+.btn:nth-child(2){border-color:var(--verde)}.btn:nth-child(3){border-color:var(--vermelho)}
+.btn small{display:block;font:400 .9rem Newsreader,serif;opacity:.8}
+.btn:hover{background:#3a261a}
+#status{padding:10px 14px;background:var(--terra);border-left:8px solid var(--ouro);margin-bottom:16px}
+.lista{display:grid;gap:12px}
+.of{background:var(--terra);padding:16px 18px;display:flex;gap:16px;justify-content:space-between;align-items:center;flex-wrap:wrap}
+.of h3{margin:0;font-size:1.15rem}
+.of span{opacity:.85;font-size:.95rem}
+.vagas{font-family:"Bricolage Grotesque";font-weight:800;font-size:1.6rem;color:var(--ouro);text-align:center;line-height:1}
+.vagas small{display:block;font-size:.7rem;font-weight:600;color:var(--creme)}
+.vagas.zero{color:var(--vermelho)}
+form{margin-top:24px;background:var(--terra);padding:20px;display:grid;gap:14px}
+form[hidden]{display:none}
+label{display:grid;gap:4px;font-weight:600;font-size:.95rem}
+input,select{font:inherit;padding:10px;border:2px solid #5a4030;background:var(--noite);color:var(--creme)}
+button{font-weight:800;font-size:1rem;padding:14px;border:0;background:var(--ouro);color:var(--noite);cursor:pointer}
+button:disabled{opacity:.5;cursor:wait}
+#msg{min-height:1.4em;font-weight:600}
+#msg.erro{color:#ff8f80}#msg.ok{color:#9be28f}
+footer{padding:28px 0 40px;opacity:.7;font-size:.9rem}
+@media(max-width:600px){header{grid-template-columns:1fr}header svg{display:none}}
+</style>
+</head>
+<body>
+<div class="faixa" aria-hidden="true"></div>
+<div class="wrap">
+<header>
+ <div>
+  <h1>CEPEx VII</h1>
+  <p class="tema">Memória, Ciência e Futuro</p>
+  <p>Congresso de Ensino, Pesquisa e Extensão · 17 de novembro de 2026 · IFMT Campus Rondonópolis</p>
+ </div>
+ <svg viewBox="0 0 120 130" aria-hidden="true">
+  <circle cx="60" cy="45" r="40" fill="#4a8a3f"/><circle cx="35" cy="55" r="26" fill="#3d7a3a"/><circle cx="88" cy="55" r="26" fill="#3d7a3a"/>
+  <path d="M48 128c4-28 2-48-6-60h36c-8 12-10 32-6 60z" fill="#e0a82e"/>
+ </svg>
+</header>
+
+<section>
+ <h2>Inscrição no evento</h2>
+ <p class="sub">Aberta a servidores do IFMT, estudantes do Ensino Médio, Técnico e Superior e ao público em geral. Para receber o certificado, faça também o check-in presencial no dia 17/11.</p>
+ <div class="links">
+  <a class="btn" href="https://eventos.ifmt.edu.br/eventos/1517/VIICEPEX/" target="_blank" rel="noopener">Realizar inscrição<small>Página oficial do evento (SIGE)</small></a>
+ </div>
+</section>
+
+<section>
+ <h2>Envie seu trabalho</h2>
+ <p class="sub">Submissões até 10/11/2026, às 23:59. Use o modelo abaixo e faça o envio pela página do evento no SIGE. Todos os autores devem estar inscritos no evento.</p>
+ <div class="links">
+  <a class="btn" href="https://docs.google.com/document/d/1_sKfhk3d2crae7B6BKysJXLuEDxhPKUb/edit?usp=sharing" target="_blank" rel="noopener">Trabalho completo<small>Modelo em Google Docs</small></a>
+  <a class="btn" href="https://docs.google.com/document/d/1qSbBVMAk-V-YTxA3rAvDUyg-eR7bigDM/edit?usp=sharing" target="_blank" rel="noopener">Resumo simples<small>Modelo em Google Docs</small></a>
+  <a class="btn" href="https://docs.google.com/document/d/1Vu3j2GZtBKLKtPc8B26QU1wSCvMUUHAy/edit?usp=sharing" target="_blank" rel="noopener">Proposta de oficina<small>Modelo em Google Docs</small></a>
+ </div>
+</section>
+
+<section id="oficinas">
+ <h2>Oficinas</h2>
+ <p class="sub">Escolha sua oficina. As vagas diminuem a cada inscrição. Você também precisa estar inscrito no evento.</p>
+ <div id="status">Carregando oficinas…</div>
+ <div class="lista" id="lista"></div>
+
+ <form id="form" hidden>
+  <label>Oficina <select name="oficina" id="sel" required></select></label>
+  <label>Nome completo <input name="nome" required autocomplete="name"></label>
+  <label>E-mail <input name="email" type="email" required autocomplete="email"></label>
+  <label>Curso ou vínculo <input name="vinculo" placeholder="Ex.: Técnico em Informática, servidor, externo" required></label>
+  <button id="btn">Confirmar inscrição</button>
+  <div id="msg" role="status"></div>
+ </form>
+</section>
+
+<footer>CEPEx · IFMT Campus Rondonópolis · Apoio PROPES<br>Contato: cepex.roo@ifmt.edu.br · pesquisa.roo@ifmt.edu.br · extensao.roo@ifmt.edu.br · (66) 3427-2304</footer>
+</div>
+<div class="faixa" aria-hidden="true"></div>
+
+<script>
+// Cole aqui a URL do Apps Script publicado (termina em /exec)
+const API_URL = "COLE_A_URL_DO_APPS_SCRIPT_AQUI";
+
+const $ = id => document.getElementById(id);
+const fmt = iso => new Date(iso).toLocaleString("pt-BR",{dateStyle:"long",timeStyle:"short"});
+
+async function carregar(){
+  try{
+    const r = await fetch(API_URL); const d = await r.json();
+    const lista = $("lista"); lista.textContent = ""; $("sel").textContent = "";
+    if(!d.oficinas.length){ $("status").textContent = "Nenhuma oficina cadastrada ainda."; return; }
+    $("status").textContent = d.aberta ? "Inscrições abertas." :
+      (d.abertura && Date.now() < new Date(d.abertura) ? "As inscrições abrem em " + fmt(d.abertura) + "." : "Inscrições encerradas.");
+    d.oficinas.forEach(o=>{
+      const el = document.createElement("div"); el.className = "of";
+      const t = document.createElement("div");
+      const h = document.createElement("h3"); h.textContent = o.nome;
+      const s = document.createElement("span"); s.textContent = o.horario || "";
+      t.append(h,s);
+      const v = document.createElement("div"); v.className = "vagas" + (o.restantes<=0?" zero":"");
+      v.innerHTML = o.restantes<=0 ? "Esgotada" : o.restantes + "<small>vagas</small>";
+      el.append(t,v); lista.append(el);
+      if(o.restantes>0){ const op = new Option(o.nome + " (" + o.restantes + " vagas)", o.nome); $("sel").add(op); }
+    });
+    $("form").hidden = !(d.aberta && $("sel").options.length);
+  }catch(e){ $("status").textContent = "Não foi possível carregar as oficinas. Tente novamente em instantes."; }
+}
+
+$("form").addEventListener("submit", async ev=>{
+  ev.preventDefault();
+  const f = Object.fromEntries(new FormData(ev.target));
+  $("btn").disabled = true; $("msg").className = ""; $("msg").textContent = "Enviando…";
+  try{
+    const r = await fetch(API_URL,{method:"POST",body:JSON.stringify(f)});
+    const d = await r.json();
+    $("msg").className = d.ok ? "ok" : "erro"; $("msg").textContent = d.mensagem;
+    if(d.ok) ev.target.reset();
+  }catch(e){ $("msg").className = "erro"; $("msg").textContent = "Falha ao enviar. Tente novamente."; }
+  $("btn").disabled = false; carregar();
+});
+carregar();
+</script>
+</body>
+</html>
