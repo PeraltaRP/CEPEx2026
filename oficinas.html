@@ -1,0 +1,759 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Oficinas | VII CEPEx 2026</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+:root {
+    --bg: #101713;
+    --surface: #19231d;
+    --surface2: #202c24;
+    --gold: #d9b76e;
+    --green: #91b69a;
+    --text: #f3f1e9;
+    --muted: #a5b0a6;
+    --border: rgba(255,255,255,.12);
+    --danger: #e58b83;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Bricolage Grotesque', sans-serif;
+    min-height: 100vh;
+}
+
+header {
+    padding: 25px 6%;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+}
+
+.logo {
+    color: var(--gold);
+    font-size: 21px;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+.logo span {
+    display: block;
+    color: var(--muted);
+    font-size: 11px;
+    font-weight: 400;
+    letter-spacing: 2px;
+    margin-top: 3px;
+}
+
+header a {
+    color: var(--green);
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 45px auto;
+    padding: 0 20px;
+}
+
+h1 {
+    font-size: clamp(32px, 5vw, 48px);
+    margin: 0 0 12px;
+    line-height: 1.1;
+}
+
+h1 span {
+    color: var(--gold);
+}
+
+.intro {
+    color: var(--muted);
+    line-height: 1.7;
+    max-width: 750px;
+    margin-bottom: 35px;
+}
+
+.filtros {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 15px;
+    padding: 22px;
+    margin-bottom: 30px;
+}
+
+label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 9px;
+    font-size: 14px;
+}
+
+select {
+    width: 100%;
+    max-width: 450px;
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    border-radius: 9px;
+    padding: 13px;
+    color: var(--text);
+    font-family: inherit;
+    font-size: 15px;
+    outline: none;
+}
+
+select:focus {
+    border-color: var(--gold);
+}
+
+.resultado {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.resultado h2 {
+    font-size: 22px;
+    margin: 0;
+}
+
+.contador {
+    color: var(--gold);
+    font-size: 13px;
+}
+
+.lista-oficinas {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+}
+
+.card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 23px;
+    display: flex;
+    flex-direction: column;
+}
+
+.card h3 {
+    color: var(--gold);
+    font-size: 21px;
+    line-height: 1.3;
+    margin: 0 0 12px;
+}
+
+.promotor {
+    color: var(--muted);
+    font-size: 14px;
+    margin-bottom: 17px;
+}
+
+.informacoes {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+    margin-bottom: 18px;
+}
+
+.info {
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    border-radius: 9px;
+    padding: 11px;
+    min-width: 0;
+}
+
+.info .rotulo {
+    display: block;
+    color: var(--muted);
+    font-size: 11px;
+    margin-bottom: 5px;
+    text-transform: uppercase;
+    letter-spacing: .5px;
+}
+
+.info .valor {
+    display: block;
+    color: var(--text);
+    font-size: 14px;
+    font-weight: 600;
+    overflow-wrap: anywhere;
+}
+
+.descricao {
+    color: #c6cec5;
+    font-size: 14px;
+    line-height: 1.65;
+    margin: 0 0 22px;
+    white-space: pre-line;
+    overflow-wrap: anywhere;
+    flex: 1;
+}
+
+.vagas {
+    color: var(--green);
+    font-size: 13px;
+    margin-bottom: 16px;
+}
+
+.vagas.esgotadas {
+    color: var(--danger);
+}
+
+.periodo-inscricao {
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    border-radius: 9px;
+    padding: 13px;
+    margin-bottom: 15px;
+    font-size: 13px;
+    line-height: 1.6;
+    color: var(--muted);
+}
+
+.periodo-inscricao strong {
+    color: var(--text);
+}
+
+.status-inscricao {
+    display: inline-block;
+    font-weight: 700;
+    margin-bottom: 7px;
+}
+
+.status-aberta {
+    color: var(--green);
+}
+
+.status-aguardando {
+    color: var(--gold);
+}
+
+.status-encerrada,
+.status-indisponivel {
+    color: var(--danger);
+}
+
+.btn-inscricao {
+    display: block;
+    width: 100%;
+    padding: 14px;
+    border-radius: 9px;
+    background: var(--gold);
+    color: #172018;
+    font-weight: 800;
+    text-align: center;
+    text-decoration: none;
+    transition: .2s;
+}
+
+.btn-inscricao:hover {
+    filter: brightness(1.1);
+}
+
+.btn-inscricao.desabilitado {
+    background: #485249;
+    color: #c4ccc4;
+    pointer-events: none;
+}
+
+.estado {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 13px;
+    padding: 25px;
+    color: var(--muted);
+    text-align: center;
+    line-height: 1.6;
+    grid-column: 1 / -1;
+}
+
+.estado.erro {
+    color: var(--danger);
+}
+
+footer {
+    text-align: center;
+    padding: 30px 15px;
+    border-top: 1px solid var(--border);
+    color: var(--muted);
+    font-size: 12px;
+    margin-top: 60px;
+}
+
+@media (max-width: 750px) {
+    .lista-oficinas {
+        grid-template-columns: 1fr;
+    }
+
+    .resultado {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 450px) {
+    header {
+        padding: 20px;
+    }
+
+    .container {
+        margin: 30px auto;
+    }
+
+    .card {
+        padding: 18px;
+    }
+
+    .informacoes {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="logo">
+        VII CEPEx
+        <span>IFMT CAMPUS RONDONÓPOLIS</span>
+    </div>
+
+    <a href="index.html">← Voltar ao site</a>
+</header>
+
+<main class="container">
+
+    <h1>Oficinas e <span>minicursos</span></h1>
+
+    <p class="intro">
+        Confira as oficinas e os minicursos disponíveis durante o
+        VII Congresso de Ensino, Pesquisa e Extensão do IFMT.
+        Selecione o campus para consultar as atividades e realizar sua inscrição.
+    </p>
+
+    <section class="filtros">
+        <label for="campus">Selecione o campus</label>
+
+        <select id="campus">
+            <option value="">Carregando campi...</option>
+        </select>
+    </section>
+
+    <div class="resultado">
+        <h2>Oficinas disponíveis</h2>
+        <span class="contador" id="contador"></span>
+    </div>
+
+    <div id="listaOficinas" class="lista-oficinas">
+        <div class="estado">Carregando oficinas...</div>
+    </div>
+
+</main>
+
+<footer>
+    VII Congresso de Ensino, Pesquisa e Extensão — IFMT
+    <br>
+    Memória, Ciência e Futuro · 2026
+</footer>
+
+<script>
+const API_URL = 'https://script.google.com/macros/s/AKfycbzmffDxLuYqnvzN3xcKpm97GVrp3oM2FtVp0DlU7kwuO592hsHAUHQcTHR4DmSWAKRy5w/exec';
+
+const campusSelect = document.getElementById('campus');
+const listaOficinas = document.getElementById('listaOficinas');
+const contador = document.getElementById('contador');
+
+let oficinas = [];
+let campi = [];
+let inscricoesAbertas = false;
+
+// =====================================================
+// CARREGAR DADOS
+// =====================================================
+
+async function carregarDados() {
+    listaOficinas.innerHTML =
+        '<div class="estado">Carregando oficinas...</div>';
+
+    try {
+        const resposta = await fetch(API_URL);
+
+        if (!resposta.ok) {
+            throw new Error('Erro ao consultar o servidor.');
+        }
+
+        const dados = await resposta.json();
+
+        if (!dados.ok) {
+            throw new Error(
+                dados.mensagem || 'Não foi possível carregar os dados.'
+            );
+        }
+
+        campi = dados.campi || [];
+        oficinas = dados.oficinas || [];
+        inscricoesAbertas = dados.aberta === true;
+
+        carregarCampi();
+
+    } catch (erro) {
+        console.error(erro);
+
+        listaOficinas.innerHTML = '';
+
+        const estado = document.createElement('div');
+        estado.className = 'estado erro';
+        estado.textContent =
+            'Não foi possível carregar as oficinas. Atualize a página ou tente novamente mais tarde.';
+
+        listaOficinas.appendChild(estado);
+    }
+}
+
+// =====================================================
+// CARREGAR CAMPI
+// =====================================================
+
+function carregarCampi() {
+    campusSelect.innerHTML = '';
+
+    const opcaoInicial = document.createElement('option');
+    opcaoInicial.value = '';
+    opcaoInicial.textContent = 'Selecione o campus';
+
+    campusSelect.appendChild(opcaoInicial);
+
+    campi.forEach(campus => {
+        const option = document.createElement('option');
+
+        option.value = campus.id;
+        option.textContent = campus.nome;
+
+        campusSelect.appendChild(option);
+    });
+
+    const rondonopolis = campi.find(campus =>
+        String(campus.nome).toLowerCase().includes('rondonópolis')
+    );
+
+    if (rondonopolis) {
+        campusSelect.value = rondonopolis.id;
+    } else if (campi.length > 0) {
+        campusSelect.value = campi[0].id;
+    }
+
+    renderizarOficinas();
+}
+
+// =====================================================
+// FORMATAR DATA
+// =====================================================
+
+function formatarData(valor) {
+    if (!valor) return 'Não informada';
+
+    const texto = String(valor).trim();
+
+    const correspondencia = texto.match(
+        /^(\d{4})-(\d{2})-(\d{2})$/
+    );
+
+    if (correspondencia) {
+        const [, ano, mes, dia] = correspondencia;
+        return `${dia}/${mes}/${ano}`;
+    }
+
+    return texto;
+}
+
+// =====================================================
+// FORMATAR DATA E HORA
+// =====================================================
+
+function formatarDataHora(valor) {
+    if (!valor) return 'Não informada';
+
+    const correspondencia = String(valor).match(
+        /^(\d{4})-(\d{2})-(\d{2})T(\d{2}):(\d{2})$/
+    );
+
+    if (!correspondencia) return valor;
+
+    const [, ano, mes, dia, hora, minuto] = correspondencia;
+
+    return `${dia}/${mes}/${ano} às ${hora}:${minuto}`;
+}
+
+// =====================================================
+// CRIAR INFORMAÇÃO DO CARTÃO
+// =====================================================
+
+function criarInfo(rotulo, valor) {
+    const bloco = document.createElement('div');
+    bloco.className = 'info';
+
+    const titulo = document.createElement('span');
+    titulo.className = 'rotulo';
+    titulo.textContent = rotulo;
+
+    const conteudo = document.createElement('span');
+    conteudo.className = 'valor';
+    conteudo.textContent = valor || 'Não informado';
+
+    bloco.appendChild(titulo);
+    bloco.appendChild(conteudo);
+
+    return bloco;
+}
+
+// =====================================================
+// PERÍODO DE INSCRIÇÃO
+// =====================================================
+
+function criarPeriodoInscricao(oficina) {
+    const bloco = document.createElement('div');
+    bloco.className = 'periodo-inscricao';
+
+    const status = document.createElement('div');
+    status.className = 'status-inscricao';
+
+    const texto = document.createElement('div');
+
+    if (!inscricoesAbertas) {
+        status.classList.add('status-indisponivel');
+        status.textContent = 'Inscrições suspensas pela organização';
+
+    } else if (oficina.situacaoInscricao === 'ABERTA') {
+        status.classList.add('status-aberta');
+        status.textContent = 'Inscrições abertas';
+
+    } else if (oficina.situacaoInscricao === 'AGUARDANDO') {
+        status.classList.add('status-aguardando');
+        status.textContent = 'Inscrições ainda não começaram';
+
+    } else if (oficina.situacaoInscricao === 'ENCERRADA') {
+        status.classList.add('status-encerrada');
+        status.textContent = 'Período de inscrições encerrado';
+
+    } else {
+        status.classList.add('status-indisponivel');
+        status.textContent = 'Período de inscrições não configurado';
+    }
+
+    const abertura = document.createElement('div');
+    abertura.textContent =
+        'Abertura: ' +
+        formatarDataHora(oficina.dataAberturaInscricao);
+
+    const encerramento = document.createElement('div');
+    encerramento.textContent =
+        'Encerramento: ' +
+        formatarDataHora(oficina.dataEncerramentoInscricao);
+
+    texto.appendChild(abertura);
+    texto.appendChild(encerramento);
+
+    bloco.appendChild(status);
+    bloco.appendChild(texto);
+
+    return bloco;
+}
+
+// =====================================================
+// EXIBIR OFICINAS
+// =====================================================
+
+function renderizarOficinas() {
+    listaOficinas.innerHTML = '';
+
+    const campusId = campusSelect.value;
+
+    if (!campusId) {
+        contador.textContent = '';
+        mostrarEstado('Selecione um campus para visualizar as oficinas.');
+        return;
+    }
+
+    const filtradas = oficinas.filter(oficina => {
+        const id = String(
+            oficina.campusId ||
+            oficina.campus_id ||
+            oficina.campus ||
+            ''
+        );
+
+        return id === String(campusId);
+    });
+
+    contador.textContent =
+        filtradas.length +
+        (filtradas.length === 1
+            ? ' oficina encontrada'
+            : ' oficinas encontradas');
+
+    if (filtradas.length === 0) {
+        mostrarEstado(
+            'Nenhuma oficina cadastrada para este campus no momento.'
+        );
+        return;
+    }
+
+    filtradas.forEach(oficina => {
+        const card = document.createElement('article');
+        card.className = 'card';
+
+        // Título
+        const titulo = document.createElement('h3');
+        titulo.textContent = oficina.nome || 'Oficina sem título';
+        card.appendChild(titulo);
+
+        // Responsável
+        const promotor = document.createElement('div');
+        promotor.className = 'promotor';
+        promotor.textContent =
+            'Responsável: ' + (oficina.promotor || 'Não informado');
+
+        card.appendChild(promotor);
+
+        // Informações
+        const informacoes = document.createElement('div');
+        informacoes.className = 'informacoes';
+
+        informacoes.appendChild(
+            criarInfo('Data', formatarData(oficina.data))
+        );
+
+        informacoes.appendChild(
+            criarInfo('Horário de início', oficina.horario || 'Não informado')
+        );
+
+        informacoes.appendChild(
+            criarInfo('Sala', oficina.sala || 'Não informada')
+        );
+
+        informacoes.appendChild(
+            criarInfo('Campus', oficina.campus || 'Não informado')
+        );
+
+        card.appendChild(informacoes);
+
+        // Descrição
+        const descricao = document.createElement('p');
+        descricao.className = 'descricao';
+        descricao.textContent =
+            oficina.sinopse || 'Descrição não informada.';
+
+        card.appendChild(descricao);
+
+        // Vagas
+        const vagas = document.createElement('div');
+        vagas.className = 'vagas';
+
+        const restantes = Number(
+            oficina.vagasRestantes !== undefined
+                ? oficina.vagasRestantes
+                : oficina.vagas
+        );
+
+        if (restantes <= 0) {
+            vagas.classList.add('esgotadas');
+            vagas.textContent = 'Vagas esgotadas';
+        } else {
+            vagas.textContent =
+                restantes +
+                (restantes === 1
+                    ? ' vaga disponível'
+                    : ' vagas disponíveis');
+        }
+
+        card.appendChild(vagas);
+
+        // Período individual
+        card.appendChild(criarPeriodoInscricao(oficina));
+
+        // Botão de inscrição
+        const botao = document.createElement('a');
+        botao.className = 'btn-inscricao';
+
+        if (!inscricoesAbertas) {
+            botao.textContent = 'Inscrições suspensas';
+            botao.classList.add('desabilitado');
+
+        } else if (restantes <= 0) {
+            botao.textContent = 'Vagas esgotadas';
+            botao.classList.add('desabilitado');
+
+        } else if (oficina.situacaoInscricao === 'AGUARDANDO') {
+            botao.textContent = 'Aguardando abertura';
+            botao.classList.add('desabilitado');
+
+        } else if (oficina.situacaoInscricao === 'ENCERRADA') {
+            botao.textContent = 'Inscrições encerradas';
+            botao.classList.add('desabilitado');
+
+        } else if (oficina.situacaoInscricao !== 'ABERTA') {
+            botao.textContent = 'Inscrição indisponível';
+            botao.classList.add('desabilitado');
+
+        } else {
+            botao.textContent = 'Realizar inscrição';
+            botao.href =
+                'inscricao.html?id=' + encodeURIComponent(oficina.id);
+        }
+
+        card.appendChild(botao);
+        listaOficinas.appendChild(card);
+    });
+}
+
+// =====================================================
+// ESTADO VAZIO
+// =====================================================
+
+function mostrarEstado(texto) {
+    listaOficinas.innerHTML = '';
+
+    const estado = document.createElement('div');
+
+    estado.className = 'estado';
+    estado.textContent = texto;
+
+    listaOficinas.appendChild(estado);
+}
+
+// =====================================================
+// EVENTOS
+// =====================================================
+
+campusSelect.addEventListener('change', renderizarOficinas);
+
+// =====================================================
+// INICIALIZAÇÃO
+// =====================================================
+
+carregarDados();
+</script>
+
+</body>
+</html>

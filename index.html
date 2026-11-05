@@ -5,29 +5,31 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>VII CEPEx 2026 | IFMT Rondonópolis</title>
+  <title>VII CEPEx 2026 | IFMT Campus Rondonópolis</title>
+
+  <meta name="description" content="VII Congresso de Ensino, Pesquisa e Extensão do IFMT Campus Rondonópolis. Memória, Ciência e Futuro.">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
   <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;500;600;700;800&family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&display=swap" rel="stylesheet">
 
   <style>
     :root {
-      --bg: #111713;
-      --surface: #1b251e;
-      --surface-light: #243128;
-      --gold: #e5b65c;
-      --orange: #d58a45;
-      --green: #789b77;
-      --text: #f5f2e9;
-      --muted: #b8c0b8;
-      --border: rgba(229, 182, 92, .22);
+      --background: #101411;
+      --surface: #19211b;
+      --surface-light: #222d24;
+      --gold: #d8b66b;
+      --green: #a3bd8b;
+      --text: #f1f0e9;
+      --muted: #a7ada4;
+      --border: rgba(216, 182, 107, .2);
     }
 
     * {
-      box-sizing: border-box;
       margin: 0;
       padding: 0;
+      box-sizing: border-box;
     }
 
     html {
@@ -35,7 +37,7 @@
     }
 
     body {
-      background: var(--bg);
+      background: var(--background);
       color: var(--text);
       font-family: 'Bricolage Grotesque', sans-serif;
       line-height: 1.6;
@@ -47,46 +49,52 @@
     }
 
     .container {
-      width: min(1120px, 92%);
+      width: min(1120px, 90%);
       margin: auto;
     }
 
     header {
       border-bottom: 1px solid var(--border);
-      background: rgba(17, 23, 19, .95);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: rgba(16, 20, 17, .96);
+      backdrop-filter: blur(12px);
     }
 
-    .nav {
+    .navbar {
       min-height: 76px;
       display: flex;
-      justify-content: space-between;
       align-items: center;
+      justify-content: space-between;
       gap: 20px;
     }
 
-    .logo {
-      font-size: 21px;
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
       font-weight: 800;
-      color: var(--gold);
+      font-size: 1.1rem;
     }
 
-    .logo small {
-      display: block;
-      color: var(--muted);
-      font-size: 11px;
-      font-weight: 400;
-      letter-spacing: 2px;
+    .brand-mark {
+      width: 42px;
+      height: 42px;
+      border: 1px solid var(--gold);
+      color: var(--gold);
+      display: grid;
+      place-items: center;
+      font-weight: 800;
+      border-radius: 10px;
     }
 
     nav {
       display: flex;
-      gap: 22px;
-      flex-wrap: wrap;
-    }
-
-    nav a {
+      align-items: center;
+      gap: 24px;
+      font-size: .9rem;
       color: var(--muted);
-      font-size: 14px;
     }
 
     nav a:hover {
@@ -94,305 +102,308 @@
     }
 
     .hero {
-      padding: 105px 0 95px;
+      min-height: 590px;
+      display: flex;
+      align-items: center;
       background:
-        radial-gradient(ellipse at 80% 20%, rgba(120,155,119,.18), transparent 45%),
-        radial-gradient(ellipse at 10% 80%, rgba(213,138,69,.13), transparent 40%);
+        radial-gradient(ellipse at 80% 30%, rgba(163, 189, 139, .12), transparent 45%),
+        linear-gradient(135deg, #101411 20%, #1b281e 100%);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .hero-content {
+      max-width: 820px;
+      padding: 90px 0;
     }
 
     .eyebrow {
       color: var(--gold);
       text-transform: uppercase;
       letter-spacing: 3px;
-      font-size: 12px;
+      font-size: .78rem;
       font-weight: 700;
-      margin-bottom: 22px;
+      margin-bottom: 20px;
     }
 
     h1 {
-      font-size: clamp(42px, 7vw, 76px);
-      line-height: 1.04;
-      max-width: 850px;
-      letter-spacing: -2px;
+      font-size: clamp(3rem, 8vw, 6.5rem);
+      line-height: .98;
+      letter-spacing: -3px;
+      font-weight: 800;
+      margin-bottom: 28px;
     }
 
     h1 span {
       color: var(--gold);
-      font-family: 'Newsreader', serif;
-      font-weight: 400;
-      font-style: italic;
     }
 
-    .hero-text {
-      max-width: 650px;
+    .hero-description {
+      max-width: 620px;
       color: var(--muted);
-      font-size: 18px;
-      margin-top: 25px;
+      font-family: 'Newsreader', serif;
+      font-size: 1.4rem;
+      margin-bottom: 34px;
     }
 
-    .event-info {
+    .hero-info {
       display: flex;
-      gap: 30px;
       flex-wrap: wrap;
-      margin-top: 35px;
-      color: var(--gold);
-      font-size: 14px;
+      gap: 24px;
+      color: var(--green);
+      font-size: .95rem;
+      margin-bottom: 34px;
     }
 
-    .actions {
-      display: flex;
-      gap: 14px;
-      flex-wrap: wrap;
-      margin-top: 32px;
-    }
-
-    .btn {
+    .button {
       display: inline-flex;
       justify-content: center;
       align-items: center;
-      padding: 13px 21px;
-      border-radius: 7px;
+      gap: 10px;
+      padding: 14px 24px;
+      border-radius: 6px;
       font-weight: 700;
       transition: .2s;
       cursor: pointer;
       border: 1px solid transparent;
-      font-family: inherit;
-      font-size: 14px;
     }
 
-    .btn-primary {
+    .button-primary {
       background: var(--gold);
-      color: #171b16;
+      color: #171b15;
     }
 
-    .btn-primary:hover {
-      background: #f0c978;
+    .button-primary:hover {
+      background: #edce87;
       transform: translateY(-2px);
     }
 
-    .btn-outline {
-      border-color: var(--border);
-      color: var(--text);
-      background: transparent;
-    }
-
-    .btn-outline:hover {
+    .button-outline {
       border-color: var(--gold);
       color: var(--gold);
     }
 
-    section {
-      padding: 75px 0;
-      border-top: 1px solid rgba(255,255,255,.06);
+    .button-outline:hover {
+      background: rgba(216, 182, 107, .1);
     }
 
-    .section-label {
-      color: var(--orange);
-      font-size: 12px;
-      text-transform: uppercase;
-      letter-spacing: 3px;
-      font-weight: 700;
-      margin-bottom: 12px;
+    section {
+      padding: 90px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .section-heading {
+      margin-bottom: 42px;
+    }
+
+    .section-heading .eyebrow {
+      margin-bottom: 10px;
     }
 
     h2 {
-      font-size: clamp(30px, 4vw, 43px);
-      line-height: 1.15;
-      margin-bottom: 17px;
+      font-size: clamp(2rem, 5vw, 3.2rem);
+      line-height: 1.1;
+      letter-spacing: -1px;
     }
 
     .section-description {
       color: var(--muted);
-      max-width: 720px;
-      margin-bottom: 35px;
+      max-width: 650px;
+      margin-top: 14px;
     }
 
-    .cards {
+    .event-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      grid-template-columns: repeat(3, 1fr);
       gap: 18px;
     }
 
-    .info-card,
-    .oficina-card {
+    .event-card {
       background: var(--surface);
       border: 1px solid var(--border);
-      border-radius: 12px;
-      padding: 25px;
-    }
-
-    .info-card h3,
-    .oficina-card h3 {
-      color: var(--gold);
-      font-size: 21px;
-      margin-bottom: 12px;
-    }
-
-    .info-card p,
-    .oficina-card p {
-      color: var(--muted);
-      font-size: 14px;
-      margin-bottom: 12px;
-    }
-
-    .oficina-card {
-      display: flex;
-      flex-direction: column;
-      min-height: 310px;
-    }
-
-    .oficina-card .promotor {
-      color: var(--gold);
-      font-size: 13px;
-    }
-
-    .oficina-card .campus-tag {
-      display: inline-block;
-      width: fit-content;
-      padding: 5px 10px;
-      margin-bottom: 14px;
-      border-radius: 5px;
-      background: var(--surface-light);
-      color: var(--green);
-      font-size: 12px;
-      font-weight: 700;
-    }
-
-    .oficina-card .sinopse {
-      flex: 1;
-    }
-
-    .oficina-card .detalhe {
-      color: var(--muted);
-      font-size: 13px;
-    }
-
-    .oficina-card .btn {
-      margin-top: 14px;
-      width: 100%;
-    }
-
-    .btn-disabled {
-      background: #414941;
-      color: #c2c9c1;
-      cursor: not-allowed;
-      opacity: .7;
-    }
-
-    .status {
-      padding: 14px 17px;
-      margin-bottom: 22px;
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      color: var(--muted);
-    }
-
-    .status.erro {
-      border-color: #a65b52;
-      color: #ffc1b8;
-    }
-
-    .status.sucesso {
-      border-color: var(--green);
-      color: #bce0b9;
-    }
-
-    .status.aviso {
-      border-color: var(--gold);
-      color: var(--gold);
-    }
-
-    .empty {
-      padding: 35px;
-      text-align: center;
-      border: 1px dashed var(--border);
+      padding: 28px;
       border-radius: 10px;
-      color: var(--muted);
-      grid-column: 1 / -1;
     }
 
-    /* FILTRO DE CAMPUS */
-
-    .filtro-campus {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      padding: 24px;
-      margin-bottom: 25px;
-    }
-
-    .filtro-campus label {
-      display: block;
+    .event-card .number {
+      font-size: 2rem;
       color: var(--gold);
-      font-weight: 700;
+      font-weight: 800;
+      margin-bottom: 15px;
+    }
+
+    .event-card h3 {
+      font-size: 1.2rem;
       margin-bottom: 10px;
     }
 
-    .filtro-campus select {
-      width: 100%;
-      max-width: 500px;
-      padding: 14px;
-      background: var(--bg);
-      color: var(--text);
-      border: 1px solid var(--border);
-      border-radius: 7px;
-      font: inherit;
-      outline: none;
-    }
-
-    .filtro-campus select:focus {
-      border-color: var(--gold);
-    }
-
-    .filtro-campus small {
-      display: block;
+    .event-card p {
       color: var(--muted);
-      margin-top: 10px;
+      font-size: .94rem;
     }
 
-    .resultado-campus {
+    .highlight {
+      background:
+        radial-gradient(circle at 85% 20%, rgba(216, 182, 107, .12), transparent 40%),
+        var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 42px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 30px;
+    }
+
+    .highlight h3 {
+      font-size: 1.8rem;
+      margin-bottom: 10px;
+    }
+
+    .highlight p {
+      color: var(--muted);
+      max-width: 650px;
+    }
+
+    .document-list {
+      display: grid;
+      gap: 14px;
+    }
+
+    .document-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      padding: 22px;
+      border: 1px solid var(--border);
+      background: var(--surface);
+      border-radius: 8px;
+    }
+
+    .document-item h3 {
+      font-size: 1.05rem;
+    }
+
+    .document-item p {
+      color: var(--muted);
+      font-size: .88rem;
+      margin-top: 4px;
+    }
+
+    .document-link {
+      color: var(--gold);
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+    .document-link:hover {
       color: var(--green);
-      font-size: 14px;
-      margin-bottom: 20px;
-      font-weight: 600;
+    }
+
+    .workshop-box {
+      background: linear-gradient(135deg, #1c2a20, #182019);
+      border: 1px solid rgba(163, 189, 139, .3);
+      padding: 45px;
+      border-radius: 14px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 30px;
+    }
+
+    .workshop-box h3 {
+      font-size: 2rem;
+      margin-bottom: 12px;
+    }
+
+    .workshop-box p {
+      color: var(--muted);
+      max-width: 650px;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 18px;
+    }
+
+    .contact-item {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      padding: 22px;
+      border-radius: 8px;
+    }
+
+    .contact-item strong {
+      display: block;
+      color: var(--gold);
+      margin-bottom: 5px;
+    }
+
+    .contact-item p,
+    .contact-item a {
+      color: var(--muted);
+      font-size: .94rem;
     }
 
     footer {
-      padding: 40px 0;
-      border-top: 1px solid var(--border);
+      padding: 35px 0;
       color: var(--muted);
-      font-size: 13px;
-    }
-
-    .footer-content {
-      display: flex;
-      justify-content: space-between;
-      gap: 25px;
-      flex-wrap: wrap;
+      font-size: .85rem;
+      text-align: center;
     }
 
     footer strong {
       color: var(--gold);
     }
 
-    @media (max-width: 650px) {
-      .nav {
-        padding: 18px 0;
+    @media (max-width: 760px) {
+      .navbar {
+        flex-direction: column;
+        padding: 15px 0;
+      }
+
+      nav {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 14px;
+      }
+
+      .hero {
+        min-height: auto;
+      }
+
+      h1 {
+        letter-spacing: -1.5px;
+      }
+
+      .event-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .highlight,
+      .workshop-box {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 28px;
+      }
+
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .document-item {
         align-items: flex-start;
         flex-direction: column;
       }
 
-      nav {
-        gap: 13px;
-      }
-
-      .hero {
-        padding: 70px 0;
+      .hero-info {
+        flex-direction: column;
+        gap: 8px;
       }
 
       section {
-        padding: 55px 0;
+        padding: 65px 0;
       }
     }
   </style>
@@ -401,510 +412,334 @@
 <body>
 
 <header>
-  <div class="container nav">
-    <a href="#" class="logo">
-      VII CEPEx
-      <small>IFMT · RONDONÓPOLIS</small>
+  <div class="container navbar">
+
+    <a href="index.html" class="brand">
+      <div class="brand-mark">VII</div>
+      <span>CEPEx 2026</span>
     </a>
 
     <nav>
-      <a href="#evento">O evento</a>
+      <a href="#sobre">O evento</a>
+      <a href="#programacao">Programação</a>
       <a href="#trabalhos">Trabalhos</a>
       <a href="#oficinas">Oficinas</a>
       <a href="#contato">Contato</a>
     </nav>
+
   </div>
 </header>
 
+
 <main>
 
-  <section class="hero" id="evento">
+  <!-- HERO -->
+
+  <section class="hero">
     <div class="container">
-      <p class="eyebrow">VII Congresso de Ensino, Pesquisa e Extensão</p>
 
-      <h1>
-        Memória,<br>
-        Ciência e <span>Futuro.</span>
-      </h1>
+      <div class="hero-content">
 
-      <p class="hero-text">
-        Um espaço de encontro, compartilhamento de experiências,
-        produção de conhecimento e valorização da ciência,
-        do ensino e da extensão.
-      </p>
+        <div class="eyebrow">
+          IFMT · Campus Rondonópolis · 2026
+        </div>
 
-      <div class="event-info">
-        <span>📅 17 de novembro de 2026</span>
-        <span>📍 IFMT Campus Rondonópolis</span>
-      </div>
+        <h1>
+          Memória,<br>
+          Ciência e <span>Futuro.</span>
+        </h1>
 
-      <div class="actions">
-        <a class="btn btn-primary"
-           href="https://suap.ifmt.edu.br/eventos/inscricao/1/35/"
-           target="_blank" rel="noopener">
-          Inscrição no evento
+        <p class="hero-description">
+          VII Congresso de Ensino, Pesquisa e Extensão.
+          Um espaço de encontro, compartilhamento de experiências,
+          produção científica e construção coletiva do conhecimento.
+        </p>
+
+        <div class="hero-info">
+          <span>📅 17 de novembro de 2026</span>
+          <span>📍 IFMT Campus Rondonópolis</span>
+        </div>
+
+        <a
+          class="button button-primary"
+          href="https://suap.ifmt.edu.br/eventos/inscricao/1/35/"
+          target="_blank"
+          rel="noopener"
+        >
+          Inscreva-se no evento →
         </a>
 
-        <a class="btn btn-outline" href="#oficinas">
-          Conhecer as oficinas
-        </a>
       </div>
+
     </div>
   </section>
+
+
+  <!-- SOBRE -->
+
+  <section id="sobre">
+    <div class="container">
+
+      <div class="section-heading">
+        <div class="eyebrow">Sobre o evento</div>
+        <h2>Conhecimento que conecta pessoas e transforma realidades.</h2>
+
+        <p class="section-description">
+          O CEPEx é um espaço de integração entre ensino, pesquisa
+          e extensão, reunindo estudantes, professores, técnicos
+          e comunidade externa para compartilhar conhecimentos,
+          experiências e resultados de projetos.
+        </p>
+      </div>
+
+      <div class="event-grid">
+
+        <article class="event-card">
+          <div class="number">01</div>
+          <h3>Ensino</h3>
+          <p>
+            Compartilhamento de práticas pedagógicas, experiências
+            formativas e iniciativas educacionais.
+          </p>
+        </article>
+
+        <article class="event-card">
+          <div class="number">02</div>
+          <h3>Pesquisa</h3>
+          <p>
+            Divulgação de estudos, projetos científicos,
+            inovação e produção de conhecimento.
+          </p>
+        </article>
+
+        <article class="event-card">
+          <div class="number">03</div>
+          <h3>Extensão</h3>
+          <p>
+            Integração entre instituição e sociedade por meio
+            de projetos, ações e experiências.
+          </p>
+        </article>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- PROGRAMAÇÃO -->
+
+  <section id="programacao">
+    <div class="container">
+
+      <div class="section-heading">
+        <div class="eyebrow">Programação</div>
+        <h2>Um encontro de ideias e experiências.</h2>
+
+        <p class="section-description">
+          A programação reúne apresentações de trabalhos,
+          atividades formativas, oficinas, minicursos e
+          momentos de integração da comunidade acadêmica.
+        </p>
+      </div>
+
+      <div class="highlight">
+
+        <div>
+          <h3>VII CEPEx 2026</h3>
+          <p>
+            Acompanhe as informações e atualizações da programação
+            pelos canais oficiais do evento.
+          </p>
+        </div>
+
+        <a
+          class="button button-outline"
+          href="https://suap.ifmt.edu.br/eventos/inscricao/1/35/"
+          target="_blank"
+          rel="noopener"
+        >
+          Acessar evento no SUAP →
+        </a>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- TRABALHOS -->
 
   <section id="trabalhos">
     <div class="container">
-      <p class="section-label">Participação acadêmica</p>
-      <h2>Envie seu trabalho</h2>
 
-      <p class="section-description">
-        Consulte os modelos de documentos para preparar
-        sua submissão ao VII CEPEx.
-      </p>
+      <div class="section-heading">
+        <div class="eyebrow">Submissão de trabalhos</div>
+        <h2>Compartilhe sua produção.</h2>
 
-      <div class="cards">
+        <p class="section-description">
+          Consulte os modelos disponíveis e realize a submissão
+          dos trabalhos pela plataforma SUAP.
+        </p>
+      </div>
 
-        <article class="info-card">
-          <h3>Resumo simples</h3>
-          <p>
-            Utilize o modelo para elaborar e submeter
-            seu resumo simples.
-          </p>
-          <a class="btn btn-outline"
-             href="https://docs.google.com/document/d/1_sKfhk3d2crae7B6BKysJXLuEDxhPKUb/edit?usp=sharing"
-             target="_blank" rel="noopener">
-            Acessar modelo
+      <div class="document-list">
+
+        <article class="document-item">
+          <div>
+            <h3>Resumo simples</h3>
+            <p>Modelo para elaboração de resumo simples.</p>
+          </div>
+
+          <a
+            class="document-link"
+            href="https://docs.google.com/document/d/1_sKfhk3d2crae7B6BKysJXLuEDxhPKUb/edit?usp=sharing"
+            target="_blank"
+            rel="noopener"
+          >
+            Acessar modelo →
           </a>
         </article>
 
-        <article class="info-card">
-          <h3>Trabalho completo</h3>
-          <p>
-            Modelo para elaboração de trabalhos
-            acadêmicos completos.
-          </p>
-          <a class="btn btn-outline"
-             href="https://docs.google.com/document/d/1qSbBVMAk-V-YTxA3rAvDUyg-eR7bigDM/edit?usp=sharing"
-             target="_blank" rel="noopener">
-            Acessar modelo
+        <article class="document-item">
+          <div>
+            <h3>Trabalho completo</h3>
+            <p>Modelo para elaboração de trabalho completo.</p>
+          </div>
+
+          <a
+            class="document-link"
+            href="https://docs.google.com/document/d/1qSbBVMAk-V-YTxA3rAvDUyg-eR7bigDM/edit?usp=sharing"
+            target="_blank"
+            rel="noopener"
+          >
+            Acessar modelo →
           </a>
         </article>
 
-        <article class="info-card">
-          <h3>Proposta de oficina</h3>
-          <p>
-            Utilize o documento para organizar
-            sua proposta de oficina ou minicurso.
-          </p>
-          <a class="btn btn-outline"
-             href="https://docs.google.com/document/d/1Vu3j2GZtBKLKtPc8B26QU1wSCvMUUHAy/edit?usp=sharing"
-             target="_blank" rel="noopener">
-            Acessar modelo
+        <article class="document-item">
+          <div>
+            <h3>Proposta de oficina ou minicurso</h3>
+            <p>Modelo para apresentação de propostas de atividades.</p>
+          </div>
+
+          <a
+            class="document-link"
+            href="https://docs.google.com/document/d/1Vu3j2GZtBKLKtPc8B26QU1wSCvMUUHAy/edit?usp=sharing"
+            target="_blank"
+            rel="noopener"
+          >
+            Acessar modelo →
           </a>
         </article>
 
       </div>
+
+      <div style="margin-top: 28px;">
+        <a
+          class="button button-primary"
+          href="https://suap.ifmt.edu.br/eventos/inscricao/1/35/"
+          target="_blank"
+          rel="noopener"
+        >
+          Enviar trabalho pelo SUAP →
+        </a>
+      </div>
+
     </div>
   </section>
+
+
+  <!-- OFICINAS -->
 
   <section id="oficinas">
     <div class="container">
 
-      <p class="section-label">Atividades práticas</p>
-      <h2>Oficinas e minicursos</h2>
+      <div class="workshop-box">
 
-      <p class="section-description">
-        Escolha o campus para visualizar as oficinas disponíveis.
-        Confira as atividades e selecione aquela da qual deseja
-        participar. As vagas são limitadas e a inscrição é individual.
-      </p>
+        <div>
+          <div class="eyebrow">Atividades formativas</div>
 
-      <div id="status" class="status">
-        Carregando oficinas...
+          <h3>Oficinas e minicursos</h3>
+
+          <p>
+            Explore as oficinas e os minicursos oferecidos
+            pelos diferentes campi participantes do VII CEPEx.
+            Escolha seu campus, conheça as atividades disponíveis
+            e faça sua inscrição.
+          </p>
+        </div>
+
+        <a
+          class="button button-primary"
+          href="oficinas.html"
+        >
+          Veja as oficinas disponíveis →
+        </a>
+
       </div>
 
-      <div class="filtro-campus">
-        <label for="filtroCampus">
-          Selecione o campus
-        </label>
+    </div>
+  </section>
 
-        <select id="filtroCampus" disabled>
-          <option value="">Carregando campi...</option>
-        </select>
 
-        <small>
-          Serão exibidas somente as oficinas cadastradas pelo campus selecionado.
-        </small>
+  <!-- CONTATO -->
+
+  <section id="contato">
+    <div class="container">
+
+      <div class="section-heading">
+        <div class="eyebrow">Fale conosco</div>
+        <h2>Entre em contato.</h2>
+
+        <p class="section-description">
+          Para dúvidas e informações sobre o VII CEPEx,
+          utilize os canais institucionais.
+        </p>
       </div>
 
-      <p id="resultadoCampus" class="resultado-campus"></p>
+      <div class="contact-grid">
 
-      <div id="lista" class="cards"></div>
+        <div class="contact-item">
+          <strong>CEPEx</strong>
+          <a href="mailto:cepex.roo@ifmt.edu.br">
+            cepex.roo@ifmt.edu.br
+          </a>
+        </div>
+
+        <div class="contact-item">
+          <strong>Pesquisa</strong>
+          <a href="mailto:pesquisa.roo@ifmt.edu.br">
+            pesquisa.roo@ifmt.edu.br
+          </a>
+        </div>
+
+        <div class="contact-item">
+          <strong>Extensão</strong>
+          <a href="mailto:extensao.roo@ifmt.edu.br">
+            extensao.roo@ifmt.edu.br
+          </a>
+        </div>
+
+        <div class="contact-item">
+          <strong>Telefone</strong>
+          <p>(66) 3427-2304</p>
+        </div>
+
+      </div>
 
     </div>
   </section>
 
 </main>
 
-<footer id="contato">
-  <div class="container footer-content">
-    <div>
-      <strong>VII CEPEx 2026</strong>
-      <p>IFMT Campus Rondonópolis</p>
-      <p>Memória, Ciência e Futuro</p>
-    </div>
 
-    <div>
-      <p>cepex.roo@ifmt.edu.br</p>
-      <p>pesquisa.roo@ifmt.edu.br</p>
-      <p>extensao.roo@ifmt.edu.br</p>
-      <p>(66) 3427-2304</p>
-    </div>
+<footer>
+  <div class="container">
+    <p><strong>VII CEPEx 2026</strong> · Memória, Ciência e Futuro</p>
+    <p>Instituto Federal de Mato Grosso · Campus Rondonópolis</p>
   </div>
 </footer>
-
-<script>
-  const API_URL =
-    'https://script.google.com/macros/s/AKfycbzmffDxLuYqnvzN3xcKpm97GVrp3oM2FtVp0DlU7kwuO592hsHAUHQcTHR4DmSWAKRy5w/exec';
-
-  const lista = document.getElementById('lista');
-  const status = document.getElementById('status');
-  const filtroCampus = document.getElementById('filtroCampus');
-  const resultadoCampus = document.getElementById('resultadoCampus');
-
-  let todasOficinas = [];
-  let todosCampi = [];
-  let inscricoesAbertas = false;
-
-  function escaparHTML(valor) {
-    return String(valor ?? '').replace(/[&<>"']/g, caractere => ({
-      '&': '&amp;',
-      '<': '&lt;',
-      '>': '&gt;',
-      '"': '&quot;',
-      "'": '&#39;'
-    })[caractere]);
-  }
-
-  function normalizar(valor) {
-    return String(valor ?? '')
-      .trim()
-      .toLocaleLowerCase('pt-BR');
-  }
-
-  function mostrarStatus(texto, tipo = '') {
-    status.textContent = texto;
-    status.className = 'status ' + tipo;
-  }
-
-  /*
-   * Obtém o campus vinculado à oficina.
-   * O backend deve devolver campusId ou campus.
-   */
-  function obterCampusDaOficina(oficina) {
-    return String(
-      oficina.campusId ??
-      oficina.campus_id ??
-      oficina.campus ??
-      oficina.campusNome ??
-      ''
-    ).trim();
-  }
-
-  /*
-   * Localiza o nome do campus para exibição.
-   */
-  function nomeDoCampus(valor) {
-    const campus = todosCampi.find(item =>
-      normalizar(item.id) === normalizar(valor) ||
-      normalizar(item.nome) === normalizar(valor)
-    );
-
-    return campus ? campus.nome : valor;
-  }
-
-  /*
-   * Monta as opções do seletor.
-   */
-  function carregarSeletorCampi(campi) {
-    todosCampi = Array.isArray(campi) ? campi : [];
-
-    filtroCampus.innerHTML =
-      '<option value="">Selecione um campus</option>';
-
-    todosCampi.forEach(campus => {
-      const option = document.createElement('option');
-
-      option.value = campus.id;
-      option.textContent = campus.nome;
-
-      filtroCampus.appendChild(option);
-    });
-
-    filtroCampus.disabled = todosCampi.length === 0;
-
-    if (todosCampi.length === 0) {
-      filtroCampus.innerHTML =
-        '<option value="">Nenhum campus disponível</option>';
-    }
-  }
-
-  /*
-   * Cria o cartão de cada oficina.
-   */
-  function criarCartaoOficina(oficina) {
-    const nome = escaparHTML(oficina.nome);
-    const promotor = escaparHTML(oficina.promotor);
-    const sinopse = escaparHTML(oficina.sinopse);
-    const horario = escaparHTML(oficina.horario);
-
-    const campusOriginal = obterCampusDaOficina(oficina);
-    const campusNome = escaparHTML(nomeDoCampus(campusOriginal));
-
-    const vagas = Number(oficina.vagasRestantes) || 0;
-    const lotada = vagas <= 0;
-
-    let botao;
-
-    if (lotada) {
-      botao = `
-        <span class="btn btn-disabled">
-          Vagas esgotadas
-        </span>
-      `;
-    } else if (!inscricoesAbertas) {
-      botao = `
-        <span class="btn btn-disabled">
-          Inscrições em breve
-        </span>
-      `;
-    } else {
-      const id = encodeURIComponent(String(oficina.id));
-
-      botao = `
-        <a class="btn btn-primary"
-           href="inscricao.html?id=${id}">
-          Quero me inscrever
-        </a>
-      `;
-    }
-
-    return `
-      <article class="oficina-card">
-
-        <span class="campus-tag">
-          ${campusNome}
-        </span>
-
-        <h3>${nome}</h3>
-
-        <p class="promotor">
-          Responsável: ${promotor || 'Não informado'}
-        </p>
-
-        <p class="sinopse">
-          ${sinopse || 'Descrição não informada.'}
-        </p>
-
-        <p class="detalhe">
-          <strong>Horário:</strong>
-          ${horario || 'A definir'}
-        </p>
-
-        <p class="detalhe">
-          <strong>Vagas restantes:</strong>
-          ${vagas}
-        </p>
-
-        ${botao}
-
-      </article>
-    `;
-  }
-
-  /*
-   * Filtra as oficinas pelo campus selecionado.
-   */
-  function filtrarOficinas() {
-    const campusSelecionado = filtroCampus.value;
-
-    lista.innerHTML = '';
-
-    if (!campusSelecionado) {
-      resultadoCampus.textContent = '';
-
-      lista.innerHTML = `
-        <div class="empty">
-          Selecione um campus para visualizar as oficinas disponíveis.
-        </div>
-      `;
-
-      return;
-    }
-
-    const campus = todosCampi.find(item =>
-      normalizar(item.id) === normalizar(campusSelecionado)
-    );
-
-    const oficinasFiltradas = todasOficinas.filter(oficina => {
-      const campusOficina = obterCampusDaOficina(oficina);
-
-      return (
-        normalizar(campusOficina) === normalizar(campusSelecionado) ||
-        normalizar(campusOficina) === normalizar(campus?.nome)
-      );
-    });
-
-    resultadoCampus.textContent =
-      'Campus selecionado: ' +
-      (campus?.nome || campusSelecionado) +
-      ' · ' +
-      oficinasFiltradas.length +
-      (oficinasFiltradas.length === 1
-        ? ' oficina encontrada'
-        : ' oficinas encontradas');
-
-    if (oficinasFiltradas.length === 0) {
-      lista.innerHTML = `
-        <div class="empty">
-          Nenhuma oficina cadastrada para este campus no momento.
-        </div>
-      `;
-
-      return;
-    }
-
-    lista.innerHTML = oficinasFiltradas
-      .map(criarCartaoOficina)
-      .join('');
-  }
-
-  /*
-   * Consulta a API e carrega campi e oficinas.
-   */
-  async function carregarOficinas() {
-    lista.innerHTML = '';
-
-    mostrarStatus('Carregando oficinas...');
-
-    filtroCampus.disabled = true;
-
-    try {
-      const resposta = await fetch(API_URL);
-
-      if (!resposta.ok) {
-        throw new Error('Não foi possível acessar o servidor.');
-      }
-
-      const dados = await resposta.json();
-
-      if (!dados.ok) {
-        throw new Error(
-          dados.mensagem || 'Erro ao consultar oficinas.'
-        );
-      }
-
-      todasOficinas = Array.isArray(dados.oficinas)
-        ? dados.oficinas
-        : [];
-
-      inscricoesAbertas = Boolean(dados.aberta);
-
-      /*
-       * O backend deve devolver a lista de campi.
-       * Se não devolver, tentamos identificar campi nas oficinas.
-       */
-      let campi = Array.isArray(dados.campi)
-        ? dados.campi
-        : [];
-
-      if (campi.length === 0) {
-        const identificadores = [
-          ...new Set(
-            todasOficinas
-              .map(obterCampusDaOficina)
-              .filter(Boolean)
-          )
-        ];
-
-        campi = identificadores.map(valor => ({
-          id: valor,
-          nome: valor
-        }));
-      }
-
-      carregarSeletorCampi(campi);
-
-      if (inscricoesAbertas) {
-        mostrarStatus(
-          'Inscrições abertas! Escolha seu campus e sua oficina.',
-          'sucesso'
-        );
-      } else {
-        mostrarStatus(
-          'As oficinas estão disponíveis para consulta. As inscrições ainda não estão abertas ou foram encerradas.',
-          'aviso'
-        );
-      }
-
-      if (campi.length === 0) {
-        mostrarStatus(
-          'Não foi possível identificar os campi. Verifique se o Apps Script está retornando os dados de campus.',
-          'erro'
-        );
-
-        lista.innerHTML = `
-          <div class="empty">
-            Ainda não há informações de campus disponíveis.
-          </div>
-        `;
-
-        return;
-      }
-
-      /*
-       * Seleciona Rondonópolis inicialmente, se estiver cadastrado.
-       * Caso contrário, seleciona o primeiro campus da lista.
-       */
-      const rondonopolis = campi.find(campus =>
-        normalizar(campus.nome).includes('rondonopolis')
-      );
-
-      filtroCampus.value = rondonopolis
-        ? rondonopolis.id
-        : campi[0].id;
-
-      filtrarOficinas();
-
-    } catch (erro) {
-      console.error('Erro ao carregar oficinas:', erro);
-
-      mostrarStatus(
-        'Não foi possível carregar as oficinas. Verifique sua conexão ou tente novamente.',
-        'erro'
-      );
-
-      lista.innerHTML = `
-        <div class="empty">
-          <p>Não foi possível consultar as oficinas.</p>
-
-          <button class="btn btn-outline"
-                  onclick="carregarOficinas()">
-            Tentar novamente
-          </button>
-        </div>
-      `;
-    }
-  }
-
-  /*
-   * Atualiza a listagem sempre que o participante
-   * selecionar outro campus.
-   */
-  filtroCampus.addEventListener('change', filtrarOficinas);
-
-  carregarOficinas();
-</script>
 
 </body>
 </html>

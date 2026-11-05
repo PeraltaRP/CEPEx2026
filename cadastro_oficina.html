@@ -1,735 +1,767 @@
-
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cadastro de Oficinas | VII CEPEx 2026</title>
 
-  <title>Cadastro de Oficinas | VII CEPEx 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;500;600;700;800&family=Newsreader:opsz,wght@6..72,400;6..72,500&display=swap" rel="stylesheet">
+<style>
+:root {
+    --bg: #101713;
+    --surface: #19231d;
+    --surface2: #202c24;
+    --gold: #d9b76e;
+    --green: #91b69a;
+    --text: #f3f1e9;
+    --muted: #a5b0a6;
+    --border: rgba(255,255,255,.12);
+    --danger: #e58b83;
+}
 
-  <style>
-    :root {
-      --bg: #101714;
-      --surface: #19231e;
-      --surface2: #202d26;
-      --text: #f1f3ed;
-      --muted: #a6b2a9;
-      --green: #8fbd79;
-      --gold: #e3b65c;
-      --border: rgba(255,255,255,.12);
-      --danger: #ff8585;
-    }
+* { box-sizing: border-box; }
 
-    * {
-      box-sizing: border-box;
-    }
+body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Bricolage Grotesque', sans-serif;
+    min-height: 100vh;
+}
 
-    body {
-      margin: 0;
-      background:
-        radial-gradient(ellipse at top right, #263b2c 0%, transparent 45%),
-        var(--bg);
-      color: var(--text);
-      font-family: 'Bricolage Grotesque', sans-serif;
-      min-height: 100vh;
-    }
+header {
+    padding: 25px 6%;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+}
 
-    a {
-      color: var(--green);
-      text-decoration: none;
-    }
+.logo {
+    color: var(--gold);
+    font-size: 21px;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
 
-    header {
-      border-bottom: 1px solid var(--border);
-      padding: 20px;
-    }
+.logo span {
+    display: block;
+    color: var(--muted);
+    font-size: 11px;
+    font-weight: 400;
+    letter-spacing: 2px;
+    margin-top: 3px;
+}
 
-    .container {
-      width: min(900px, 92%);
-      margin: auto;
-    }
+header a {
+    color: var(--green);
+    text-decoration: none;
+    font-size: 14px;
+}
 
-    .topo {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 15px;
-      flex-wrap: wrap;
-    }
+.container {
+    max-width: 950px;
+    margin: 45px auto;
+    padding: 0 20px;
+}
 
-    .marca {
-      font-size: 13px;
-      color: var(--gold);
-      font-weight: 700;
-      letter-spacing: 1px;
-      text-transform: uppercase;
-    }
+h1 {
+    font-size: clamp(30px, 5vw, 45px);
+    margin: 0 0 10px;
+    line-height: 1.1;
+}
 
-    .voltar {
-      font-size: 14px;
-    }
+h1 span { color: var(--gold); }
 
-    main {
-      padding: 48px 0 70px;
-    }
+.intro {
+    color: var(--muted);
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
 
-    .introducao {
-      margin-bottom: 30px;
-    }
+.painel {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    padding: 25px;
+    margin-bottom: 25px;
+}
 
-    .etiqueta {
-      color: var(--green);
-      font-size: 12px;
-      font-weight: 800;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-    }
+label {
+    display: block;
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
 
-    h1 {
-      font-size: clamp(32px, 6vw, 52px);
-      line-height: 1.05;
-      margin: 12px 0;
-    }
+input, select, textarea {
+    width: 100%;
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    border-radius: 9px;
+    padding: 13px;
+    color: var(--text);
+    font-family: inherit;
+    font-size: 15px;
+    outline: none;
+}
 
-    .descricao {
-      color: var(--muted);
-      line-height: 1.7;
-      max-width: 650px;
-    }
+input:focus, select:focus, textarea:focus {
+    border-color: var(--gold);
+}
 
-    .painel {
-      background: rgba(25,35,30,.94);
-      border: 1px solid var(--border);
-      border-radius: 18px;
-      padding: 25px;
-      margin-bottom: 22px;
-    }
+input[type="time"],
+input[type="date"],
+input[type="datetime-local"] {
+    min-height: 46px;
+    color-scheme: dark;
+    cursor: pointer;
+}
 
-    h2 {
-      margin-top: 0;
-      font-size: 21px;
-    }
+textarea {
+    min-height: 100px;
+    resize: vertical;
+}
 
-    label {
-      display: block;
-      font-size: 13px;
-      font-weight: 700;
-      margin-bottom: 8px;
-    }
+.campo { margin-bottom: 20px; }
 
-    input,
-    select,
-    textarea {
-      width: 100%;
-      padding: 13px 14px;
-      background: #111a15;
-      color: var(--text);
-      border: 1px solid var(--border);
-      border-radius: 9px;
-      font: inherit;
-      outline: none;
-    }
+small {
+    display: block;
+    color: var(--muted);
+    margin-top: 7px;
+    font-size: 12px;
+    line-height: 1.5;
+}
 
-    input:focus,
-    select:focus,
-    textarea:focus {
-      border-color: var(--green);
-    }
+.titulo-secao {
+    color: var(--gold);
+    font-size: 20px;
+    margin: 0 0 20px;
+}
 
-    textarea {
-      min-height: 110px;
-      resize: vertical;
-    }
+.oficina {
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    border-radius: 13px;
+    padding: 20px;
+    margin-bottom: 18px;
+}
 
-    .campo {
-      margin-bottom: 18px;
-    }
+.oficina-topo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    gap: 10px;
+}
 
-    .grade {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 15px;
-    }
+.oficina-topo h3 {
+    margin: 0;
+    font-size: 17px;
+}
 
-    .oficina-card {
-      border: 1px solid var(--border);
-      border-radius: 14px;
-      padding: 20px;
-      margin-top: 18px;
-      background: var(--surface);
-    }
+.numero { color: var(--gold); }
 
-    .oficina-topo {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 10px;
-      margin-bottom: 18px;
-    }
+.btn-remover {
+    border: 1px solid rgba(229,139,131,.4);
+    color: var(--danger);
+    background: transparent;
+    border-radius: 7px;
+    padding: 7px 11px;
+    cursor: pointer;
+    font-family: inherit;
+}
 
-    .oficina-topo h3 {
-      margin: 0;
-      font-size: 17px;
-    }
+.btn-remover:hover {
+    background: rgba(229,139,131,.1);
+}
 
-    .numero {
-      color: var(--gold);
-      font-size: 13px;
-      font-weight: 700;
-    }
+.btn {
+    border: 0;
+    border-radius: 9px;
+    padding: 13px 20px;
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: .2s;
+}
 
-    button {
-      cursor: pointer;
-      border: 0;
-      border-radius: 9px;
-      padding: 13px 18px;
-      font: inherit;
-      font-weight: 700;
-      transition: .2s;
-    }
+.btn:disabled {
+    opacity: .5;
+    cursor: not-allowed;
+}
 
-    button:disabled {
-      opacity: .55;
-      cursor: not-allowed;
-    }
+.btn-adicionar {
+    color: var(--gold);
+    background: transparent;
+    border: 1px solid var(--gold);
+}
 
-    .remover {
-      background: transparent;
-      border: 1px solid rgba(255,133,133,.4);
-      color: var(--danger);
-      padding: 8px 12px;
-      font-size: 12px;
-    }
+.btn-adicionar:hover {
+    background: rgba(217,183,110,.1);
+}
 
-    .adicionar {
-      width: 100%;
-      background: var(--surface2);
-      border: 1px dashed var(--green);
-      color: var(--green);
-      margin-top: 20px;
-    }
+.btn-enviar {
+    width: 100%;
+    background: var(--gold);
+    color: #172018;
+    font-size: 16px;
+    padding: 16px;
+}
 
-    .enviar {
-      width: 100%;
-      background: var(--green);
-      color: #102016;
-      margin-top: 12px;
-      padding: 16px;
-      font-size: 16px;
-    }
+.btn-enviar:hover:not(:disabled) {
+    filter: brightness(1.08);
+}
 
-    .adicionar:hover,
-    .enviar:hover,
-    .remover:hover {
-      filter: brightness(1.12);
-    }
+.acoes {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
 
-    .mensagem {
-      display: none;
-      padding: 15px;
-      border-radius: 10px;
-      margin-bottom: 20px;
-      line-height: 1.5;
-    }
+.periodo {
+    background: rgba(145,182,154,.08);
+    border: 1px solid rgba(145,182,154,.25);
+    border-radius: 10px;
+    padding: 17px;
+    margin-bottom: 20px;
+}
 
-    .mensagem.sucesso {
-      display: block;
-      background: rgba(60,140,75,.18);
-      border: 1px solid rgba(100,200,120,.4);
-      color: #b7e6bd;
-    }
+.periodo h4 {
+    margin: 0 0 8px;
+    color: var(--green);
+    font-size: 15px;
+}
 
-    .mensagem.erro {
-      display: block;
-      background: rgba(180,60,60,.15);
-      border: 1px solid rgba(255,100,100,.35);
-      color: #ffaaaa;
-    }
+.periodo p {
+    color: var(--muted);
+    font-size: 13px;
+    line-height: 1.5;
+    margin: 0 0 15px;
+}
 
-    .mensagem.info {
-      display: block;
-      background: rgba(227,182,92,.12);
-      border: 1px solid rgba(227,182,92,.35);
-      color: #f0d69e;
-    }
+.grade {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 15px;
+}
 
-    .ajuda {
-      color: var(--muted);
-      font-size: 12px;
-      line-height: 1.5;
-      margin-top: 8px;
-    }
+.mensagem {
+    display: none;
+    padding: 15px;
+    border-radius: 9px;
+    margin-bottom: 20px;
+    line-height: 1.5;
+}
 
-    footer {
-      border-top: 1px solid var(--border);
-      padding: 25px 0;
-      text-align: center;
-      color: var(--muted);
-      font-size: 12px;
-    }
+.mensagem.sucesso {
+    display: block;
+    color: #b5e2bd;
+    background: rgba(65,150,85,.15);
+    border: 1px solid rgba(65,150,85,.35);
+}
 
-    @media(max-width: 600px) {
-      .grade {
-        grid-template-columns: 1fr;
-        gap: 0;
-      }
+.mensagem.erro {
+    display: block;
+    color: #f0aaa3;
+    background: rgba(200,70,60,.12);
+    border: 1px solid rgba(200,70,60,.3);
+}
 
-      .painel {
-        padding: 18px;
-      }
+footer {
+    text-align: center;
+    padding: 30px 15px;
+    border-top: 1px solid var(--border);
+    color: var(--muted);
+    font-size: 12px;
+}
 
-      main {
-        padding-top: 32px;
-      }
-    }
-  </style>
+@media (max-width: 600px) {
+    header { padding: 20px; }
+    .container { margin: 30px auto; }
+    .painel { padding: 18px; }
+    .oficina { padding: 15px; }
+    .grade { grid-template-columns: 1fr; }
+}
+</style>
 </head>
 
 <body>
 
 <header>
-  <div class="container topo">
-    <div class="marca">VII CEPEx 2026 · IFMT</div>
-    <a class="voltar" href="index.html">← Voltar ao site</a>
-  </div>
+    <div class="logo">
+        VII CEPEx
+        <span>IFMT CAMPUS RONDONÓPOLIS</span>
+    </div>
+    <a href="index.html">← Voltar ao site</a>
 </header>
 
 <main class="container">
 
-  <section class="introducao">
-    <div class="etiqueta">Cadastro de atividades</div>
+    <h1>Cadastro de <span>oficinas</span></h1>
 
-    <h1>Cadastro de oficinas</h1>
-
-    <p class="descricao">
-      Professores e servidores podem cadastrar oficinas para o
-      VII Congresso de Ensino, Pesquisa e Extensão do IFMT.
-      Selecione o campus e informe os dados das atividades.
+    <p class="intro">
+        Utilize este formulário para cadastrar as oficinas e os minicursos
+        que serão oferecidos durante o VII Congresso de Ensino, Pesquisa
+        e Extensão do IFMT.
     </p>
-  </section>
 
-  <div id="mensagem" class="mensagem" role="status" aria-live="polite"></div>
+    <div id="mensagem" class="mensagem" role="status"></div>
 
-  <section class="painel">
-    <h2>Identificação do campus</h2>
+    <form id="formulario">
 
-    <div class="campo">
-      <label for="campus">Selecione o campus *</label>
+        <section class="painel">
+            <h2 class="titulo-secao">1. Identificação do campus</h2>
 
-      <select id="campus" required>
-        <option value="">Carregando campi...</option>
-      </select>
+            <div class="campo">
+                <label for="campus">Campus responsável *</label>
+                <select id="campus" required>
+                    <option value="">Carregando campi...</option>
+                </select>
+                <small>
+                    Selecione o campus ao qual as oficinas estarão vinculadas.
+                </small>
+            </div>
+        </section>
 
-      <p class="ajuda">
-        Todas as oficinas adicionadas nesta página serão vinculadas
-        ao campus selecionado.
-      </p>
-    </div>
-  </section>
+        <section class="painel">
+            <h2 class="titulo-secao">2. Oficinas e minicursos</h2>
 
-  <section class="painel">
-    <div class="oficina-topo">
-      <h2>Oficinas</h2>
-      <span class="numero" id="contador">1 oficina</span>
-    </div>
+            <div id="listaOficinas"></div>
 
-    <div id="listaOficinas"></div>
+            <div class="acoes">
+                <button
+                    type="button"
+                    class="btn btn-adicionar"
+                    id="btnAdicionar">
+                    + Adicionar outra oficina
+                </button>
 
-    <button type="button" class="adicionar" id="btnAdicionar">
-      + Adicionar outra oficina
-    </button>
+                <small>
+                    Você pode cadastrar até 30 oficinas por envio.
+                </small>
+            </div>
+        </section>
 
-    <button type="button" class="enviar" id="btnEnviar">
-      Enviar oficinas
-    </button>
+        <button
+            type="submit"
+            class="btn btn-enviar"
+            id="btnEnviar">
+            Enviar cadastro de oficinas
+        </button>
 
-    <p class="ajuda">
-      Confira os dados antes de enviar. Todas as oficinas serão
-      cadastradas no campus selecionado.
-    </p>
-  </section>
-
+    </form>
 </main>
 
 <footer>
-  <div class="container">
-    VII CEPEx 2026 · IFMT Campus Rondonópolis
-  </div>
+    VII Congresso de Ensino, Pesquisa e Extensão — IFMT
+    <br>
+    Memória, Ciência e Futuro · 2026
 </footer>
 
-
 <script>
-  const API_URL =
-    'https://script.google.com/macros/s/AKfycbzmffDxLuYqnvzN3xcKpm97GVrp3oM2FtVp0DlU7kwuO592hsHAUHQcTHR4DmSWAKRy5w/exec';
+const API_URL = 'https://script.google.com/macros/s/AKfycbzmffDxLuYqnvzN3xcKpm97GVrp3oM2FtVp0DlU7kwuO592hsHAUHQcTHR4DmSWAKRy5w/exec';
 
-  const campusSelect = document.getElementById('campus');
-  const listaOficinas = document.getElementById('listaOficinas');
-  const btnAdicionar = document.getElementById('btnAdicionar');
-  const btnEnviar = document.getElementById('btnEnviar');
-  const contador = document.getElementById('contador');
-  const mensagem = document.getElementById('mensagem');
+const LIMITE_OFICINAS = 30;
 
-  let quantidadeOficinas = 0;
-  let enviando = false;
+const campusSelect = document.getElementById('campus');
+const listaOficinas = document.getElementById('listaOficinas');
+const btnAdicionar = document.getElementById('btnAdicionar');
+const btnEnviar = document.getElementById('btnEnviar');
+const formulario = document.getElementById('formulario');
+const mensagem = document.getElementById('mensagem');
 
+// =====================================================
+// CARREGAR CAMPI
+// =====================================================
 
-  /************************************************
-   * MENSAGENS
-   ************************************************/
-  function mostrarMensagem(texto, tipo) {
-    mensagem.textContent = texto;
-    mensagem.className = 'mensagem ' + tipo;
-    mensagem.scrollIntoView({
-      behavior: 'smooth',
-      block: 'center'
-    });
-  }
+async function carregarCampi() {
+    campusSelect.innerHTML =
+        '<option value="">Carregando campi...</option>';
 
-  function limparMensagem() {
-    mensagem.textContent = '';
-    mensagem.className = 'mensagem';
-  }
-
-
-  /************************************************
-   * CARREGAR CAMPI DA PLANILHA
-   ************************************************/
-  async function carregarCampi() {
     try {
-      const resposta = await fetch(API_URL);
-      const dados = await resposta.json();
+        const resposta = await fetch(API_URL);
+        const dados = await resposta.json();
 
-      if (!dados.ok) {
-        throw new Error(dados.mensagem || 'Erro ao carregar campi.');
-      }
+        if (!resposta.ok || !dados.ok || !Array.isArray(dados.campi)) {
+            throw new Error('Não foi possível carregar os campi.');
+        }
 
-      campusSelect.innerHTML =
-        '<option value="">Selecione o campus</option>';
-
-      (dados.campi || []).forEach(campus => {
-        const option = document.createElement('option');
-
-        option.value = campus.id;
-        option.textContent = campus.nome;
-
-        campusSelect.appendChild(option);
-      });
-
-      if (!dados.campi || dados.campi.length === 0) {
         campusSelect.innerHTML =
-          '<option value="">Nenhum campus cadastrado</option>';
-      }
+            '<option value="">Selecione o campus</option>';
+
+        dados.campi.forEach(campus => {
+            const option = document.createElement('option');
+            option.value = campus.id;
+            option.textContent = campus.nome;
+            campusSelect.appendChild(option);
+        });
+
+        const rondonopolis = dados.campi.find(campus =>
+            String(campus.nome).toLowerCase().includes('rondonópolis')
+        );
+
+        if (rondonopolis) {
+            campusSelect.value = rondonopolis.id;
+        }
 
     } catch (erro) {
-      campusSelect.innerHTML =
-        '<option value="">Erro ao carregar campi</option>';
+        campusSelect.innerHTML =
+            '<option value="">Erro ao carregar campi</option>';
 
-      mostrarMensagem(
-        'Não foi possível carregar os campi. Atualize a página. Detalhes: ' +
-        erro.message,
-        'erro'
-      );
+        mostrarMensagem(
+            'Não foi possível carregar os campi. Atualize a página e tente novamente.',
+            'erro'
+        );
+
+        console.error(erro);
     }
-  }
+}
 
+// =====================================================
+// ADICIONAR OFICINA
+// =====================================================
 
-  /************************************************
-   * CRIAR CARTÃO DE OFICINA
-   ************************************************/
-  function adicionarOficina() {
-    if (quantidadeOficinas >= 30) {
-      mostrarMensagem(
-        'O limite é de 30 oficinas por envio.',
-        'erro'
-      );
-      return;
+function adicionarOficina() {
+    const quantidade = document.querySelectorAll('.oficina').length;
+
+    if (quantidade >= LIMITE_OFICINAS) {
+        mostrarMensagem(
+            'O limite é de 30 oficinas por cadastro.',
+            'erro'
+        );
+        return;
     }
-
-    quantidadeOficinas++;
-
-    const numero = quantidadeOficinas;
 
     const card = document.createElement('div');
-    card.className = 'oficina-card';
-    card.dataset.oficina = numero;
+    card.className = 'oficina';
 
     card.innerHTML = `
-      <div class="oficina-topo">
-        <h3>Oficina <span class="numero">${numero}</span></h3>
+        <div class="oficina-topo">
+            <h3><span class="numero"></span></h3>
 
-        <button
-          type="button"
-          class="remover"
-          aria-label="Remover oficina ${numero}"
-        >
-          Remover
-        </button>
-      </div>
-
-      <div class="campo">
-        <label>Nome da oficina *</label>
-        <input
-          type="text"
-          name="nome"
-          maxlength="150"
-          placeholder="Ex.: Introdução à Robótica"
-          required
-        >
-      </div>
-
-      <div class="campo">
-        <label>Responsável / Promotor *</label>
-        <input
-          type="text"
-          name="promotor"
-          maxlength="150"
-          placeholder="Nome do professor ou responsável"
-          required
-        >
-      </div>
-
-      <div class="grade">
-        <div class="campo">
-          <label>Quantidade de vagas *</label>
-          <input
-            type="number"
-            name="vagas"
-            min="1"
-            max="500"
-            step="1"
-            placeholder="Ex.: 20"
-            required
-          >
+            <button type="button" class="btn-remover">
+                Remover
+            </button>
         </div>
 
         <div class="campo">
-          <label>Horário *</label>
-          <input
-            type="text"
-            name="horario"
-            maxlength="100"
-            placeholder="Ex.: 14h às 16h"
-            required
-          >
+            <label>Nome da oficina ou minicurso *</label>
+            <input
+                type="text"
+                name="nome"
+                maxlength="200"
+                placeholder="Ex.: Introdução à Robótica"
+                required>
         </div>
-      </div>
 
-      <div class="campo">
-        <label>Sinopse / Descrição *</label>
-        <textarea
-          name="sinopse"
-          maxlength="2000"
-          placeholder="Descreva o objetivo e o conteúdo da oficina..."
-          required
-        ></textarea>
-      </div>
+        <div class="campo">
+            <label>Responsável / Promotor *</label>
+            <input
+                type="text"
+                name="promotor"
+                maxlength="150"
+                placeholder="Nome do responsável pela oficina"
+                required>
+        </div>
+
+        <div class="campo">
+            <label>Quantidade de vagas *</label>
+            <input
+                type="number"
+                name="vagas"
+                min="1"
+                max="500"
+                placeholder="Ex.: 25"
+                required>
+        </div>
+
+        <div class="campo">
+            <label>Data da oficina *</label>
+            <input
+                type="date"
+                name="data"
+                required>
+            <small>
+                Selecione o dia em que a oficina será realizada.
+            </small>
+        </div>
+
+        <div class="campo">
+            <label>Horário de início *</label>
+            <input
+                type="time"
+                name="horario"
+                step="60"
+                required>
+            <small>
+                Selecione a hora e os minutos. Exemplo: 13:00.
+            </small>
+        </div>
+
+        <div class="campo">
+            <label>Sala de realização *</label>
+            <input
+                type="text"
+                name="sala"
+                maxlength="100"
+                placeholder="Ex.: Laboratório de Informática 01"
+                required>
+            <small>
+                Informe a sala, laboratório ou espaço onde ocorrerá a oficina.
+            </small>
+        </div>
+
+        <div class="campo">
+            <label>Sinopse / Descrição da oficina *</label>
+            <textarea
+                name="sinopse"
+                maxlength="1500"
+                placeholder="Descreva brevemente o conteúdo e os objetivos da oficina..."
+                required></textarea>
+        </div>
+
+        <div class="periodo">
+            <h4>Período de inscrições desta oficina</h4>
+            <p>
+                Defina quando os participantes poderão realizar a inscrição.
+                O período é independente para cada oficina.
+            </p>
+
+            <div class="grade">
+                <div class="campo">
+                    <label>Data e hora de abertura *</label>
+                    <input
+                        type="datetime-local"
+                        name="dataAberturaInscricao"
+                        required>
+                </div>
+
+                <div class="campo">
+                    <label>Data e hora de encerramento *</label>
+                    <input
+                        type="datetime-local"
+                        name="dataEncerramentoInscricao"
+                        required>
+                </div>
+            </div>
+        </div>
     `;
 
-    card.querySelector('.remover').addEventListener('click', () => {
-      card.remove();
-      atualizarContador();
-      renumerarOficinas();
-      limparMensagem();
+    card.querySelector('.btn-remover').addEventListener('click', () => {
+        card.remove();
+        atualizarNumeracao();
+        atualizarBotaoAdicionar();
     });
 
     listaOficinas.appendChild(card);
 
-    atualizarContador();
-    limparMensagem();
-  }
+    atualizarNumeracao();
+    atualizarBotaoAdicionar();
+}
 
+// =====================================================
+// NUMERAÇÃO
+// =====================================================
 
-  /************************************************
-   * ATUALIZAR NUMERAÇÃO DOS CARTÕES
-   ************************************************/
-  function renumerarOficinas() {
-    const cards = listaOficinas.querySelectorAll('.oficina-card');
-
-    cards.forEach((card, indice) => {
-      const numero = indice + 1;
-
-      card.dataset.oficina = numero;
-
-      const titulo = card.querySelector('h3');
-      titulo.innerHTML =
-        'Oficina <span class="numero">' + numero + '</span>';
-
-      card.querySelector('.remover').setAttribute(
-        'aria-label',
-        'Remover oficina ' + numero
-      );
+function atualizarNumeracao() {
+    document.querySelectorAll('.oficina').forEach((card, indice) => {
+        card.querySelector('.numero').textContent =
+            `Oficina ${indice + 1}`;
     });
+}
 
-    quantidadeOficinas = cards.length;
-  }
+// =====================================================
+// BOTÃO ADICIONAR
+// =====================================================
 
+function atualizarBotaoAdicionar() {
+    const quantidade = document.querySelectorAll('.oficina').length;
 
-  /************************************************
-   * CONTADOR DE OFICINAS
-   ************************************************/
-  function atualizarContador() {
-    const total =
-      listaOficinas.querySelectorAll('.oficina-card').length;
+    btnAdicionar.disabled = quantidade >= LIMITE_OFICINAS;
 
-    contador.textContent =
-      total + (total === 1 ? ' oficina' : ' oficinas');
+    btnAdicionar.textContent =
+        quantidade >= LIMITE_OFICINAS
+            ? 'Limite de 30 oficinas atingido'
+            : '+ Adicionar outra oficina';
+}
 
-    btnAdicionar.disabled = total >= 30;
-  }
+// =====================================================
+// COLETAR DADOS
+// =====================================================
 
+function coletarOficinas() {
+    const cards = document.querySelectorAll('.oficina');
 
-  /************************************************
-   * REUNIR OS DADOS DOS FORMULÁRIOS
-   ************************************************/
-  function obterOficinas() {
-    const cards =
-      listaOficinas.querySelectorAll('.oficina-card');
+    return Array.from(cards).map(card => {
+        const obter = nome =>
+            card.querySelector(`[name="${nome}"]`).value.trim();
 
-    const oficinas = [];
+        const horario = obter('horario');
 
-    cards.forEach(card => {
-      oficinas.push({
-        nome: card.querySelector('[name="nome"]').value.trim(),
-        promotor: card.querySelector('[name="promotor"]').value.trim(),
-        vagas: Number(card.querySelector('[name="vagas"]').value),
-        horario: card.querySelector('[name="horario"]').value.trim(),
-        sinopse: card.querySelector('[name="sinopse"]').value.trim()
-      });
+        return {
+            nome: obter('nome'),
+            promotor: obter('promotor'),
+            vagas: Number(obter('vagas')),
+            data: obter('data'),
+            horario: horario ? horario + ':00' : '',
+            sala: obter('sala'),
+            sinopse: obter('sinopse'),
+            dataAberturaInscricao: obter('dataAberturaInscricao'),
+            dataEncerramentoInscricao: obter('dataEncerramentoInscricao')
+        };
     });
+}
 
-    return oficinas;
-  }
+// =====================================================
+// VALIDAR PERÍODOS NO NAVEGADOR
+// =====================================================
 
+function validarPeriodos() {
+    const cards = document.querySelectorAll('.oficina');
 
-  /************************************************
-   * ENVIAR OFICINAS PARA O GOOGLE SHEETS
-   ************************************************/
-  async function enviarOficinas() {
-    if (enviando) return;
+    for (let indice = 0; indice < cards.length; indice++) {
+        const card = cards[indice];
 
+        const abertura = card.querySelector(
+            '[name="dataAberturaInscricao"]'
+        ).value;
+
+        const encerramento = card.querySelector(
+            '[name="dataEncerramentoInscricao"]'
+        ).value;
+
+        if (!abertura || !encerramento) {
+            mostrarMensagem(
+                `Informe a abertura e o encerramento das inscrições da oficina ${indice + 1}.`,
+                'erro'
+            );
+            return false;
+        }
+
+        if (new Date(abertura) >= new Date(encerramento)) {
+            mostrarMensagem(
+                `O encerramento deve ser posterior à abertura das inscrições da oficina ${indice + 1}.`,
+                'erro'
+            );
+            return false;
+        }
+    }
+
+    return true;
+}
+
+// =====================================================
+// ENVIAR PARA O APPS SCRIPT
+// =====================================================
+
+formulario.addEventListener('submit', async function(event) {
+    event.preventDefault();
     limparMensagem();
 
     if (!campusSelect.value) {
-      mostrarMensagem(
-        'Selecione o campus antes de enviar.',
-        'erro'
-      );
-      campusSelect.focus();
-      return;
-    }
-
-    const formulario = listaOficinas.querySelectorAll(
-      'input, textarea'
-    );
-
-    for (const campo of formulario) {
-      if (!campo.checkValidity()) {
-        campo.reportValidity();
+        mostrarMensagem('Selecione o campus responsável.', 'erro');
+        campusSelect.focus();
         return;
-      }
     }
 
-    const oficinas = obterOficinas();
-
-    if (oficinas.length === 0) {
-      mostrarMensagem(
-        'Adicione pelo menos uma oficina.',
-        'erro'
-      );
-      return;
+    if (document.querySelectorAll('.oficina').length === 0) {
+        mostrarMensagem('Adicione pelo menos uma oficina.', 'erro');
+        return;
     }
 
-    const campusNome =
-      campusSelect.options[campusSelect.selectedIndex].text;
+    if (!formulario.reportValidity()) {
+        return;
+    }
 
-    const confirmar = confirm(
-      'Confirma o envio de ' + oficinas.length +
-      ' oficina(s) para o campus ' + campusNome + '?'
-    );
+    if (!validarPeriodos()) {
+        return;
+    }
 
-    if (!confirmar) return;
+    const dados = {
+        acao: 'cadastrarOficinas',
+        campusId: campusSelect.value,
+        oficinas: coletarOficinas()
+    };
 
-    enviando = true;
     btnEnviar.disabled = true;
     btnAdicionar.disabled = true;
-    btnEnviar.textContent = 'Enviando oficinas...';
+    btnEnviar.textContent = 'Enviando cadastro...';
 
     try {
-      const resposta = await fetch(API_URL, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'text/plain;charset=utf-8'
-        },
-        body: JSON.stringify({
-          acao: 'cadastrarOficinas',
-          campusId: campusSelect.value,
-          oficinas: oficinas
-        })
-      });
+        const resposta = await fetch(API_URL, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'text/plain;charset=utf-8'
+            },
+            body: JSON.stringify(dados)
+        });
 
-      const resultado = await resposta.json();
+        const resultado = await resposta.json();
 
-      if (!resultado.ok) {
-        throw new Error(
-          resultado.mensagem || 'Não foi possível cadastrar as oficinas.'
+        if (!resposta.ok || !resultado.ok) {
+            throw new Error(
+                resultado.mensagem ||
+                'Não foi possível cadastrar as oficinas.'
+            );
+        }
+
+        mostrarMensagem(
+            resultado.mensagem || 'Oficinas cadastradas com sucesso!',
+            'sucesso'
         );
-      }
 
-      mostrarMensagem(
-        resultado.mensagem +
-        ' Campus: ' + resultado.campus +
-        '. Obrigado pela colaboração!',
-        'sucesso'
-      );
+        listaOficinas.innerHTML = '';
+        adicionarOficina();
 
-      // Limpa os formulários após confirmação do servidor.
-      listaOficinas.innerHTML = '';
-      quantidadeOficinas = 0;
-      adicionarOficina();
-      atualizarContador();
-
-      window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
-      });
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
 
     } catch (erro) {
-      mostrarMensagem(
-        'Não foi possível enviar as oficinas. ' +
-        'Verifique sua conexão e tente novamente. Detalhes: ' +
-        erro.message,
-        'erro'
-      );
+        console.error(erro);
+
+        mostrarMensagem(
+            erro.message ||
+            'Ocorreu um erro ao enviar os dados. Tente novamente.',
+            'erro'
+        );
 
     } finally {
-      enviando = false;
-      btnEnviar.disabled = false;
-      btnAdicionar.disabled = false;
-      btnEnviar.textContent = 'Enviar oficinas';
-      atualizarContador();
+        btnEnviar.disabled = false;
+        btnEnviar.textContent = 'Enviar cadastro de oficinas';
+        atualizarBotaoAdicionar();
     }
-  }
+});
 
+// =====================================================
+// MENSAGENS
+// =====================================================
 
-  /************************************************
-   * EVENTOS
-   ************************************************/
-  btnAdicionar.addEventListener('click', adicionarOficina);
-  btnEnviar.addEventListener('click', enviarOficinas);
+function mostrarMensagem(texto, tipo) {
+    mensagem.textContent = texto;
+    mensagem.className = 'mensagem ' + tipo;
+}
 
-  campusSelect.addEventListener('change', limparMensagem);
+function limparMensagem() {
+    mensagem.textContent = '';
+    mensagem.className = 'mensagem';
+}
 
+// =====================================================
+// INICIALIZAÇÃO
+// =====================================================
 
-  /************************************************
-   * INICIALIZAÇÃO
-   ************************************************/
-  carregarCampi();
-  adicionarOficina();
+btnAdicionar.addEventListener('click', adicionarOficina);
 
+carregarCampi();
+adicionarOficina();
 </script>
 
 </body>
