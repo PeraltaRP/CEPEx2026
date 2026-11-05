@@ -1,0 +1,499 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Inscrição em Oficina | VII CEPEx 2026</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;500;600;700;800&family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #111713;
+      --surface: #1b251e;
+      --surface-light: #243128;
+      --gold: #e5b65c;
+      --orange: #d58a45;
+      --text: #f5f2e9;
+      --muted: #b8c0b8;
+      --border: rgba(229, 182, 92, .22);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background:
+        radial-gradient(ellipse at 80% 10%, rgba(120,155,119,.14), transparent 40%),
+        var(--bg);
+      color: var(--text);
+      font-family: 'Bricolage Grotesque', sans-serif;
+      line-height: 1.6;
+      min-height: 100vh;
+      padding: 30px 16px;
+    }
+
+    .container {
+      width: min(680px, 100%);
+      margin: 35px auto;
+    }
+
+    .voltar {
+      display: inline-block;
+      color: var(--gold);
+      margin-bottom: 24px;
+      text-decoration: none;
+    }
+
+    .voltar:hover {
+      text-decoration: underline;
+    }
+
+    .cabecalho {
+      margin-bottom: 24px;
+    }
+
+    .eyebrow {
+      color: var(--orange);
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      font-size: 11px;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+
+    h1 {
+      font-size: clamp(32px, 6vw, 45px);
+      line-height: 1.1;
+      margin-bottom: 12px;
+    }
+
+    .cabecalho p {
+      color: var(--muted);
+    }
+
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 28px;
+    }
+
+    .oficina {
+      background: var(--surface-light);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 22px;
+      margin-bottom: 25px;
+    }
+
+    .oficina h2 {
+      color: var(--gold);
+      font-size: 25px;
+      margin-bottom: 12px;
+    }
+
+    .oficina p {
+      color: var(--muted);
+      font-size: 14px;
+      margin-top: 8px;
+    }
+
+    .oficina strong {
+      color: var(--text);
+    }
+
+    .vagas {
+      color: var(--gold) !important;
+      font-weight: 700;
+    }
+
+    .campo {
+      margin-bottom: 19px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 7px;
+      font-weight: 600;
+      font-size: 14px;
+    }
+
+    input {
+      width: 100%;
+      padding: 14px;
+      border: 1px solid #59685d;
+      border-radius: 7px;
+      background: #111713;
+      color: var(--text);
+      font: inherit;
+      outline: none;
+    }
+
+    input:focus {
+      border-color: var(--gold);
+      box-shadow: 0 0 0 2px rgba(229,182,92,.12);
+    }
+
+    input::placeholder {
+      color: #89938a;
+    }
+
+    button {
+      width: 100%;
+      padding: 15px;
+      background: var(--gold);
+      color: #171b16;
+      border: none;
+      border-radius: 7px;
+      font: inherit;
+      font-weight: 800;
+      cursor: pointer;
+      transition: .2s;
+    }
+
+    button:hover:not(:disabled) {
+      background: #f0c978;
+      transform: translateY(-1px);
+    }
+
+    button:disabled {
+      opacity: .5;
+      cursor: not-allowed;
+    }
+
+    .mensagem {
+      display: none;
+      padding: 14px;
+      border-radius: 8px;
+      margin-top: 20px;
+      font-size: 14px;
+      overflow-wrap: anywhere;
+    }
+
+    .mensagem.sucesso {
+      display: block;
+      background: #24452e;
+      color: #b8f0c5;
+      border: 1px solid #477c50;
+    }
+
+    .mensagem.erro {
+      display: block;
+      background: #542c2c;
+      color: #ffd0d0;
+      border: 1px solid #a65b52;
+    }
+
+    .mensagem.aviso {
+      display: block;
+      background: #44391f;
+      color: #f5d995;
+      border: 1px solid #8c7137;
+    }
+
+    .rodape {
+      color: var(--muted);
+      text-align: center;
+      font-size: 12px;
+      margin-top: 25px;
+    }
+
+    @media (max-width: 500px) {
+      .card {
+        padding: 19px;
+      }
+
+      .oficina {
+        padding: 17px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<div class="container">
+
+  <a class="voltar" href="index.html">
+    ← Voltar para as oficinas
+  </a>
+
+  <div class="cabecalho">
+    <p class="eyebrow">VII CEPEx 2026 · IFMT</p>
+    <h1>Inscrição em oficina</h1>
+    <p>
+      Preencha os dados abaixo para confirmar sua participação.
+    </p>
+  </div>
+
+  <div class="card">
+
+    <div class="oficina">
+      <h2 id="nomeOficina">Carregando oficina...</h2>
+
+      <p id="promotor"></p>
+      <p id="sinopse"></p>
+      <p id="horario"></p>
+      <p id="vagas" class="vagas"></p>
+    </div>
+
+    <form id="formulario">
+
+      <div class="campo">
+        <label for="nome">Nome completo *</label>
+        <input
+          type="text"
+          id="nome"
+          name="nome"
+          required
+          maxlength="150"
+          autocomplete="name"
+          placeholder="Digite seu nome completo">
+      </div>
+
+      <div class="campo">
+        <label for="matricula">Matrícula *</label>
+        <input
+          type="text"
+          id="matricula"
+          name="matricula"
+          required
+          maxlength="50"
+          autocomplete="off"
+          placeholder="Digite sua matrícula">
+      </div>
+
+      <div class="campo">
+        <label for="email">E-mail *</label>
+        <input
+          type="email"
+          id="email"
+          name="email"
+          required
+          maxlength="150"
+          autocomplete="email"
+          placeholder="Digite seu e-mail">
+      </div>
+
+      <button type="submit" id="botao" disabled>
+        Confirmar inscrição
+      </button>
+
+    </form>
+
+    <div id="mensagem" class="mensagem"></div>
+
+  </div>
+
+  <div class="rodape">
+    VII Congresso de Ensino, Pesquisa e Extensão<br>
+    IFMT Campus Rondonópolis · 2026
+  </div>
+
+</div>
+
+<script>
+  const API_URL =
+    'https://script.google.com/macros/s/AKfycbzmffDxLuYqnvzN3xcKpm97GVrp3oM2FtVp0DlU7kwuO592hsHAUHQcTHR4DmSWAKRy5w/exec';
+
+  const parametros = new URLSearchParams(window.location.search);
+  const oficinaId = parametros.get('id');
+
+  const formulario = document.getElementById('formulario');
+  const botao = document.getElementById('botao');
+  const mensagem = document.getElementById('mensagem');
+
+  let oficinaSelecionada = null;
+  let inscricoesAbertas = false;
+  let inscricaoConcluida = false;
+
+  function mostrarMensagem(texto, tipo) {
+    mensagem.textContent = texto;
+    mensagem.className = 'mensagem ' + tipo;
+  }
+
+  function limparMensagem() {
+    mensagem.textContent = '';
+    mensagem.className = 'mensagem';
+  }
+
+  function atualizarBotao() {
+    const disponivel =
+      oficinaSelecionada &&
+      inscricoesAbertas &&
+      oficinaSelecionada.vagasRestantes > 0 &&
+      !inscricaoConcluida;
+
+    botao.disabled = !disponivel;
+  }
+
+  async function carregarOficina() {
+    botao.disabled = true;
+
+    if (!oficinaId) {
+      document.getElementById('nomeOficina').textContent =
+        'Oficina não identificada';
+
+      mostrarMensagem(
+        'Não encontramos a oficina selecionada. Volte à página principal e escolha uma oficina.',
+        'erro'
+      );
+      return;
+    }
+
+    try {
+      const resposta = await fetch(API_URL);
+
+      if (!resposta.ok) {
+        throw new Error('Não foi possível acessar o servidor.');
+      }
+
+      const dados = await resposta.json();
+
+      if (!dados.ok) {
+        throw new Error(dados.mensagem || 'Erro ao carregar oficinas.');
+      }
+
+      oficinaSelecionada = dados.oficinas.find(
+        oficina => String(oficina.id) === String(oficinaId)
+      );
+
+      if (!oficinaSelecionada) {
+        throw new Error('Oficina não encontrada ou não está disponível.');
+      }
+
+      document.getElementById('nomeOficina').textContent =
+        oficinaSelecionada.nome;
+
+      document.getElementById('promotor').textContent =
+        'Responsável: ' + (oficinaSelecionada.promotor || 'Não informado');
+
+      document.getElementById('sinopse').textContent =
+        oficinaSelecionada.sinopse || 'Descrição não informada.';
+
+      document.getElementById('horario').textContent =
+        'Horário: ' + (oficinaSelecionada.horario || 'A definir');
+
+      document.getElementById('vagas').textContent =
+        'Vagas restantes: ' + oficinaSelecionada.vagasRestantes;
+
+      inscricoesAbertas = dados.aberta;
+
+      if (inscricaoConcluida) {
+        atualizarBotao();
+        return;
+      }
+
+      if (!inscricoesAbertas) {
+        mostrarMensagem(
+          'As inscrições ainda não estão abertas ou foram encerradas.',
+          'aviso'
+        );
+      } else if (oficinaSelecionada.vagasRestantes <= 0) {
+        mostrarMensagem(
+          'Esta oficina já está com todas as vagas preenchidas.',
+          'erro'
+        );
+      } else {
+        limparMensagem();
+      }
+
+      atualizarBotao();
+
+    } catch (erro) {
+      console.error(erro);
+
+      mostrarMensagem(
+        erro.message || 'Não foi possível carregar os dados da oficina.',
+        'erro'
+      );
+    }
+  }
+
+  formulario.addEventListener('submit', async function(event) {
+    event.preventDefault();
+
+    if (!oficinaSelecionada || !inscricoesAbertas) {
+      return;
+    }
+
+    if (!formulario.reportValidity()) {
+      return;
+    }
+
+    const dados = {
+      oficinaId: oficinaSelecionada.id,
+      nome: document.getElementById('nome').value.trim(),
+      matricula: document.getElementById('matricula').value.trim(),
+      email: document.getElementById('email').value.trim()
+    };
+
+    if (!dados.nome || !dados.matricula || !dados.email) {
+      mostrarMensagem('Preencha todos os campos.', 'erro');
+      return;
+    }
+
+    botao.disabled = true;
+    botao.textContent = 'Enviando inscrição...';
+    limparMensagem();
+
+    try {
+      const resposta = await fetch(API_URL, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'text/plain;charset=utf-8'
+        },
+        body: JSON.stringify(dados)
+      });
+
+      if (!resposta.ok) {
+        throw new Error('Não foi possível enviar os dados ao servidor.');
+      }
+
+      const resultado = await resposta.json();
+
+      if (!resultado.ok) {
+        throw new Error(resultado.mensagem || 'Não foi possível confirmar a inscrição.');
+      }
+
+      inscricaoConcluida = true;
+
+      mostrarMensagem(
+        'Inscrição realizada com sucesso! Sua vaga foi registrada no sistema.',
+        'sucesso'
+      );
+
+      formulario.reset();
+
+      await carregarOficina();
+
+    } catch (erro) {
+      console.error(erro);
+
+      mostrarMensagem(
+        erro.message || 'Não foi possível realizar a inscrição. Tente novamente.',
+        'erro'
+      );
+
+    } finally {
+      botao.textContent = inscricaoConcluida
+        ? 'Inscrição confirmada'
+        : 'Confirmar inscrição';
+
+      atualizarBotao();
+    }
+  });
+
+  carregarOficina();
+</script>
+
+</body>
+</html>

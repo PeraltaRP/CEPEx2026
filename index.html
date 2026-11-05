@@ -1,432 +1,623 @@
-<!doctype html>
+
+<!DOCTYPE html>
 <html lang="pt-BR">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>CEPEx VII – Memória, Ciência e Futuro</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;800&family=Newsreader:wght@400;600&display=swap"
-      rel="stylesheet"
-    />
-    <style>
-      :root {
-        --noite: #1a110c;
-        --terra: #2b1b12;
-        --ouro: #e0a82e;
-        --laranja: #e2711d;
-        --verde: #4a8a3f;
-        --vermelho: #c23b2e;
-        --creme: #f3e6cf;
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>VII CEPEx 2026 | IFMT Rondonópolis</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;500;600;700;800&family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #111713;
+      --surface: #1b251e;
+      --surface-light: #243128;
+      --gold: #e5b65c;
+      --orange: #d58a45;
+      --green: #789b77;
+      --text: #f5f2e9;
+      --muted: #b8c0b8;
+      --border: rgba(229, 182, 92, .22);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Bricolage Grotesque', sans-serif;
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: min(1120px, 92%);
+      margin: auto;
+    }
+
+    header {
+      border-bottom: 1px solid var(--border);
+      background: rgba(17, 23, 19, .95);
+    }
+
+    .nav {
+      min-height: 76px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .logo {
+      font-size: 21px;
+      font-weight: 800;
+      color: var(--gold);
+    }
+
+    .logo small {
+      display: block;
+      color: var(--muted);
+      font-size: 11px;
+      font-weight: 400;
+      letter-spacing: 2px;
+    }
+
+    nav {
+      display: flex;
+      gap: 22px;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    nav a:hover {
+      color: var(--gold);
+    }
+
+    .hero {
+      padding: 105px 0 95px;
+      background:
+        radial-gradient(ellipse at 80% 20%, rgba(120,155,119,.18), transparent 45%),
+        radial-gradient(ellipse at 10% 80%, rgba(213,138,69,.13), transparent 40%);
+    }
+
+    .eyebrow {
+      color: var(--gold);
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      font-size: 12px;
+      font-weight: 700;
+      margin-bottom: 22px;
+    }
+
+    h1 {
+      font-size: clamp(42px, 7vw, 76px);
+      line-height: 1.04;
+      max-width: 850px;
+      letter-spacing: -2px;
+    }
+
+    h1 span {
+      color: var(--gold);
+      font-family: 'Newsreader', serif;
+      font-weight: 400;
+      font-style: italic;
+    }
+
+    .hero-text {
+      max-width: 650px;
+      color: var(--muted);
+      font-size: 18px;
+      margin-top: 25px;
+    }
+
+    .event-info {
+      display: flex;
+      gap: 30px;
+      flex-wrap: wrap;
+      margin-top: 35px;
+      color: var(--gold);
+      font-size: 14px;
+    }
+
+    .actions {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      margin-top: 32px;
+    }
+
+    .btn {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      padding: 13px 21px;
+      border-radius: 7px;
+      font-weight: 700;
+      transition: .2s;
+      cursor: pointer;
+      border: 1px solid transparent;
+    }
+
+    .btn-primary {
+      background: var(--gold);
+      color: #171b16;
+    }
+
+    .btn-primary:hover {
+      background: #f0c978;
+      transform: translateY(-2px);
+    }
+
+    .btn-outline {
+      border-color: var(--border);
+      color: var(--text);
+    }
+
+    .btn-outline:hover {
+      border-color: var(--gold);
+      color: var(--gold);
+    }
+
+    section {
+      padding: 75px 0;
+      border-top: 1px solid rgba(255,255,255,.06);
+    }
+
+    .section-label {
+      color: var(--orange);
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+
+    h2 {
+      font-size: clamp(30px, 4vw, 43px);
+      line-height: 1.15;
+      margin-bottom: 17px;
+    }
+
+    .section-description {
+      color: var(--muted);
+      max-width: 720px;
+      margin-bottom: 35px;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 18px;
+    }
+
+    .info-card,
+    .oficina-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 25px;
+    }
+
+    .info-card h3,
+    .oficina-card h3 {
+      color: var(--gold);
+      font-size: 21px;
+      margin-bottom: 12px;
+    }
+
+    .info-card p,
+    .oficina-card p {
+      color: var(--muted);
+      font-size: 14px;
+      margin-bottom: 12px;
+    }
+
+    .oficina-card {
+      display: flex;
+      flex-direction: column;
+      min-height: 290px;
+    }
+
+    .oficina-card .promotor {
+      color: var(--gold);
+      font-size: 13px;
+    }
+
+    .oficina-card .sinopse {
+      flex: 1;
+    }
+
+    .oficina-card .detalhe {
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .oficina-card .btn {
+      margin-top: 14px;
+      width: 100%;
+    }
+
+    .oficina-card .btn:disabled {
+      opacity: .5;
+      cursor: not-allowed;
+      transform: none;
+    }
+
+    .status {
+      padding: 14px 17px;
+      margin-bottom: 22px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      color: var(--muted);
+    }
+
+    .status.erro {
+      border-color: #a65b52;
+      color: #ffc1b8;
+    }
+
+    .status.sucesso {
+      border-color: var(--green);
+      color: #bce0b9;
+    }
+
+    .status.aviso {
+      border-color: var(--gold);
+      color: var(--gold);
+    }
+
+    .empty {
+      padding: 35px;
+      text-align: center;
+      border: 1px dashed var(--border);
+      border-radius: 10px;
+      color: var(--muted);
+      grid-column: 1 / -1;
+    }
+
+    footer {
+      padding: 40px 0;
+      border-top: 1px solid var(--border);
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .footer-content {
+      display: flex;
+      justify-content: space-between;
+      gap: 25px;
+      flex-wrap: wrap;
+    }
+
+    footer strong {
+      color: var(--gold);
+    }
+
+    @media (max-width: 650px) {
+      .nav {
+        padding: 18px 0;
+        align-items: flex-start;
+        flex-direction: column;
       }
-      * {
-        box-sizing: border-box;
+
+      nav {
+        gap: 13px;
       }
-      body {
-        margin: 0;
-        background: var(--noite);
-        color: var(--creme);
-        font:
-          18px/1.6 Newsreader,
-          Georgia,
-          serif;
+
+      .hero {
+        padding: 70px 0;
       }
-      h1,
-      h2,
-      h3,
-      button,
-      .btn,
-      label {
-        font-family: 'Bricolage Grotesque', system-ui, sans-serif;
-      }
-      a {
-        color: inherit;
-      }
-      :focus-visible {
-        outline: 3px solid var(--ouro);
-        outline-offset: 3px;
-      }
-      .faixa {
-        height: 22px;
-        background: conic-gradient(
-            from 45deg at 50% 50%,
-            var(--ouro) 25%,
-            var(--laranja) 0 50%,
-            var(--verde) 0 75%,
-            var(--vermelho) 0
-          )
-          0 0/22px 22px;
-      }
-      .wrap {
-        max-width: 900px;
-        margin: 0 auto;
-        padding: 0 20px;
-      }
-      header {
-        padding: 48px 0 36px;
-        display: grid;
-        grid-template-columns: 1fr auto;
-        gap: 24px;
-        align-items: end;
-      }
-      header h1 {
-        margin: 0;
-        font-size: clamp(2.4rem, 8vw, 4.6rem);
-        line-height: 0.95;
-        font-weight: 800;
-        color: var(--ouro);
-      }
-      header p {
-        margin: 12px 0 0;
-        max-width: 34ch;
-      }
-      .tema {
-        font-size: 1.5rem;
-        color: var(--creme);
-        font-style: italic;
-      }
-      header svg {
-        width: 150px;
-        height: auto;
-      }
+
       section {
-        padding: 32px 0;
-        border-top: 1px solid #4a3426;
+        padding: 55px 0;
       }
-      h2 {
-        font-size: 1.7rem;
-        margin: 0 0 6px;
-        color: var(--ouro);
-      }
-      .sub {
-        margin: 0 0 20px;
-        opacity: 0.85;
-      }
-      .links {
-        display: grid;
-        gap: 12px;
-        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      }
-      .btn {
-        display: block;
-        text-decoration: none;
-        padding: 18px 20px;
-        background: var(--terra);
-        border-left: 8px solid var(--laranja);
-        font-weight: 600;
-        font-size: 1.05rem;
-      }
-      .btn:nth-child(2) {
-        border-color: var(--verde);
-      }
-      .btn:nth-child(3) {
-        border-color: var(--vermelho);
-      }
-      .btn small {
-        display: block;
-        font:
-          400 0.9rem Newsreader,
-          serif;
-        opacity: 0.8;
-      }
-      .btn:hover {
-        background: #3a261a;
-      }
-      #status {
-        padding: 10px 14px;
-        background: var(--terra);
-        border-left: 8px solid var(--ouro);
-        margin-bottom: 16px;
-      }
-      .lista {
-        display: grid;
-        gap: 12px;
-      }
-      .of {
-        background: var(--terra);
-        padding: 16px 18px;
-        display: flex;
-        gap: 16px;
-        justify-content: space-between;
-        align-items: center;
-        flex-wrap: wrap;
-      }
-      .of h3 {
-        margin: 0;
-        font-size: 1.15rem;
-      }
-      .of span {
-        opacity: 0.85;
-        font-size: 0.95rem;
-      }
-      .vagas {
-        font-family: 'Bricolage Grotesque';
-        font-weight: 800;
-        font-size: 1.6rem;
-        color: var(--ouro);
-        text-align: center;
-        line-height: 1;
-      }
-      .vagas small {
-        display: block;
-        font-size: 0.7rem;
-        font-weight: 600;
-        color: var(--creme);
-      }
-      .vagas.zero {
-        color: var(--vermelho);
-      }
-      form {
-        margin-top: 24px;
-        background: var(--terra);
-        padding: 20px;
-        display: grid;
-        gap: 14px;
-      }
-      form[hidden] {
-        display: none;
-      }
-      label {
-        display: grid;
-        gap: 4px;
-        font-weight: 600;
-        font-size: 0.95rem;
-      }
-      input,
-      select {
-        font: inherit;
-        padding: 10px;
-        border: 2px solid #5a4030;
-        background: var(--noite);
-        color: var(--creme);
-      }
-      button {
-        font-weight: 800;
-        font-size: 1rem;
-        padding: 14px;
-        border: 0;
-        background: var(--ouro);
-        color: var(--noite);
-        cursor: pointer;
-      }
-      button:disabled {
-        opacity: 0.5;
-        cursor: wait;
-      }
-      #msg {
-        min-height: 1.4em;
-        font-weight: 600;
-      }
-      #msg.erro {
-        color: #ff8f80;
-      }
-      #msg.ok {
-        color: #9be28f;
-      }
-      footer {
-        padding: 28px 0 40px;
-        opacity: 0.7;
-        font-size: 0.9rem;
-      }
-      @media (max-width: 600px) {
-        header {
-          grid-template-columns: 1fr;
-        }
-        header svg {
-          display: none;
-        }
-      }
-    </style>
-  </head>
-  <body>
-    <div class="faixa" aria-hidden="true"></div>
-    <div class="wrap">
-      <header>
-        <div>
-          <h1>VII CEPEx</h1>
-          <p class="tema">Memória, Ciência e Futuro</p>
-          <p>
-            Congresso de Ensino, Pesquisa e Extensão · 17 de novembro de 2026 ·
-            IFMT Campus Rondonópolis
-          </p>
-        </div>
-        
-      </header>
+    }
+  </style>
+</head>
 
-      <section>
-        <h2>Inscrição no evento</h2>
-        <p class="sub">
-          Aberta a servidores do IFMT, estudantes do Ensino Médio, Técnico e
-          Superior e ao público em geral. Para receber o certificado, faça
-          também o check-in presencial no dia 17/11.
-        </p>
-        <div class="links">
-          <a
-            class="btn"
-            href="https://suap.ifmt.edu.br/eventos/inscricao/1/35/"
-            target="_blank"
-            rel="noopener"
-            >Realizar inscrição<small>Página de eventos do SUAP</small></a
-          >
-        </div>
-      </section>
+<body>
 
-      <section>
-        <h2>Envie seu trabalho</h2>
-        <p class="sub">
-          Submissões até 10/11/2026, às 23:59. Use o modelo abaixo e faça o
-          envio pela página do evento no SUAP. Todos os autores devem estar
-          inscritos no evento.
-        </p>
-        <div class="links">
-          <a
-            class="btn"
-            href="https://docs.google.com/document/d/1_sKfhk3d2crae7B6BKysJXLuEDxhPKUb/edit?usp=sharing"
-            target="_blank"
-            rel="noopener"
-            >Trabalho completo<small>Modelo em Google Docs</small></a
-          >
-          <a
-            class="btn"
-            href="https://docs.google.com/document/d/1qSbBVMAk-V-YTxA3rAvDUyg-eR7bigDM/edit?usp=sharing"
-            target="_blank"
-            rel="noopener"
-            >Resumo simples<small>Modelo em Google Docs</small></a
-          >
-          <a
-            class="btn"
-            href="https://docs.google.com/document/d/1Vu3j2GZtBKLKtPc8B26QU1wSCvMUUHAy/edit?usp=sharing"
-            target="_blank"
-            rel="noopener"
-            >Proposta de oficina<small>Modelo em Google Docs</small></a
-          >
-        </div>
-      </section>
+<header>
+  <div class="container nav">
+    <a href="#" class="logo">
+      VII CEPEx
+      <small>IFMT · RONDONÓPOLIS</small>
+    </a>
 
-      <section id="oficinas">
-        <h2>Oficinas</h2>
-        <p class="sub">
-          Escolha sua oficina. As vagas diminuem a cada inscrição. Você também
-          precisa estar inscrito no evento.
-        </p>
-        <div id="status">Carregando oficinas…</div>
-        <div class="lista" id="lista"></div>
+    <nav>
+      <a href="#evento">O evento</a>
+      <a href="#trabalhos">Trabalhos</a>
+      <a href="#oficinas">Oficinas</a>
+      <a href="#contato">Contato</a>
+    </nav>
+  </div>
+</header>
 
-        <form id="form" hidden>
-          <label
-            >Oficina
-            <select name="oficina" id="sel" required></select
-          ></label>
-          <label
-            >Nome completo <input name="nome" required autocomplete="name"
-          /></label>
-          <label
-            >E-mail
-            <input name="email" type="email" required autocomplete="email"
-          /></label>
-          <label
-            >Curso ou vínculo
-            <input
-              name="vinculo"
-              placeholder="Ex.: Técnico em Informática, servidor, externo"
-              required
-          /></label>
-          <button id="btn">Confirmar inscrição</button>
-          <div id="msg" role="status"></div>
-        </form>
-      </section>
+<main>
 
-      <footer>
-        CEPEx · IFMT Campus Rondonópolis · Apoio PROPES<br />Contato:
-        cepex.roo@ifmt.edu.br · pesquisa.roo@ifmt.edu.br ·
-        extensao.roo@ifmt.edu.br · (66) 3427-2304
-      </footer>
+  <section class="hero" id="evento">
+    <div class="container">
+      <p class="eyebrow">VII Congresso de Ensino, Pesquisa e Extensão</p>
+
+      <h1>
+        Memória,<br>
+        Ciência e <span>Futuro.</span>
+      </h1>
+
+      <p class="hero-text">
+        Um espaço de encontro, compartilhamento de experiências,
+        produção de conhecimento e valorização da ciência,
+        do ensino e da extensão.
+      </p>
+
+      <div class="event-info">
+        <span>📅 17 de novembro de 2026</span>
+        <span>📍 IFMT Campus Rondonópolis</span>
+      </div>
+
+      <div class="actions">
+        <a class="btn btn-primary"
+           href="https://suap.ifmt.edu.br/eventos/inscricao/1/35/"
+           target="_blank" rel="noopener">
+          Inscrição no evento
+        </a>
+
+        <a class="btn btn-outline" href="#oficinas">
+          Conhecer as oficinas
+        </a>
+      </div>
     </div>
-    <div class="faixa" aria-hidden="true"></div>
+  </section>
 
-    <script>
-      // Cole aqui a URL do Apps Script publicado (termina em /exec)
-      const API_URL = 'COLE_A_URL_DO_APPS_SCRIPT_AQUI'
+  <section id="trabalhos">
+    <div class="container">
+      <p class="section-label">Participação acadêmica</p>
+      <h2>Envie seu trabalho</h2>
 
-      const $ = id => document.getElementById(id)
-      const fmt = iso =>
-        new Date(iso).toLocaleString('pt-BR', {
-          dateStyle: 'long',
-          timeStyle: 'short'
-        })
+      <p class="section-description">
+        Consulte os modelos de documentos para preparar
+        sua submissão ao VII CEPEx.
+      </p>
 
-      async function carregar() {
-        try {
-          const r = await fetch(API_URL)
-          const d = await r.json()
-          const lista = $('lista')
-          lista.textContent = ''
-          $('sel').textContent = ''
-          if (!d.oficinas.length) {
-            $('status').textContent = 'Nenhuma oficina cadastrada ainda.'
-            return
-          }
-          $('status').textContent = d.aberta
-            ? 'Inscrições abertas.'
-            : d.abertura && Date.now() < new Date(d.abertura)
-              ? 'As inscrições abrem em ' + fmt(d.abertura) + '.'
-              : 'Inscrições encerradas.'
-          d.oficinas.forEach(o => {
-            const el = document.createElement('div')
-            el.className = 'of'
-            const t = document.createElement('div')
-            const h = document.createElement('h3')
-            h.textContent = o.nome
-            const s = document.createElement('span')
-            s.textContent = o.horario || ''
-            t.append(h, s)
-            const v = document.createElement('div')
-            v.className = 'vagas' + (o.restantes <= 0 ? ' zero' : '')
-            v.innerHTML =
-              o.restantes <= 0
-                ? 'Esgotada'
-                : o.restantes + '<small>vagas</small>'
-            el.append(t, v)
-            lista.append(el)
-            if (o.restantes > 0) {
-              const op = new Option(
-                o.nome + ' (' + o.restantes + ' vagas)',
-                o.nome
-              )
-              $('sel').add(op)
-            }
-          })
-          $('form').hidden = !(d.aberta && $('sel').options.length)
-        } catch (e) {
-          $('status').textContent =
-            'Não foi possível carregar as oficinas. Tente novamente em instantes.'
-        }
+      <div class="cards">
+
+        <article class="info-card">
+          <h3>Resumo simples</h3>
+          <p>
+            Utilize o modelo para elaborar e submeter
+            seu resumo simples.
+          </p>
+          <a class="btn btn-outline"
+             href="https://docs.google.com/document/d/1_sKfhk3d2crae7B6BKysJXLuEDxhPKUb/edit?usp=sharing"
+             target="_blank" rel="noopener">
+            Acessar modelo
+          </a>
+        </article>
+
+        <article class="info-card">
+          <h3>Trabalho completo</h3>
+          <p>
+            Modelo para elaboração de trabalhos
+            acadêmicos completos.
+          </p>
+          <a class="btn btn-outline"
+             href="https://docs.google.com/document/d/1qSbBVMAk-V-YTxA3rAvDUyg-eR7bigDM/edit?usp=sharing"
+             target="_blank" rel="noopener">
+            Acessar modelo
+          </a>
+        </article>
+
+        <article class="info-card">
+          <h3>Proposta de oficina</h3>
+          <p>
+            Utilize o documento para organizar
+            sua proposta de oficina ou minicurso.
+          </p>
+          <a class="btn btn-outline"
+             href="https://docs.google.com/document/d/1Vu3j2GZtBKLKtPc8B26QU1wSCvMUUHAy/edit?usp=sharing"
+             target="_blank" rel="noopener">
+            Acessar modelo
+          </a>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <section id="oficinas">
+    <div class="container">
+      <p class="section-label">Atividades práticas</p>
+      <h2>Oficinas e minicursos</h2>
+
+      <p class="section-description">
+        Confira as atividades disponíveis e escolha
+        aquela da qual deseja participar. As vagas são
+        limitadas e a inscrição é individual.
+      </p>
+
+      <div id="status" class="status">
+        Carregando oficinas...
+      </div>
+
+      <div id="lista" class="cards"></div>
+    </div>
+  </section>
+
+</main>
+
+<footer id="contato">
+  <div class="container footer-content">
+    <div>
+      <strong>VII CEPEx 2026</strong>
+      <p>IFMT Campus Rondonópolis</p>
+      <p>Memória, Ciência e Futuro</p>
+    </div>
+
+    <div>
+      <p>cepex.roo@ifmt.edu.br</p>
+      <p>pesquisa.roo@ifmt.edu.br</p>
+      <p>extensao.roo@ifmt.edu.br</p>
+      <p>(66) 3427-2304</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const API_URL =
+    'https://script.google.com/macros/s/AKfycbzmffDxLuYqnvzN3xcKpm97GVrp3oM2FtVp0DlU7kwuO592hsHAUHQcTHR4DmSWAKRy5w/exec';
+
+  const lista = document.getElementById('lista');
+  const status = document.getElementById('status');
+
+  function escaparHTML(valor) {
+    return String(valor ?? '').replace(/[&<>"']/g, caractere => ({
+      '&': '&amp;',
+      '<': '&lt;',
+      '>': '&gt;',
+      '"': '&quot;',
+      "'": '&#39;'
+    })[caractere]);
+  }
+
+  function mostrarStatus(texto, tipo = '') {
+    status.textContent = texto;
+    status.className = 'status ' + tipo;
+  }
+
+  function criarCartaoOficina(oficina, aberta) {
+    const nome = escaparHTML(oficina.nome);
+    const promotor = escaparHTML(oficina.promotor);
+    const sinopse = escaparHTML(oficina.sinopse);
+    const horario = escaparHTML(oficina.horario);
+    const vagas = Number(oficina.vagasRestantes) || 0;
+
+    const lotada = vagas <= 0;
+
+    let textoBotao = 'Quero me inscrever';
+
+    if (lotada) {
+      textoBotao = 'Vagas esgotadas';
+    } else if (!aberta) {
+      textoBotao = 'Inscrições em breve';
+    }
+
+    const id = encodeURIComponent(String(oficina.id));
+
+    return `
+      <article class="oficina-card">
+        <h3>${nome}</h3>
+
+        <p class="promotor">
+          Responsável: ${promotor || 'Não informado'}
+        </p>
+
+        <p class="sinopse">
+          ${sinopse || 'Descrição não informada.'}
+        </p>
+
+        <p class="detalhe">
+          <strong>Horário:</strong> ${horario || 'A definir'}
+        </p>
+
+        <p class="detalhe">
+          <strong>Vagas restantes:</strong> ${vagas}
+        </p>
+
+        <a class="btn btn-primary"
+           href="inscricao.html?id=${id}"
+           ${lotada || !aberta ? 'aria-disabled="true"' : ''}>
+          ${textoBotao}
+        </a>
+      </article>
+    `;
+  }
+
+  async function carregarOficinas() {
+    lista.innerHTML = '';
+    mostrarStatus('Carregando oficinas...');
+
+    try {
+      const resposta = await fetch(API_URL);
+
+      if (!resposta.ok) {
+        throw new Error('Não foi possível acessar o servidor.');
       }
 
-      $('form').addEventListener('submit', async ev => {
-        ev.preventDefault()
-        const f = Object.fromEntries(new FormData(ev.target))
-        $('btn').disabled = true
-        $('msg').className = ''
-        $('msg').textContent = 'Enviando…'
-        try {
-          const r = await fetch(API_URL, {
-            method: 'POST',
-            body: JSON.stringify(f)
-          })
-          const d = await r.json()
-          $('msg').className = d.ok ? 'ok' : 'erro'
-          $('msg').textContent = d.mensagem
-          if (d.ok) ev.target.reset()
-        } catch (e) {
-          $('msg').className = 'erro'
-          $('msg').textContent = 'Falha ao enviar. Tente novamente.'
-        }
-        $('btn').disabled = false
-        carregar()
-      })
-      carregar()
-    </script>
-  </body>
+      const dados = await resposta.json();
+
+      if (!dados.ok) {
+        throw new Error(dados.mensagem || 'Erro ao consultar oficinas.');
+      }
+
+      const oficinas = Array.isArray(dados.oficinas)
+        ? dados.oficinas
+        : [];
+
+      if (dados.aberta) {
+        mostrarStatus('Inscrições abertas! Escolha sua oficina.', 'sucesso');
+      } else {
+        mostrarStatus(
+          'As oficinas estão disponíveis para consulta. As inscrições ainda não estão abertas ou foram encerradas.',
+          'aviso'
+        );
+      }
+
+      if (oficinas.length === 0) {
+        lista.innerHTML = `
+          <div class="empty">
+            Nenhuma oficina cadastrada ou disponível no momento.
+          </div>
+        `;
+        return;
+      }
+
+      lista.innerHTML = oficinas.map(oficina =>
+        criarCartaoOficina(oficina, dados.aberta)
+      ).join('');
+
+    } catch (erro) {
+      console.error('Erro ao carregar oficinas:', erro);
+
+      mostrarStatus(
+        'Não foi possível carregar as oficinas. Verifique sua conexão ou tente novamente.',
+        'erro'
+      );
+
+      lista.innerHTML = `
+        <div class="empty">
+          <p>Não foi possível consultar as oficinas.</p>
+          <button class="btn btn-outline"
+                  onclick="carregarOficinas()">
+            Tentar novamente
+          </button>
+        </div>
+      `;
+    }
+  }
+
+  carregarOficinas();
+</script>
+
+</body>
 </html>
