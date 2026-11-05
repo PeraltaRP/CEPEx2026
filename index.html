@@ -154,6 +154,13 @@
       margin-bottom: 34px;
     }
 
+    .hero-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      align-items: center;
+    }
+
     .button {
       display: inline-flex;
       justify-content: center;
@@ -184,6 +191,18 @@
 
     .button-outline:hover {
       background: rgba(216, 182, 107, .1);
+    }
+
+    .button-workshops {
+      background: var(--green);
+      color: #101811;
+      border: 1px solid var(--green);
+    }
+
+    .button-workshops:hover {
+      background: #bdd5a7;
+      border-color: #bdd5a7;
+      transform: translateY(-2px);
     }
 
     section {
@@ -402,6 +421,15 @@
         gap: 8px;
       }
 
+      .hero-buttons {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .hero-buttons .button {
+        width: 100%;
+      }
+
       section {
         padding: 65px 0;
       }
@@ -429,7 +457,6 @@
 
   </div>
 </header>
-
 
 <main>
 
@@ -460,20 +487,30 @@
           <span>📍 IFMT Campus Rondonópolis</span>
         </div>
 
-        <a
-          class="button button-primary"
-          href="https://suap.ifmt.edu.br/eventos/inscricao/1/35/"
-          target="_blank"
-          rel="noopener"
-        >
-          Inscreva-se no evento →
-        </a>
+        <div class="hero-buttons">
+
+          <a
+            class="button button-primary"
+            href="https://suap.ifmt.edu.br/eventos/inscricao/1/35/"
+            target="_blank"
+            rel="noopener"
+          >
+            Inscreva-se no evento →
+          </a>
+
+          <a
+            class="button button-workshops"
+            href="oficinas.html"
+          >
+            Ver oficinas disponíveis →
+          </a>
+
+        </div>
 
       </div>
 
     </div>
   </section>
-
 
   <!-- SOBRE -->
 
@@ -526,7 +563,6 @@
     </div>
   </section>
 
-
   <!-- PROGRAMAÇÃO -->
 
   <section id="programacao">
@@ -566,7 +602,6 @@
 
     </div>
   </section>
-
 
   <!-- TRABALHOS -->
 
@@ -649,7 +684,6 @@
     </div>
   </section>
 
-
   <!-- OFICINAS -->
 
   <section id="oficinas">
@@ -671,17 +705,16 @@
         </div>
 
         <a
-          class="button button-primary"
+          class="button button-workshops"
           href="oficinas.html"
         >
-          Veja as oficinas disponíveis →
+          Ver oficinas disponíveis →
         </a>
 
       </div>
 
     </div>
   </section>
-
 
   <!-- CONTATO -->
 
@@ -732,7 +765,6 @@
   </section>
 
 </main>
-
 
 <footer>
   <div class="container">
