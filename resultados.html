@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Consulte os trabalhos completos, resumos simples e oficinas do VII CEPEx 2026.">
+  <title>Resultados | VII CEPEx 2026</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #101713;
+      --surface: #19231d;
+      --surface-light: #202c24;
+      --gold: #d9b76e;
+      --green: #91b69a;
+      --text: #f3f1e9;
+      --muted: #a5b0a6;
+      --border: rgba(255, 255, 255, .12);
+      --error: #ef9a91;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      min-height: 100vh;
+      margin: 0;
+      background:
+        radial-gradient(ellipse at 80% 0, rgba(145, 182, 154, .12), transparent 38%),
+        var(--bg);
+      color: var(--text);
+      font-family: 'Bricolage Grotesque', sans-serif;
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    .topbar {
+      padding: 20px 6%;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    .logo {
+      color: var(--gold);
+      font-weight: 800;
+      letter-spacing: 1px;
+      text-decoration: none;
+    }
+
+    .back-link {
+      color: var(--green);
+      font-size: .92rem;
+      text-decoration: none;
+    }
+
+    .back-link:hover,
+    .logo:hover {
+      text-decoration: underline;
+      text-underline-offset: 4px;
+    }
+
+    main {
+      width: min(1120px, 90%);
+      margin: 54px auto 80px;
+    }
+
+    .eyebrow {
+      margin-bottom: 10px;
+      color: var(--green);
+      font-size: .76rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(2.2rem, 5vw, 3.5rem);
+      line-height: 1.1;
+    }
+
+    h1 span {
+      color: var(--gold);
+    }
+
+    .intro {
+      max-width: 700px;
+      margin: 16px 0 32px;
+      color: var(--muted);
+    }
+
+    .filters {
+      display: grid;
+      grid-template-columns: minmax(220px, .7fr) minmax(280px, 1.3fr);
+      gap: 18px;
+      padding: 22px;
+      margin-bottom: 28px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 8px;
+      font-size: .9rem;
+      font-weight: 600;
+    }
+
+    select,
+    input {
+      width: 100%;
+      min-height: 48px;
+      padding: 11px 13px;
+      border: 1px solid var(--border);
+      border-radius: 9px;
+      outline: none;
+      background: var(--surface-light);
+      color: var(--text);
+      font: inherit;
+    }
+
+    select:focus,
+    input:focus {
+      border-color: var(--gold);
+      box-shadow: 0 0 0 3px rgba(217, 183, 110, .14);
+    }
+
+    .results-heading {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 16px;
+      margin-bottom: 16px;
+    }
+
+    .results-heading h2 {
+      margin: 0;
+      font-size: 1.4rem;
+    }
+
+    .count {
+      color: var(--gold);
+      font-size: .9rem;
+      white-space: nowrap;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .card {
+      min-width: 0;
+      padding: 22px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 15px;
+    }
+
+    .badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 13px;
+    }
+
+    .category,
+    .status {
+      display: inline-block;
+      padding: 4px 10px;
+      border: 1px solid rgba(217, 183, 110, .3);
+      border-radius: 999px;
+      font-size: .75rem;
+      font-weight: 600;
+    }
+
+    .category {
+      color: var(--gold);
+    }
+
+    .status {
+      border-color: rgba(145, 182, 154, .35);
+      color: var(--green);
+    }
+
+    .card h3 {
+      margin: 0 0 12px;
+      color: var(--text);
+      font-size: 1.18rem;
+      line-height: 1.35;
+      overflow-wrap: anywhere;
+    }
+
+    .authors {
+      margin: 0 0 14px;
+      color: var(--muted);
+      font-size: .92rem;
+    }
+
+    .axis {
+      padding-top: 12px;
+      border-top: 1px solid var(--border);
+      color: var(--green);
+      font-size: .84rem;
+    }
+
+    .message {
+      padding: 22px;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      background: var(--surface);
+      color: var(--muted);
+    }
+
+    .message.error {
+      border-color: rgba(239, 154, 145, .45);
+      color: var(--error);
+    }
+
+    @media (max-width: 700px) {
+      main {
+        margin-top: 38px;
+      }
+
+      .filters,
+      .cards {
+        grid-template-columns: 1fr;
+      }
+
+      .topbar {
+        padding: 17px 5%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <a class="logo" href="index.html">VII CEPEx 2026</a>
+    <a class="back-link" href="index.html">← Voltar ao site</a>
+  </header>
+
+  <main>
+    <p class="eyebrow">Ensino · Pesquisa · Extensão</p>
+    <h1>Resultados <span>CEPEx</span></h1>
+    <p class="intro">Consulte os trabalhos e as oficinas desta edição. Filtre por categoria ou pesquise pelo nome do trabalho ou de qualquer autor.</p>
+
+    <section class="filters" aria-label="Filtros dos resultados">
+      <div>
+        <label for="category-filter">Categoria</label>
+        <select id="category-filter">
+          <option value="todos">Todas as categorias</option>
+          <option value="trabalhosCompletos">Trabalhos completos</option>
+          <option value="resumosSimples">Artigos simples</option>
+          <option value="oficinas">Oficinas</option>
+        </select>
+      </div>
+      <div>
+        <label for="search-input">Buscar por trabalho ou autor</label>
+        <input id="search-input" type="search" placeholder="Digite o nome do trabalho ou do autor" autocomplete="off">
+      </div>
+    </section>
+
+    <section aria-labelledby="results-title">
+      <div class="results-heading">
+        <h2 id="results-title">Trabalhos encontrados</h2>
+        <p class="count" id="results-count" aria-live="polite"></p>
+      </div>
+      <div class="cards" id="results-list" aria-live="polite">
+        <p class="message">Carregando resultados…</p>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    const categories = {
+      trabalhosCompletos: 'Trabalho completo',
+      resumosSimples: 'Artigo simples',
+      oficinas: 'Oficina'
+    };
+
+    const categoryFilter = document.querySelector('#category-filter');
+    const searchInput = document.querySelector('#search-input');
+    const resultsList = document.querySelector('#results-list');
+    const resultsCount = document.querySelector('#results-count');
+    let entries = [];
+
+    function normalize(value) {
+      return String(value ?? '')
+        .normalize('NFD')
+        .replace(/[\u0300-\u036f]/g, '')
+        .toLocaleLowerCase('pt-BR')
+        .trim();
+    }
+
+    function createCard(entry) {
+      const card = document.createElement('article');
+      card.className = 'card';
+
+      const badges = document.createElement('div');
+      badges.className = 'badges';
+
+      const category = document.createElement('span');
+      category.className = 'category';
+      category.textContent = entry.category;
+
+      const status = document.createElement('span');
+      status.className = 'status';
+      status.textContent = entry.status;
+      badges.append(category, status);
+
+      const title = document.createElement('h3');
+      title.textContent = entry.name;
+
+      const authors = document.createElement('p');
+      authors.className = 'authors';
+      authors.textContent = `Autores: ${entry.authors.join(', ')}`;
+
+      card.append(badges, title, authors);
+
+      if (entry.axis) {
+        const axis = document.createElement('p');
+        axis.className = 'axis';
+        axis.textContent = entry.axis;
+        card.append(axis);
+      }
+
+      return card;
+    }
+
+    function renderResults() {
+      const selectedCategory = categoryFilter.value;
+      const searchTerm = normalize(searchInput.value);
+      const filtered = entries.filter((entry) => {
+        const matchesCategory = selectedCategory === 'todos' || entry.key === selectedCategory;
+        const searchableText = normalize([entry.name, ...entry.authors].join(' '));
+        return matchesCategory && searchableText.includes(searchTerm);
+      });
+
+      resultsCount.textContent = `${filtered.length} ${filtered.length === 1 ? 'resultado' : 'resultados'}`;
+      resultsList.replaceChildren();
+
+      if (filtered.length === 0) {
+        const emptyMessage = document.createElement('p');
+        emptyMessage.className = 'message';
+        emptyMessage.textContent = 'Nenhum resultado encontrado. Tente outro termo ou categoria.';
+        resultsList.append(emptyMessage);
+        return;
+      }
+
+      filtered.forEach((entry) => resultsList.append(createCard(entry)));
+    }
+
+    async function loadResults() {
+      try {
+        const response = await fetch('./trabalhos_cepex.json');
+        if (!response.ok) {
+          throw new Error(`Não foi possível carregar o arquivo de resultados (HTTP ${response.status}).`);
+        }
+
+        const data = await response.json();
+        entries = Object.entries(categories).flatMap(([key, category]) => {
+          const records = data[key];
+          if (!Array.isArray(records)) {
+            return [];
+          }
+
+          return records
+            .filter((record) => record && typeof record.nome === 'string')
+            .map((record) => ({
+              key,
+              category,
+              status: typeof record.status === 'string' ? record.status : 'Status não informado',
+              name: record.nome,
+              authors: Array.isArray(record.autores) ? record.autores.map(String) : [],
+              axis: typeof record.eixoTematico === 'string' ? record.eixoTematico : ''
+            }));
+        });
+
+        renderResults();
+      } catch (error) {
+        resultsCount.textContent = '';
+        resultsList.replaceChildren();
+        const errorMessage = document.createElement('p');
+        errorMessage.className = 'message error';
+        errorMessage.textContent = `${error.message} Abra esta página por um servidor local para que o navegador possa acessar o JSON.`;
+        resultsList.append(errorMessage);
+      }
+    }
+
+    categoryFilter.addEventListener('change', renderResults);
+    searchInput.addEventListener('input', renderResults);
+    loadResults();
+  </script>
+</body>
+</html>
