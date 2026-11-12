@@ -505,6 +505,21 @@ function adicionarOficina() {
         </div>
 
         <div class="campo">
+            <label>Duração (em horas) *</label>
+            <input
+                type="number"
+                name="duracao"
+                min="1"
+                max="24"
+                step="1"
+                placeholder="Ex.: 2"
+                required>
+            <small>
+                Informe a duração em horas inteiras.
+            </small>
+        </div>
+
+        <div class="campo">
             <label>Sala de realização *</label>
             <input
                 type="text"
@@ -610,6 +625,7 @@ function coletarOficinas() {
             vagas: Number(obter('vagas')),
             data: obter('data'),
             horario: horario ? horario + ':00' : '',
+            duracao: Number(obter('duracao')),
             sala: obter('sala'),
             sinopse: obter('sinopse'),
             dataAberturaInscricao: obter('dataAberturaInscricao'),

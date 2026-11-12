@@ -2,307 +2,621 @@
   "trabalhosCompletos": [
     {
       "nome": "Matemágicos",
-      "autores": ["Arthur Henrique Da Silva Blaudt", "Carlos Henrique de Souza Abreu", "Enderson Nauan Pereira Torres Honorato", "Jhuan Cleber da Silva Santos", "João Gabriel Martins Oliveira", "João Vitor Silva Carvalho"],
-      "eixoTematico": "Eixo Temático 04 - Educação e Inclusão em Sociedade",
-      "status": "Aprovado"
+      "autores": [
+        "Arthur Henrique Da Silva Blaudt",
+        "Carlos Henrique de Souza Abreu",
+        "Enderson Nauan Pereira Torres Honorato",
+        "Jhuan Cleber da Silva Santos",
+        "João Gabriel Martins Oliveira",
+        "João Vitor Silva Carvalho"
+      ],
+      "eixoTematico": "Eixo Temático 04 - Educação e Inclusão em Sociedade"
     },
     {
       "nome": "ROOSemProblemas: Aplicação do CrowdSourcing para o Auxílio da Gestão Pública",
-      "autores": ["Alexandre Aiki S. Cintra", "Daniel Gustavo Strege", "Eduardo P. Da Silva", "Elia Andrews De A. Rodrigues", "Érick Eduardo F. C. Flauzino", "Gabriel S. de Oliveira", "Kairo D. Machado", "Kauã C. C. de Freitas", "Marcos Antonio P. S. Mila", "Matheus M. de Paula", "Petterson Ryan Da Silva", "Darley D. de Almeida"],
-      "eixoTematico": "Eixo Temático 02 - Inovação Tecnológica e Transferência de Tecnologia",
-      "status": "Aprovado"
+      "autores": [
+        "Alexandre Aiki S. Cintra",
+        "Daniel Gustavo Strege",
+        "Eduardo P. Da Silva",
+        "Elia Andrews De A. Rodrigues",
+        "Érick Eduardo F. C. Flauzino",
+        "Gabriel S. de Oliveira",
+        "Kairo D. Machado",
+        "Kauã C. C. de Freitas",
+        "Marcos Antonio P. S. Mila",
+        "Matheus M. de Paula",
+        "Petterson Ryan Da Silva",
+        "Darley D. de Almeida"
+      ],
+      "eixoTematico": "Eixo Temático 02 - Inovação Tecnológica e Transferência de Tecnologia"
     },
     {
       "nome": "EstaçãoAgro",
-      "autores": ["Daniel de Moraes Nascimento", "Emilly Marilene Dionisio Alves", "Gabrielly Cavalcante de Oliveira", "Helana de Souza de Figueiredo", "Julia Morais Gomes", "Kalliny Antonia Carnaiba de Oliveira", "Lucas Gabriel Santos de Moraes", "Daniel Domingos Alves", "Darley Domingos de Almeida"],
-      "eixoTematico": "Eixo Temático 03 - Ensino Agrícola e Agronegócio",
-      "status": "Aprovado"
+      "autores": [
+        "Daniel de Moraes Nascimento",
+        "Emilly Marilene Dionisio Alves",
+        "Gabrielly Cavalcante de Oliveira",
+        "Helana de Souza de Figueiredo",
+        "Julia Morais Gomes",
+        "Kalliny Antonia Carnaiba de Oliveira",
+        "Lucas Gabriel Santos de Moraes",
+        "Daniel Domingos Alves",
+        "Darley Domingos de Almeida"
+      ],
+      "eixoTematico": "Eixo Temático 03 - Ensino Agrícola e Agronegócio"
     },
     {
       "nome": "Laços de vida - conectando histórias, curando ausências, porque juntas tecemos o amor que nos faltou.",
-      "autores": ["Ana Livia de Medeiros Sifroni", "Ana Luiza Duque", "Maria Eduarda Pereira", "Daniel Domingues (Orientador)"],
-      "eixoTematico": "Eixo Temático 04 - Educação e Inclusão em Sociedade",
-      "status": "Aprovado"
+      "autores": [
+        "Ana Livia de Medeiros Sifroni",
+        "Ana Luiza Duque",
+        "Maria Eduarda Pereira",
+        "Daniel Domingues (Orientador)"
+      ],
+      "eixoTematico": "Eixo Temático 04 - Educação e Inclusão em Sociedade"
     },
     {
       "nome": "SafeSilo: Monitoramento de silagem",
-      "autores": ["Amanda Q. Silva", "Clara O. D. Costa", "Geovanna L. Mendonça", "Iasmin Ì. M. R. Bueno", "Maria F. Alves", "Nathalia V. C. da Silva", "Pedro R. Peralta", "Daniel D. Alves"],
-      "eixoTematico": "Eixo Temático 02 - Inovação Tecnológica e Transferência de Tecnologia",
-      "status": "Aprovado"
+      "autores": [
+        "Amanda Q. Silva",
+        "Clara O. D. Costa",
+        "Geovanna L. Mendonça",
+        "Iasmin Ì. M. R. Bueno",
+        "Maria F. Alves",
+        "Nathalia V. C. da Silva",
+        "Pedro R. Peralta",
+        "Daniel D. Alves"
+      ],
+      "eixoTematico": "Eixo Temático 02 - Inovação Tecnológica e Transferência de Tecnologia"
     },
     {
       "nome": "Corrida dos números",
-      "autores": ["Carlos Eduardo Costa Santos", "Sebastian Carlos Henrique Neto", "Kairon Batista Meira", "Thiago Gabriel Correa Pacheco de Oliveira", "João Gabriel Rodrigues"],
-      "eixoTematico": "Eixo Temático 01 - Ensino em Educação Profissional e Tecnológica",
-      "status": "Aprovado"
+      "autores": [
+        "Carlos Eduardo Costa Santos",
+        "Sebastian Carlos Henrique Neto",
+        "Kairon Batista Meira",
+        "Thiago Gabriel Correa Pacheco de Oliveira",
+        "João Gabriel Rodrigues"
+      ],
+      "eixoTematico": "Eixo Temático 01 - Ensino em Educação Profissional e Tecnológica"
     },
     {
       "nome": "DESENVOLVIMENTO DE UM QUIZ DIGITAL DE HISTÓRIA GERAL COMO FERRAMENTA DE APOIO À APRENDIZAGEM",
-      "autores": ["Eliezer Rodrigues de Oliveira", "Enderson Nauan Pereira Honorato Torres", "Jakson Douglas Araujo dos Santos", "Lucas Alves Da Silva Marques", "Lucas Winnycius Bezerra Barros", "Ryckson Matheus Dascalakis Correia"],
-      "eixoTematico": "Eixo Temático 04 - Educação e Inclusão em Sociedade",
-      "status": "Aprovado"
+      "autores": [
+        "Eliezer Rodrigues de Oliveira",
+        "Enderson Nauan Pereira Honorato Torres",
+        "Jakson Douglas Araujo dos Santos",
+        "Lucas Alves Da Silva Marques",
+        "Lucas Winnycius Bezerra Barros",
+        "Ryckson Matheus Dascalakis Correia"
+      ],
+      "eixoTematico": "Eixo Temático 04 - Educação e Inclusão em Sociedade"
     },
     {
       "nome": "IFocus: Uma Solução Móvel para Organização de Atividades Acadêmicas com Design Centrado no Usuário e Gestão de Tarefas com Kanban e Pomodoro",
-      "autores": ["Danyele Reis Rocha", "Iasmim Lino Dias de Souza", "Rebeca Xavier Pinto Monteiro", "Yasmin Araujo da Silva", "Daniel Domingos Alves", "Pedro Rafael Peralta"],
-      "eixoTematico": "Eixo Temático 01 - Ensino em Educação Profissional e Tecnológica",
-      "status": "Aprovado"
+      "autores": [
+        "Danyele Reis Rocha",
+        "Iasmim Lino Dias de Souza",
+        "Rebeca Xavier Pinto Monteiro",
+        "Yasmin Araujo da Silva",
+        "Daniel Domingos Alves",
+        "Pedro Rafael Peralta"
+      ],
+      "eixoTematico": "Eixo Temático 01 - Ensino em Educação Profissional e Tecnológica"
     },
     {
       "nome": "Inteligência Artificial e Computação de Alto Desempenho na Gestão Hidríca da Agricultura Familiar",
-      "autores": ["Cristiane Silva Vieira"],
-      "eixoTematico": "Eixo Temático 02 - Inovação Tecnológica e Transferência de Tecnologia",
-      "status": "Aprovado"
+      "autores": [
+        "Cristiane Silva Vieira"
+      ],
+      "eixoTematico": "Eixo Temático 02 - Inovação Tecnológica e Transferência de Tecnologia"
     },
     {
       "nome": "Farm Code: Proposta de um website e jogo de tabuleiro para o ensino de algoritmos e lógica de programação",
-      "autores": ["Isabela Pillar Vieira de Figueiredo", "Ana Luiza Morais Dantas", "Aurélio Vinícius Ribeiro Silva", "Kássia Pereira Ferron", "Matheus Henrique Gil Souza", "Isac Gabriel Prais", "Messias Leite Aires", "Daniel Domingos Alves"],
-      "eixoTematico": "Eixo Temático 04 - Educação e Inclusão em Sociedade",
-      "status": "Aprovado"
+      "autores": [
+        "Isabela Pillar Vieira de Figueiredo",
+        "Ana Luiza Morais Dantas",
+        "Aurélio Vinícius Ribeiro Silva",
+        "Kássia Pereira Ferron",
+        "Matheus Henrique Gil Souza",
+        "Isac Gabriel Prais",
+        "Messias Leite Aires",
+        "Daniel Domingos Alves"
+      ],
+      "eixoTematico": "Eixo Temático 04 - Educação e Inclusão em Sociedade"
     },
     {
       "nome": "Recicla se +: Proposta de um website para sensibilizar a população rondonopolitana sobre a importância da coleta seletiva",
-      "autores": ["Félix Sousa Santos", "Alex Carneiro Machado", "Maria Clara Cardoso Otano Peixoto", "Samuel Werner de Oliveira Vergara", "Daniel Domingos Alves", "Pedro Rafael Peralta"],
-      "eixoTematico": "Eixo Temático 02 - Inovação Tecnológica e Transferência de Tecnologia",
-      "status": "Aprovado"
+      "autores": [
+        "Félix Sousa Santos",
+        "Alex Carneiro Machado",
+        "Maria Clara Cardoso Otano Peixoto",
+        "Samuel Werner de Oliveira Vergara",
+        "Daniel Domingos Alves",
+        "Pedro Rafael Peralta"
+      ],
+      "eixoTematico": "Eixo Temático 02 - Inovação Tecnológica e Transferência de Tecnologia"
     },
     {
       "nome": "ARANDU GESTÃO: Sistema de gestão empresas MEI",
-      "autores": ["Mara Andrea Dota (Orientador)", "Nabor do Nascimento da Silva"],
-      "eixoTematico": "Eixo Temático 01 - Ensino em Educação Profissional e Tecnológica",
-      "status": "Aprovado"
+      "autores": [
+        "Mara Andrea Dota (Orientador)",
+        "Nabor do Nascimento da Silva"
+      ],
+      "eixoTematico": "Eixo Temático 01 - Ensino em Educação Profissional e Tecnológica"
     },
     {
       "nome": "DESENVOLVIMENTO DE SISTEMA INTELIGENTE BIDIRECIONAL COM ARDUINO UNO E SENSORES ULTRASSÔNICOS VOLTADO À PRESERVAÇÃO E MONITORAMENTO DA FAUNA LOCAL",
-      "autores": ["Ana Beatriz Da Silva Vieira", "Gabriela Vilalba Queiroz Cezar", "José Fernando Garcia", "Micaely Aparecida Manoel Feitosa", "Alicia Yumi Fujimoto Araujo Dota", "Rafael Souza Regis", "Daiane Ferreira", "Jeanne Caroline Oliveira Moura", "Thiago Pereira Simão"],
-      "eixoTematico": "Eixo Temático 01 - Ensino em Educação Profissional e Tecnológica",
-      "status": "Aprovado"
+      "autores": [
+        "Ana Beatriz Da Silva Vieira",
+        "Gabriela Vilalba Queiroz Cezar",
+        "José Fernando Garcia",
+        "Micaely Aparecida Manoel Feitosa",
+        "Alicia Yumi Fujimoto Araujo Dota",
+        "Rafael Souza Regis",
+        "Daiane Ferreira",
+        "Jeanne Caroline Oliveira Moura",
+        "Thiago Pereira Simão"
+      ],
+      "eixoTematico": "Eixo Temático 01 - Ensino em Educação Profissional e Tecnológica"
     },
     {
       "nome": "METODOLOGIAS ATIVAS NO ENSINO COMPUTACIONAL DE MECÂNICA DOS FLUIDOS E TRANSFERÊNCIA DE CALOR: UM PROJETO PILOTO NA ESCOLA POLITÉCNICA DA UFRJ",
-      "autores": ["Gustavo Rabello dos Anjos"],
-      "eixoTematico": "Eixo Temático 01 - Ensino em Educação Profissional e Tecnológica",
-      "status": "Aprovado"
+      "autores": [
+        "Gustavo Rabello dos Anjos"
+      ],
+      "eixoTematico": "Eixo Temático 01 - Ensino em Educação Profissional e Tecnológica"
     },
     {
       "nome": "A CONSOLIDAÇÃO DA PESQUISA E O PROTAGONISMO NA PÓS-GRADUAÇÃO EM EDUCAÇÃO NA UNIVERSIDADE FEDERAL DE RONDONÓPOLIS - UFR",
-      "autores": ["NEIVA TEREZINHA DE COL", "Simone Albuquerque da Rocha (Orientador)", "Simone Andrade Ribeiro dos Santos Rodrigues", "WELIDA KATIANE DOS SANTOS SOUSA LIMA"],
-      "eixoTematico": "Eixo Temático 01 - Ensino em Educação Profissional e Tecnológica",
-      "status": "Aprovado"
+      "autores": [
+        "NEIVA TEREZINHA DE COL",
+        "Simone Albuquerque da Rocha (Orientador)",
+        "Simone Andrade Ribeiro dos Santos Rodrigues",
+        "WELIDA KATIANE DOS SANTOS SOUSA LIMA"
+      ],
+      "eixoTematico": "Eixo Temático 01 - Ensino em Educação Profissional e Tecnológica"
     },
     {
       "nome": "RAÇAPET: APLICATIVO DE REPRODUÇÃO CANINA",
-      "autores": ["Carlos Christian Buchhorn Clair", "Tiago Dos Santos Klos", "thais fernanda severo da silva", "José Rafael Santana De Souza", "TIAGO SEVERO DA SILVA", "Rafael Rodrigues Garcia (Orientador)", "Anamin Juliana Barbosa da Silva"],
-      "eixoTematico": "Eixo Temático 02 - Inovação Tecnológica e Transferência de Tecnologia",
-      "status": "Aprovado"
+      "autores": [
+        "Carlos Christian Buchhorn Clair",
+        "Tiago Dos Santos Klos",
+        "thais fernanda severo da silva",
+        "José Rafael Santana De Souza",
+        "TIAGO SEVERO DA SILVA",
+        "Rafael Rodrigues Garcia (Orientador)",
+        "Anamin Juliana Barbosa da Silva"
+      ],
+      "eixoTematico": "Eixo Temático 02 - Inovação Tecnológica e Transferência de Tecnologia"
     },
     {
       "nome": "AGREMINT: CONCEPÇÃO DE UMA PLATAFORMA INTEGRADA A ESTAÇÕES METEOROLÓGICAS DE BAIXO CUSTO PARA APOIO AO PEQUENO PRODUTOR",
-      "autores": ["Pedro Rafael Peralta (Coorientador)", "Daniel Domingos Alves (Orientador)", "Diego Alves Gomes", "João Pedro Adams Santana", "Carlos Eduardo Do Carmo Cardoso", "Carlos Eduardo Rodrigues Dos Santos", "Gabriel Junior Proença", "Paulo Henrique Paulino Barboza", "Caique Gomes Dourado"],
-      "eixoTematico": "Eixo Temático 02 - Inovação Tecnológica e Transferência de Tecnologia",
-      "status": "Aprovado"
+      "autores": [
+        "Pedro Rafael Peralta (Coorientador)",
+        "Daniel Domingos Alves (Orientador)",
+        "Diego Alves Gomes",
+        "João Pedro Adams Santana",
+        "Carlos Eduardo Do Carmo Cardoso",
+        "Carlos Eduardo Rodrigues Dos Santos",
+        "Gabriel Junior Proença",
+        "Paulo Henrique Paulino Barboza",
+        "Caique Gomes Dourado"
+      ],
+      "eixoTematico": "Eixo Temático 02 - Inovação Tecnológica e Transferência de Tecnologia"
     },
     {
       "nome": "Estacao Meteorologica",
-      "autores": ["Julia Morais Gomes", "Geovanna Lemes Mendonça", "João Pedro Franco Brocuá de Carvalho", "Salathiel Vieira"],
-      "eixoTematico": "Eixo Temático 02 - Inovação Tecnológica e Transferência de Tecnologia",
-      "status": "Aprovado"
+      "autores": [
+        "Julia Morais Gomes",
+        "Geovanna Lemes Mendonça",
+        "João Pedro Franco Brocuá de Carvalho",
+        "Salathiel Vieira"
+      ],
+      "eixoTematico": "Eixo Temático 02 - Inovação Tecnológica e Transferência de Tecnologia"
     },
     {
       "nome": "ORTHOMATCH 3D: SISTEMA COMPUTACIONAL DE APOIO À DECISÃO PARA PERSONALIZAÇÃO CLÍNICO-FUNCIONAL E PSICOSSOCIAL DE ÓRTESES DE MEMBROS SUPERIORES E INFERIORES",
-      "autores": ["Mara Andrea Dota (Coorientador)", "Aliny Barbosa dos santos Dornelas", "Arthur Valene Rocha", "Priscila Macedo Caires Mrozinski (Orientador)"],
-      "eixoTematico": "Eixo Temático 02 - Inovação Tecnológica e Transferência de Tecnologia",
-      "status": "Aprovado"
+      "autores": [
+        "Mara Andrea Dota (Coorientador)",
+        "Aliny Barbosa dos santos Dornelas",
+        "Arthur Valene Rocha",
+        "Priscila Macedo Caires Mrozinski (Orientador)"
+      ],
+      "eixoTematico": "Eixo Temático 02 - Inovação Tecnológica e Transferência de Tecnologia"
     },
     {
       "nome": "TECNOLOGIA QUE TOCA: CONSTRUÇÃO DE UM PIANO INTERATIVO PARA INICIAÇÃO MUSICAL",
-      "autores": ["Mara Andrea Dota (Orientador)", "Miguel Estêvão Rodrigues Teixeira", "Waine Teixeira Júnior (Coorientador)"],
-      "eixoTematico": "Eixo Temático 02 - Inovação Tecnológica e Transferência de Tecnologia",
-      "status": "Aprovado"
+      "autores": [
+        "Mara Andrea Dota (Orientador)",
+        "Miguel Estêvão Rodrigues Teixeira",
+        "Waine Teixeira Júnior (Coorientador)"
+      ],
+      "eixoTematico": "Eixo Temático 02 - Inovação Tecnológica e Transferência de Tecnologia"
     },
     {
       "nome": "LOGCARE: Concepção e prototipação de uma plataforma web de apoio à gestão do cuidado domiciliar de pessoas idosas",
-      "autores": ["Luiza Gonçalves do Nascimento Cavalcante", "Isabelly de Souza Paulo", "Sinasefe seção Rondonópolis (Orientador)", "João Pedro Ferreira de Moraes Silva", "Jhalys Wunsche"],
-      "eixoTematico": "Eixo Temático 02 - Inovação Tecnológica e Transferência de Tecnologia",
-      "status": "Aprovado"
+      "autores": [
+        "Luiza Gonçalves do Nascimento Cavalcante",
+        "Isabelly de Souza Paulo",
+        "Sinasefe seção Rondonópolis (Orientador)",
+        "João Pedro Ferreira de Moraes Silva",
+        "Jhalys Wunsche"
+      ],
+      "eixoTematico": "Eixo Temático 02 - Inovação Tecnológica e Transferência de Tecnologia"
     },
     {
       "nome": "Proposta de um Aplicativo Mobile de Apoio à Educação Financeira para Crianças e Adolescentes",
-      "autores": ["Samuel Werner De Oliveira Vergara", "Daniel Domingos Alves (Orientador)", "Gabriel Bezerra Lários", "Vitor Emanuel Massa Omena Da Silva"],
-      "eixoTematico": "Eixo Temático 04 - Educação e Inclusão em Sociedade",
-      "status": "Aprovado"
+      "autores": [
+        "Samuel Werner De Oliveira Vergara",
+        "Daniel Domingos Alves (Orientador)",
+        "Gabriel Bezerra Lários",
+        "Vitor Emanuel Massa Omena Da Silva"
+      ],
+      "eixoTematico": "Eixo Temático 04 - Educação e Inclusão em Sociedade"
     },
     {
       "nome": "AdotPets",
-      "autores": ["João Marcelo Gregório Soares", "Mateus Rodrigues Dos Santos", "Mateus Vinicius Guimarães Sampaio", "Luiz Gustavo Xavier De Freitas"],
-      "eixoTematico": "Eixo Temático 04 - Educação e Inclusão em Sociedade",
-      "status": "Aprovado"
+      "autores": [
+        "João Marcelo Gregório Soares",
+        "Mateus Rodrigues Dos Santos",
+        "Mateus Vinicius Guimarães Sampaio",
+        "Luiz Gustavo Xavier De Freitas"
+      ],
+      "eixoTematico": "Eixo Temático 04 - Educação e Inclusão em Sociedade"
     },
     {
       "nome": "Caça Fake: Um jogo educacional para o enfrentamento à desinformação na educação básica",
-      "autores": ["Daniel Domingos Alves (Orientador)", "Sinasefe seção Rondonópolis (Orientador)", "Geovana Luz Gonçalves", "Bárbara Geovana Tenor Silva Ramos", "Geovanna Recalde Morais Silverio", "Gabriel Mendonça De Oliveira", "Ketlyn Alves De Souza Aguiar", "Kellen Alves De Souza Aguiar"],
-      "eixoTematico": "Eixo Temático 04 - Educação e Inclusão em Sociedade",
-      "status": "Aprovado"
+      "autores": [
+        "Daniel Domingos Alves (Orientador)",
+        "Sinasefe seção Rondonópolis (Orientador)",
+        "Geovana Luz Gonçalves",
+        "Bárbara Geovana Tenor Silva Ramos",
+        "Geovanna Recalde Morais Silverio",
+        "Gabriel Mendonça De Oliveira",
+        "Ketlyn Alves De Souza Aguiar",
+        "Kellen Alves De Souza Aguiar"
+      ],
+      "eixoTematico": "Eixo Temático 04 - Educação e Inclusão em Sociedade"
     },
     {
       "nome": "DO SUBWAY SURFERS AO PÁTIO: PROTAGONISMO ESTUDANTIL NA CRIAÇÃO E VIVÊNCIA DO JOGO CORPORAL RAIO SCAPY NAS AULAS DE EDUCAÇÃO FÍSICA",
-      "autores": ["Raquel Pereira Barbosa", "Kariny Campos Rosa", "Joslaine Antônia Da Silva Monteiro Volgarim"],
-      "eixoTematico": "Eixo Temático 04 - Educação e Inclusão em Sociedade",
-      "status": "Aprovado"
+      "autores": [
+        "Raquel Pereira Barbosa",
+        "Kariny Campos Rosa",
+        "Joslaine Antônia Da Silva Monteiro Volgarim"
+      ],
+      "eixoTematico": "Eixo Temático 04 - Educação e Inclusão em Sociedade"
     }
   ],
   "resumosSimples": [
     {
       "nome": "Da teoria á experimentação: um relato de experiência docente sobre a integração entre Bioquímica e Anatomia no estudo da digestão",
-      "autores": ["Raffaela Nobre Riccaldone Linhares"],
-      "eixoTematico": "Eixo Temático 01 - Ensino em Educação Profissional e Tecnológica",
-      "status": "Aprovado"
+      "autores": [
+        "Raffaela Nobre Riccaldone Linhares"
+      ],
+      "eixoTematico": "Eixo Temático 01 - Ensino em Educação Profissional e Tecnológica"
     },
     {
       "nome": "Do bacharel à sala de aula: a constituição dos saberes docentes na Educação Profissional e Tecnológica",
-      "autores": ["Pedro Rafael Peralta", "Rosana Maria Martins"],
-      "eixoTematico": "Eixo Temático 04 - Educação e Inclusão em Sociedade",
-      "status": "Aprovado"
+      "autores": [
+        "Pedro Rafael Peralta",
+        "Rosana Maria Martins"
+      ],
+      "eixoTematico": "Eixo Temático 04 - Educação e Inclusão em Sociedade"
     },
     {
       "nome": "Língua, Identidade e Cultura Waurá: diálogos e reflexões a partir do audiovisual “Os espíritos só entendem o nosso idioma”",
-      "autores": ["Yawairo Waurá", "Merilin Baldan"],
-      "eixoTematico": "Eixo Temático 04 - Educação e Inclusão em Sociedade",
-      "status": "Aprovado"
+      "autores": [
+        "Yawairo Waurá",
+        "Merilin Baldan"
+      ],
+      "eixoTematico": "Eixo Temático 04 - Educação e Inclusão em Sociedade"
     },
     {
       "nome": "O artesanato tradicional Myky, os saberes tradicionais e o cinema indígena: a relevância da cinegrafia do coletivo Ijã Mytyli de Cinema Manoki e Myky",
-      "autores": ["Kamtinuwy Myky", "Merilin Baldan"],
-      "eixoTematico": "Eixo Temático 04 - Educação e Inclusão em Sociedade",
-      "status": "Aprovado"
+      "autores": [
+        "Kamtinuwy Myky",
+        "Merilin Baldan"
+      ],
+      "eixoTematico": "Eixo Temático 04 - Educação e Inclusão em Sociedade"
     },
     {
       "nome": "FARMAR AURA DOCENTE? POLÍTICAS CURRICULARES, PERFORMATIVIDADE E PRODUÇÃO DE SENTIDO SOBRE A DOCÊNCIA NO ENSINO MÉDIO",
-      "autores": ["Denize Aragão Macêdo"],
-      "eixoTematico": "Eixo Temático 01 - Ensino em Educação Profissional e Tecnológica",
-      "status": "Aprovado"
+      "autores": [
+        "Denize Aragão Macêdo"
+      ],
+      "eixoTematico": "Eixo Temático 01 - Ensino em Educação Profissional e Tecnológica"
     },
     {
       "nome": "JESSIE: BONECA ROBÓTICA INTERATIVA COM ARDUINO",
-      "autores": ["Janicléia Rodrigues de Souza", "Paula Gabriella Santos Souza", "Amábile Cecília Mazzardo", "Thiago Pereira Simão (Orientador)", "Larissa Pinheiro Fuzzetti"],
-      "eixoTematico": "Eixo Temático 02 - Inovação Tecnológica e Transferência de Tecnologia",
-      "status": "Aprovado"
+      "autores": [
+        "Janicléia Rodrigues de Souza",
+        "Paula Gabriella Santos Souza",
+        "Amábile Cecília Mazzardo",
+        "Thiago Pereira Simão (Orientador)",
+        "Larissa Pinheiro Fuzzetti"
+      ],
+      "eixoTematico": "Eixo Temático 02 - Inovação Tecnológica e Transferência de Tecnologia"
     },
     {
       "nome": "DESENVOLVIMENTO DE UM VEÍCULO ROBÓTICO DE CORRIDA CONTROLADO VIA WI-FI COM ARDUINO UNO R4",
-      "autores": ["André Flederico Pereira (Orientador)", "Edson Tasca Porto Neto", "Thalyson Sabino Correia", "Wallison Vinicius Silva de Olanda"],
-      "eixoTematico": "Eixo Temático 02 - Inovação Tecnológica e Transferência de Tecnologia",
-      "status": "Aprovado"
+      "autores": [
+        "André Flederico Pereira (Orientador)",
+        "Edson Tasca Porto Neto",
+        "Thalyson Sabino Correia",
+        "Wallison Vinicius Silva de Olanda"
+      ],
+      "eixoTematico": "Eixo Temático 02 - Inovação Tecnológica e Transferência de Tecnologia"
     },
     {
       "nome": "PROTÓTIPO DE MÃO ROBÓTICA DE BAIXO CUSTO COM CONTROLE SEM FIO PARA PRÓTESES DE MEMBRO SUPERIOR",
-      "autores": ["Mara Andrea Dota (Orientador)", "Giovana Gomes da Silva Gigih", "Joao Pedro Gobes Alves"],
-      "eixoTematico": "Eixo Temático 02 - Inovação Tecnológica e Transferência de Tecnologia",
-      "status": "Aprovado"
+      "autores": [
+        "Mara Andrea Dota (Orientador)",
+        "Giovana Gomes da Silva Gigih",
+        "Joao Pedro Gobes Alves"
+      ],
+      "eixoTematico": "Eixo Temático 02 - Inovação Tecnológica e Transferência de Tecnologia"
     },
     {
       "nome": "Adotapet: Desenvolvimento De Uma Plataforma Digital Para Promoção Da Adoção Responsável De Animais",
-      "autores": ["Daniel Domingos Alves (Orientador)", "Renan Miranda Couto", "VITOR HUGO CENTENARO BORDIM", "Antônio Vitor Souza Campos", "Isaias Fernando Da Silva Rosa"],
-      "eixoTematico": "Eixo Temático 02 - Inovação Tecnológica e Transferência de Tecnologia",
-      "status": "Aprovado"
+      "autores": [
+        "Daniel Domingos Alves (Orientador)",
+        "Renan Miranda Couto",
+        "VITOR HUGO CENTENARO BORDIM",
+        "Antônio Vitor Souza Campos",
+        "Isaias Fernando Da Silva Rosa"
+      ],
+      "eixoTematico": "Eixo Temático 02 - Inovação Tecnológica e Transferência de Tecnologia"
     },
     {
       "nome": "HORA DA FEIRA: PROPOSTA DE APLICATIVO MÓVEL PARA CONECTAR FEIRANTES, PEQUENOS PRODUTORES E CONSUMIDORES",
-      "autores": ["Daniel Domingos Alves (Orientador)", "Arthur Silva Prado", "Isabella Nunes Valois Schroeder", "Kayke Samuel Dos Santos", "Miguel Duarte Lima Quintino", "Alerrandro Sousa Oliveira", "Victor Do Nascimento Gonçalves"],
-      "eixoTematico": "Eixo Temático 02 - Inovação Tecnológica e Transferência de Tecnologia",
-      "status": "Aprovado"
+      "autores": [
+        "Daniel Domingos Alves (Orientador)",
+        "Arthur Silva Prado",
+        "Isabella Nunes Valois Schroeder",
+        "Kayke Samuel Dos Santos",
+        "Miguel Duarte Lima Quintino",
+        "Alerrandro Sousa Oliveira",
+        "Victor Do Nascimento Gonçalves"
+      ],
+      "eixoTematico": "Eixo Temático 02 - Inovação Tecnológica e Transferência de Tecnologia"
     },
     {
       "nome": "RESOLVE AQUI: PROPOSTA DE UMA PLATAFORMA PARA APOIAR A SOLUÇÃO DE PROBLEMAS URBANOS",
-      "autores": ["Daniel Domingos Alves (Coorientador)", "Brenda Clara Pereira Cagi", "Alisson Queiroz Alves", "Carla Danieli Mendes (Orientador)", "Ariel Luiz Biondo"],
-      "eixoTematico": "Eixo Temático 02 - Inovação Tecnológica e Transferência de Tecnologia",
-      "status": "Aprovado"
+      "autores": [
+        "Daniel Domingos Alves (Coorientador)",
+        "Brenda Clara Pereira Cagi",
+        "Alisson Queiroz Alves",
+        "Carla Danieli Mendes (Orientador)",
+        "Ariel Luiz Biondo"
+      ],
+      "eixoTematico": "Eixo Temático 02 - Inovação Tecnológica e Transferência de Tecnologia"
     },
     {
       "nome": "STUDO: PROPOSTA DE UM APLICATIVO MÓVEL GAMIFICADO PARA AUXILIAR NA ORGANIZAÇÃO DE ATIVIDADES ACADÊMICAS",
-      "autores": ["Daniel Domingos Alves (Orientador)", "Júlia Soares Barreira", "Marcos Eduardo Rodrigues Oliveira", "Luis Guilherme Madureira Gonçalves", "Erick André Schimanko Da Silva", "Marco Aurelio De Oliveira Lopes", "Heloísa Boni Santos", "Vivian Karolini Pereira Cyzewski", "Rafaela Oliveira Henig", "Victor Hugo Curvelo De Souza"],
-      "eixoTematico": "Eixo Temático 02 - Inovação Tecnológica e Transferência de Tecnologia",
-      "status": "Aprovado"
+      "autores": [
+        "Daniel Domingos Alves (Orientador)",
+        "Júlia Soares Barreira",
+        "Marcos Eduardo Rodrigues Oliveira",
+        "Luis Guilherme Madureira Gonçalves",
+        "Erick André Schimanko Da Silva",
+        "Marco Aurelio De Oliveira Lopes",
+        "Heloísa Boni Santos",
+        "Vivian Karolini Pereira Cyzewski",
+        "Rafaela Oliveira Henig",
+        "Victor Hugo Curvelo De Souza"
+      ],
+      "eixoTematico": "Eixo Temático 02 - Inovação Tecnológica e Transferência de Tecnologia"
     },
     {
       "nome": "COFRE ELETRÔNICO COM CONTROLE DE ACESSO MULTIFATORIAL UTILIZANDO ARDUINO, DISPLAY LCD E BIOMETRIA",
-      "autores": ["André Flederico Pereira (Orientador)", "Marcos Daniel Suares Lima Torres", "Leonardo Assis Braga", "Paulo Cesar Campos Viana"],
-      "eixoTematico": "Eixo Temático 02 - Inovação Tecnológica e Transferência de Tecnologia",
-      "status": "Aprovado"
+      "autores": [
+        "André Flederico Pereira (Orientador)",
+        "Marcos Daniel Suares Lima Torres",
+        "Leonardo Assis Braga",
+        "Paulo Cesar Campos Viana"
+      ],
+      "eixoTematico": "Eixo Temático 02 - Inovação Tecnológica e Transferência de Tecnologia"
     },
     {
       "nome": "HORA DA FEIRA: PROPOSTA DE APLICATIVO MÓVEL PARA CONECTAR FEIRANTES, PEQUENOS PRODUTORES E CONSUMIDORES",
-      "autores": ["Daniel Domingos Alves", "Arthur Silva Prado", "Kayke Samuel Dos Santos", "Miguel Duarte Lima Quintino", "Alerrandro Sousa Oliveira", "Victor Do Nascimento Gonçalves"],
-      "eixoTematico": "Eixo Temático 03 - Ensino Agrícola e Agronegócio",
-      "status": "Aprovado"
+      "autores": [
+        "Daniel Domingos Alves",
+        "Arthur Silva Prado",
+        "Kayke Samuel Dos Santos",
+        "Miguel Duarte Lima Quintino",
+        "Alerrandro Sousa Oliveira",
+        "Victor Do Nascimento Gonçalves"
+      ],
+      "eixoTematico": "Eixo Temático 03 - Ensino Agrícola e Agronegócio"
     },
     {
       "nome": "SEMÁFORO SONORO: SISTEMA VISUAL PARA MONITORAMENTO DE BARULHO EM AMBIENTES ESTUDANTIS",
-      "autores": ["Mara Andrea Dota (Orientador)", "Daniel Domingos Alves (Coorientador)", "Mariany Araújo", "Júlia Soares Barreira", "Isabella Nunes Valois Schroeder"],
-      "eixoTematico": "Eixo Temático 03 - Ensino Agrícola e Agronegócio",
-      "status": "Aprovado"
+      "autores": [
+        "Mara Andrea Dota (Orientador)",
+        "Daniel Domingos Alves (Coorientador)",
+        "Mariany Araújo",
+        "Júlia Soares Barreira",
+        "Isabella Nunes Valois Schroeder"
+      ],
+      "eixoTematico": "Eixo Temático 03 - Ensino Agrícola e Agronegócio"
     },
     {
       "nome": "CONECTA-VOZ: DISPENSER INTELIGENTE DE MEDICAÇÃO PARA PESSOAS IDOSAS E A PROMOÇÃO DA AUTONOMIA",
-      "autores": ["Mara Andrea Dota (Orientador)", "Daniel Domingos Alves (Orientador)", "Isabela Pillar Vieira de Figueiredo", "Ana Luiza Morais Dantas"],
-      "eixoTematico": "Eixo Temático 04 - Educação e Inclusão em Sociedade",
-      "status": "Aprovado"
+      "autores": [
+        "Mara Andrea Dota (Orientador)",
+        "Daniel Domingos Alves (Orientador)",
+        "Isabela Pillar Vieira de Figueiredo",
+        "Ana Luiza Morais Dantas"
+      ],
+      "eixoTematico": "Eixo Temático 04 - Educação e Inclusão em Sociedade"
+    },
+    {
+      "nome": "INTERAPI: DESENVOLVIMENTO DE UM SISTEMA INTERATIVO COM LEDS PARA APOIO AO ENSINO DE PIANO",
+      "autores": [
+        "Daniel Domingos Alves (Orientador)",
+        "Vicktor Ezequiel Soares Corrêa",
+        "Matheus Marques De Oliveira",
+        "Felipe Rocha Fialha",
+        "Joao Vitor Martins Da Silva",
+        "Enzo Gabriel Oliveira Santos",
+        "João Manoel Anjos da Cas",
+        "Kassiano Coelho Da Silva",
+        "Joao Ricardo Borges Bastezini"
+      ],
+      "eixoTematico": "Eixo Temático 04 - Educação e Inclusão em Sociedade"
+    },
+    {
+      "nome": "O racismo científico, a história e o ensino de ciências: algumas reflexões e possibilidades.",
+      "autores": [
+        "Valter Cardoso da Silva (Orientador)"
+      ],
+      "eixoTematico": "Eixo Temático 04 - Educação e Inclusão em Sociedade"
+    },
+    {
+      "nome": "REFLEXÕES DA MENTE RECOMPUTADA: CONVERGÊNCIAS ENTRE O PENSAMENTO COMPUTACIONAL, A INTERFACE CÉREBRO-MÁQUINA E A NEUROFILOSOFIA",
+      "autores": [
+        "Marcio Martins"
+      ],
+      "eixoTematico": "Eixo Temático 04 - Educação e Inclusão em Sociedade"
+    },
+    {
+      "nome": "ROBÓTICA E DIVERSÃO: BICHINHO VIRTUAL CAPIVARA",
+      "autores": [
+        "CARLOS EDUARDO FONTENELLE PELITO",
+        "Paula Akeime Umekawa"
+      ],
+      "eixoTematico": "Eixo Temático 04 - Educação e Inclusão em Sociedade"
+    },
+    {
+      "nome": "JOGOS E BRINCADEIRAS TRADICIONAIS COMO EXPRESSÃO DA MEMÓRIA E DA CULTURA NAS AULAS DE EDUCAÇÃO FÍSICA DO ENSINO MÉDIO",
+      "autores": [
+        "Joslaine Antônia Da Silva Monteiro Volgarim"
+      ],
+      "eixoTematico": "Eixo Temático 04 - Educação e Inclusão em Sociedade"
+    },
+    {
+      "nome": "AKYPTA: PROPOSTA DE UMA REDE SOCIAL PARA VALORIZAÇÃO E APRENDIZAGEM DE JOVENS ARTISTAS",
+      "autores": [
+        "Daniel Domingos Alves (Orientador)",
+        "Guilherme Marçal De Morais",
+        "Rafael Roberto Lopes De Azevedo",
+        "Maria Luiza dos Santos Régo",
+        "Micaelly Viana Brandão",
+        "Ryan Augusto Silva Nascimento"
+      ],
+      "eixoTematico": "Eixo Temático 04 - Educação e Inclusão em Sociedade"
+    },
+    {
+      "nome": "artigo cepex safe mind",
+      "autores": [
+        "Daniel Domingos Alves (Orientador)",
+        "João Victor Araújo Dos Anjos",
+        "Murilo Vilches",
+        "Kaua Guilherme Barbieri Oliveira",
+        "Pedro Henrique Batista De Souza"
+      ],
+      "eixoTematico": "Eixo Temático 04 - Educação e Inclusão em Sociedade"
+    },
+    {
+      "nome": "Decolonizações de museus e a educação das relações étnico-raciais: uma reflexão a partir do audiovisual “As estátuas também morrem” e “Dahomey”",
+      "autores": [
+        "Ana Laís Lúcia Campos",
+        "Merilin Baldan (Orientador)"
+      ],
+      "eixoTematico": "Eixo Temático 04 - Educação e Inclusão em Sociedade"
     }
   ],
   "oficinas": [
     {
       "nome": "ENTRE HISTÓRIAS, LIVROS E BRINCADEIRAS: LITERATURA INFANTIL E A INSERÇÃO DA CRIANÇA NA CULTURA ESCRITA",
-      "autores": ["MICHELE CRISTINA FERREIRA POMBO", "IVONÊS FERREIRA DE SOUZA ABÍLIO", "LAURA JUCICLÉIA PEREIRA FERREIRA", "MARIA APARECIDA DA SILVA"],
-      "eixoTematico": "Eixo Temático 04 - Educação e Inclusão em Sociedade",
-      "status": "Aprovado"
+      "autores": [
+        "MICHELE CRISTINA FERREIRA POMBO",
+        "IVONÊS FERREIRA DE SOUZA ABÍLIO",
+        "LAURA JUCICLÉIA PEREIRA FERREIRA",
+        "MARIA APARECIDA DA SILVA"
+      ],
+      "eixoTematico": "Eixo Temático 04 - Educação e Inclusão em Sociedade"
     },
     {
       "nome": "Da memória à descoberta: aprender fazendo com metodologias ativas",
-      "autores": ["Raffaela Nobre Riccaldone Linhares"],
-      "eixoTematico": "Eixo Temático 01 - Ensino em Educação Profissional e Tecnológica",
-      "status": "Aprovado"
+      "autores": [
+        "Raffaela Nobre Riccaldone Linhares"
+      ],
+      "eixoTematico": "Eixo Temático 01 - Ensino em Educação Profissional e Tecnológica"
     },
     {
       "nome": "Calliandra: Arte, Moda Sustentável e Estilismo — Uma Trajetória de Criatividade e Expressão pela Moda.",
-      "autores": ["Dayane Cristina R. de Almeida", "Laysla Silva de Lima", "Isabella Cândida da Silva", "Maria Eduarda B. de Araújo", "Maria Rita T. S. Reis", "Anna Carolina L. de Souza", "Ana Luiza Pereira de Oliveira", "Cristhiany Fernandes Aguiar", "Ana Lívia de M. Sifroni", "Emilly Vitória Passos", "Maria Eduarda Nascimento"],
-      "eixoTematico": "Eixo Temático 04 - Educação e Inclusão em Sociedade",
-      "status": "Aprovado"
+      "autores": [
+        "Dayane Cristina R. de Almeida",
+        "Laysla Silva de Lima",
+        "Isabella Cândida da Silva",
+        "Maria Eduarda B. de Araújo",
+        "Maria Rita T. S. Reis",
+        "Anna Carolina L. de Souza",
+        "Ana Luiza Pereira de Oliveira",
+        "Cristhiany Fernandes Aguiar",
+        "Ana Lívia de M. Sifroni",
+        "Emilly Vitória Passos",
+        "Maria Eduarda Nascimento"
+      ],
+      "eixoTematico": "Eixo Temático 04 - Educação e Inclusão em Sociedade"
     },
     {
       "nome": "Yolo um modelo de visão computacional",
-      "autores": ["Samuel Werner de O Vergara", "Pedro Rafael Peralta"],
-      "eixoTematico": "Eixo Temático 02 - Inovação Tecnológica e Transferência de Tecnologia",
-      "status": "Aprovado"
+      "autores": [
+        "Samuel Werner de O Vergara",
+        "Pedro Rafael Peralta"
+      ],
+      "eixoTematico": "Eixo Temático 02 - Inovação Tecnológica e Transferência de Tecnologia"
     },
     {
       "nome": "PetBit: criando um animal de estimação virtual",
-      "autores": ["Mara Andrea Dota (Coorientador)", "Waine Teixeira Júnior (Orientador)", "Natalia Ayumi Shimizu da Silva"],
-      "eixoTematico": "Eixo Temático 01 - Ensino em Educação Profissional e Tecnológica",
-      "status": "Aprovado"
+      "autores": [
+        "Mara Andrea Dota (Coorientador)",
+        "Waine Teixeira Júnior (Orientador)",
+        "Natalia Ayumi Shimizu da Silva"
+      ],
+      "eixoTematico": "Eixo Temático 01 - Ensino em Educação Profissional e Tecnológica"
     },
     {
       "nome": "Da Criação à Circulação: Arte, Economia Criativa e Valorização da Produção Artística Estudantil",
-      "autores": ["Sofia Filgueiras Dapper", "Marcio Martins", "ADERGILDO CARDOSO MENDES"],
-      "eixoTematico": "Eixo Temático 04 - Educação e Inclusão em Sociedade",
-      "status": "Aprovado"
+      "autores": [
+        "Sofia Filgueiras Dapper",
+        "Marcio Martins",
+        "ADERGILDO CARDOSO MENDES"
+      ],
+      "eixoTematico": "Eixo Temático 04 - Educação e Inclusão em Sociedade"
     },
     {
       "nome": "Robótica criativa: brincar, desenhar e animar o futuro",
-      "autores": ["Isabela Pillar Vieira de Figueiredo", "Geovanna Lemes Mendonça", "Julia Morais Gomes", "Júlia Soares Barreira", "Daniel Domingos Alves (Coorientador)", "Mara Andrea Dota (Orientador)"],
-      "eixoTematico": "Eixo Temático 04 - Educação e Inclusão em Sociedade",
-      "status": "Aprovado"
+      "autores": [
+        "Isabela Pillar Vieira de Figueiredo",
+        "Geovanna Lemes Mendonça",
+        "Julia Morais Gomes",
+        "Júlia Soares Barreira",
+        "Daniel Domingos Alves (Coorientador)",
+        "Mara Andrea Dota (Orientador)"
+      ],
+      "eixoTematico": "Eixo Temático 04 - Educação e Inclusão em Sociedade"
     },
     {
       "nome": "Outros saberes, outras possibilidades de futuros: decolonialidade e práticas de resistência na educação",
-      "autores": ["Emily Victória Moreno de Amorim", "Merilin Baldan", "Lilia Corrêa Amorim de Souza"],
-      "eixoTematico": "Eixo Temático 04 - Educação e Inclusão em Sociedade",
-      "status": "Aprovado"
+      "autores": [
+        "Emily Victória Moreno de Amorim",
+        "Merilin Baldan",
+        "Lilia Corrêa Amorim de Souza"
+      ],
+      "eixoTematico": "Eixo Temático 04 - Educação e Inclusão em Sociedade"
     },
     {
       "nome": "Memórias do Futuro: Criando um mascote eletrônico com expressões e sons usando Arduino e IA.",
-      "autores": ["CARLOS EDUARDO FONTENELLE PELITO (Coorientador)", "Mara Andrea Dota"],
-      "eixoTematico": "Eixo Temático 04 - Educação e Inclusão em Sociedade",
-      "status": "Aprovado"
+      "autores": [
+        "CARLOS EDUARDO FONTENELLE PELITO (Coorientador)",
+        "Mara Andrea Dota"
+      ],
+      "eixoTematico": "Eixo Temático 04 - Educação e Inclusão em Sociedade"
     }
   ]
 }
