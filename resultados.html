@@ -100,6 +100,47 @@
       color: var(--muted);
     }
 
+    .resource-card {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      padding: 22px;
+      margin-bottom: 28px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+    }
+
+    .resource-card h2 {
+      margin: 0 0 4px;
+      font-size: 1.2rem;
+    }
+
+    .resource-card p {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    .template-link {
+      flex-shrink: 0;
+      padding: 11px 16px;
+      border-radius: 9px;
+      background: var(--gold);
+      color: var(--bg);
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    .template-link:hover {
+      background: var(--green);
+    }
+
+    .template-link:focus-visible {
+      outline: 3px solid var(--text);
+      outline-offset: 3px;
+    }
+
     .filters {
       display: grid;
       grid-template-columns: minmax(220px, .7fr) minmax(280px, 1.3fr);
@@ -240,6 +281,11 @@
         grid-template-columns: 1fr;
       }
 
+      .resource-card {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
       .topbar {
         padding: 17px 5%;
       }
@@ -256,6 +302,26 @@
     <p class="eyebrow">Ensino · Pesquisa · Extensão</p>
     <h1>Resultados <span>CEPEx</span></h1>
     <p class="intro">Consulte os trabalhos e as oficinas desta edição. Filtre por categoria ou pesquise pelo nome do trabalho ou de qualquer autor.</p>
+
+    <section class="resource-card" aria-labelledby="banner-template-title">
+      <div>
+        <h2 id="banner-template-title">Template para banner</h2>
+        <p>Acesse o modelo de banner do evento no Canva.</p>
+      </div>
+      <a class="template-link" href="https://canva.link/oq69dsbwen3stpm" target="_blank" rel="noopener noreferrer">
+        Abrir template
+      </a>
+    </section>
+
+    <section class="resource-card" aria-labelledby="full-paper-title">
+      <div>
+        <h2 id="full-paper-title">Trabalho completo</h2>
+        <p>Acesse o modelo para elaboração de trabalho completo.</p>
+      </div>
+      <a class="template-link" href="https://docs.google.com/presentation/d/1rZzkmk12gtV2n1n3tN9KI8zfuF3SK8JP/edit?slide=id.p1#slide=id.p1" target="_blank" rel="noopener noreferrer">
+        Acessar modelo
+      </a>
+    </section>
 
     <section class="filters" aria-label="Filtros dos resultados">
       <div>
