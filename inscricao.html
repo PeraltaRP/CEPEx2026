@@ -382,8 +382,15 @@
       document.getElementById('horario').textContent =
         'Horário: ' + (oficinaSelecionada.horario || 'A definir');
 
+      const vagasIniciais = Number(oficinaSelecionada.vagas);
+      const vagasRestantes = Number(oficinaSelecionada.vagasRestantes);
+      const vagasPreenchidas =
+        Number.isFinite(vagasIniciais) && Number.isFinite(vagasRestantes)
+          ? Math.max(vagasIniciais - vagasRestantes, 0)
+          : '—';
+
       document.getElementById('vagas').textContent =
-        'Vagas restantes: ' + oficinaSelecionada.vagasRestantes;
+        `Vagas preenchidas: ${vagasPreenchidas} / VAGASINICIAIS`;
 
       inscricoesAbertas = dados.aberta;
 

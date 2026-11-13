@@ -448,7 +448,7 @@
             .map((record) => ({
               key,
               category,
-              status: typeof record.status === 'string' ? record.status : 'Status não informado',
+              status: 'Aprovado',
               name: record.nome,
               authors: Array.isArray(record.autores) ? record.autores.map(String) : [],
               axis: typeof record.eixoTematico === 'string' ? record.eixoTematico : ''
