@@ -1,0 +1,102 @@
+VII CEPEx 2026 - Trabalhos orais
+Ordem: horario e sala
+
+1. IFocus: Uma Solução Móvel para Organização de Atividades Acadêmicas com Design Centrado no Usuário e Gestão de Tarefas com Kanban e Pomodoro
+   Sala de apresentacao: BS 02
+   Horario: 13:30 - 13:45
+
+2. ROOSemProblemas: Aplicação do CrowdSourcing para o Auxílio da Gestão Pública
+   Sala de apresentacao: BS 04
+   Horario: 13:30 - 13:45
+
+3. Laços de vida - conectando histórias, curando ausências, porque juntas tecemos o amor que nos faltou.
+   Sala de apresentacao: BS 05
+   Horario: 13:30 - 13:45
+
+4. EstaçãoAgro
+   Sala de apresentacao: BS 02
+   Horario: 13:45 - 14:00
+
+5. Inteligência Artificial e Computação de Alto Desempenho na Gestão Hidríca da Agricultura Familiar
+   Sala de apresentacao: BS 04
+   Horario: 13:45 - 14:00
+
+6. AdotPets
+   Sala de apresentacao: BS 05
+   Horario: 13:45 - 14:00
+
+7. A CONSOLIDAÇÃO DA PESQUISA E O PROTAGONISMO NA PÓS-GRADUAÇÃO EM EDUCAÇÃO NA UNIVERSIDADE FEDERAL DE RONDONÓPOLIS - UFR
+   Sala de apresentacao: BS 02
+   Horario: 14:00 - 14:15
+
+8. ORTHOMATCH 3D: SISTEMA COMPUTACIONAL DE APOIO À DECISÃO PARA PERSONALIZAÇÃO CLÍNICO-FUNCIONAL E PSICOSSOCIAL DE ÓRTESES DE MEMBROS SUPERIORES E INFERIORES
+   Sala de apresentacao: BS 04
+   Horario: 14:00 - 14:15
+
+9. DO SUBWAY SURFERS AO PÁTIO: PROTAGONISMO ESTUDANTIL NA CRIAÇÃO E VIVÊNCIA DO JOGO CORPORAL RAIO SCAPY NAS AULAS DE EDUCAÇÃO FÍSICA
+   Sala de apresentacao: BS 05
+   Horario: 14:00 - 14:15
+
+10. ARANDU GESTÃO: Sistema de gestão empresas MEI
+   Sala de apresentacao: BS 02
+   Horario: 14:15 - 14:30
+
+11. SafeSilo: Monitoramento de silagem
+   Sala de apresentacao: BS 04
+   Horario: 14:15 - 14:30
+
+12. Matemágicos
+   Sala de apresentacao: BS 05
+   Horario: 14:15 - 14:30
+
+13. Corrida dos números
+   Sala de apresentacao: BS 02
+   Horario: 14:30 - 14:45
+
+14. Recicla se +: Proposta de um website para sensibilizar a população rondonopolitana sobre a importância da coleta seletiva
+   Sala de apresentacao: BS 04
+   Horario: 14:30 - 14:45
+
+15. DESENVOLVIMENTO DE UM QUIZ DIGITAL DE HISTÓRIA GERAL COMO FERRAMENTA DE APOIO À APRENDIZAGEM
+   Sala de apresentacao: BS 05
+   Horario: 14:30 - 14:45
+
+16. METODOLOGIAS ATIVAS NO ENSINO COMPUTACIONAL DE MECÂNICA DOS FLUIDOS E TRANSFERÊNCIA DE CALOR: UM PROJETO PILOTO NA ESCOLA POLITÉCNICA DA UFRJ
+   Sala de apresentacao: BS 02
+   Horario: 14:45 - 15:00
+
+17. LOGCARE: Concepção e prototipação de uma plataforma web de apoio à gestão do cuidado domiciliar de pessoas idosas
+   Sala de apresentacao: BS 04
+   Horario: 14:45 - 15:00
+
+18. Farm Code: Proposta de um website e jogo de tabuleiro para o ensino de algoritmos e lógica de programação
+   Sala de apresentacao: BS 05
+   Horario: 14:45 - 15:00
+
+19. DESENVOLVIMENTO DE SISTEMA INTELIGENTE BIDIRECIONAL COM ARDUINO UNO E SENSORES ULTRASSÔNICOS VOLTADO À PRESERVAÇÃO E MONITORAMENTO DA FAUNA LOCAL
+   Sala de apresentacao: BS 02
+   Horario: 15:00 - 15:15
+
+20. TECNOLOGIA QUE TOCA: CONSTRUÇÃO DE UM PIANO INTERATIVO PARA INICIAÇÃO MUSICAL
+   Sala de apresentacao: BS 04
+   Horario: 15:00 - 15:15
+
+21. Caça Fake: Um jogo educacional para o enfrentamento à desinformação na educação básica
+   Sala de apresentacao: BS 05
+   Horario: 15:00 - 15:15
+
+22. RAÇAPET: APLICATIVO DE REPRODUÇÃO CANINA
+   Sala de apresentacao: BS 04
+   Horario: 15:15 - 15:30
+
+23. Proposta de um Aplicativo Mobile de Apoio à Educação Financeira para Crianças e Adolescentes
+   Sala de apresentacao: BS 05
+   Horario: 15:15 - 15:30
+
+24. AGREMINT: CONCEPÇÃO DE UMA PLATAFORMA INTEGRADA A ESTAÇÕES METEOROLÓGICAS DE BAIXO CUSTO PARA APOIO AO PEQUENO PRODUTOR
+   Sala de apresentacao: BS 04
+   Horario: 15:30 - 15:45
+
+25. Estacao Meteorologica
+   Sala de apresentacao: BS 04
+   Horario: 15:45 - 16:00

@@ -1,0 +1,61 @@
+VII CEPEx 2026 — PORTAL DE CERTIFICADOS
+======================================
+
+Arquivos:
+- index.html              : página inicial do CEPEx com links para o portal
+- certificados.html       : duas opções — buscar e validar
+- validar/index.html      : redireciona os QR Codes já impressos (/validar?codigo=...)
+- PortalCertificados.gs   : backend público de leitura e download do PDF
+
+A) SERVIÇO GOOGLE APPS SCRIPT (SEPARADO DO EMISSOR)
+1. Acesse script.google.com e crie um NOVO projeto Apps Script, separado do projeto
+   que gera os certificados (assim não sobrescrevemos o doGet das oficinas).
+2. Cole o conteúdo de PortalCertificados.gs no novo projeto.
+3. O ID inicial da planilha no arquivo é:
+   1KD4eiFFqc0mVzJB1VqOzIfN6v2bEpoT7CcLJXr-JCF8
+   Confira se essa é a planilha que contém Cert_Emitidos, Cert_Autores,
+   Cert_Trabalhos, Cert_Ministrantes e Oficinas. Se mudou, atualize
+   CEPEX_PUBLIC_SS_ID antes de implantar.
+4. Publicar > Nova implantação > Aplicativo da Web.
+   Executar como: Você (proprietário, com acesso aos PDFs).
+   Quem tem acesso: Qualquer pessoa (se a organização permitir).
+5. Autorize as permissões solicitadas (planilha e leitura do Google Drive).
+6. Copie o link final que termina em /exec.
+
+B) SITE GITHUB PAGES
+1. Abra certificados.html e altere:
+   const API_URL = 'COLE_AQUI_A_URL_DO_APPS_SCRIPT_EXEC';
+   para o endereço /exec publicado no passo A.
+2. No repositório peraltarp/CEPEx2026, envie para a raiz:
+   index.html e certificados.html.
+3. Crie pasta validar e dentro dela adicione index.html de validar/index.html.
+4. Aguarde a implantação do GitHub Pages e acesse:
+   https://peraltarp.github.io/CEPEx2026/certificados.html
+5. Teste busca com nome completo e validação com código EMITIDO.
+6. Teste o download a partir de uma janela anônima do navegador.
+
+FUNCIONAMENTO
+- Busca: nome completo exato, com tolerância para maiúsculas e acentos.
+  Mostra certificados oficiais EMITIDO na aba Cert_Emitidos.
+  Oficinas: procura ministrante em Cert_Ministrantes com oficina_id correto.
+  Trabalhos individuais: cruza autor_id com Cert_Autores.id e trabalho_id.
+- Validação: código de autenticidade registrado em Cert_Emitidos.
+- Download: web app lê o PDF no Drive como proprietário e entrega ao visitante
+  sem depender de ANYONE_WITH_LINK, caso esteja permitido publicar o web app.
+- Não altera as abas de certificados, nem os PDFs e nem suas permissões.
+- Os QR codes existentes em /CEPEx2026/validar?codigo=... vão usar o
+  redirecionamento da pasta validar para certificados.html?codigo=...
+
+OBSERVAÇÕES IMPORTANTES
+- Esta versão NÃO exige autenticação do visitante. A consulta por nome completo
+  pode expor certificados a pessoas que conheçam o nome. Avalie LGPD e obtenha
+  aprovação institucional antes de disponibilizar o acesso público.
+- Se o Google Workspace bloquear implantação para Qualquer pessoa, esse método
+  não conseguirá oferecer download anônimo. Será preciso autorização do setor TI
+  ou outra hospedagem/backend aprovado pela instituição.
+- Recomendamos publicar em um ambiente de teste e revisar index.html antes de
+  substituir o site atual, pois é uma cópia recuperada do site existente.
+- O emissor original permanece intocado. Não adicione este backend ao mesmo
+  projeto se nele já existir um doGet ativo.
+- A validação confirma apenas registros EMITIDO na planilha, não é uma assinatura
+  digital criptográfica do PDF.

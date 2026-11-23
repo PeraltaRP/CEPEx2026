@@ -1,0 +1,6 @@
+<!doctype html><html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Validar certificado — CEPEx 2026</title><script>
+const destino = new URL('../certificados.html',location.href);
+const codigo = new URLSearchParams(location.search).get('codigo');
+if(codigo) destino.searchParams.set('codigo',codigo);
+location.replace(destino.href);
+</script></head><body><p>Redirecionando para a validação de certificados…</p><p><a href="../certificados.html">Abrir portal de certificados</a></p></body></html>

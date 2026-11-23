@@ -237,6 +237,11 @@
       color: var(--green);
     }
 
+    .room {
+      border-color: rgba(145, 182, 154, .35);
+      color: var(--green);
+    }
+
     .card h3 {
       margin: 0 0 12px;
       color: var(--text);
@@ -387,6 +392,13 @@
       status.textContent = entry.status;
       badges.append(category, status);
 
+      if (entry.room) {
+        const room = document.createElement('span');
+        room.className = 'room status';
+        room.textContent = `Sala ${entry.room}`;
+        badges.append(room);
+      }
+
       const title = document.createElement('h3');
       title.textContent = entry.name;
 
@@ -411,7 +423,7 @@
       const searchTerm = normalize(searchInput.value);
       const filtered = entries.filter((entry) => {
         const matchesCategory = selectedCategory === 'todos' || entry.key === selectedCategory;
-        const searchableText = normalize([entry.name, ...entry.authors].join(' '));
+        const searchableText = normalize([entry.name, ...entry.authors, entry.room].join(' '));
         return matchesCategory && searchableText.includes(searchTerm);
       });
 
@@ -431,12 +443,58 @@
 
     async function loadResults() {
       try {
-        const response = await fetch('./trabalhos_cepex.json');
-        if (!response.ok) {
-          throw new Error(`Não foi possível carregar o arquivo de resultados (HTTP ${response.status}).`);
+        const [resultsResponse, scheduleResponse] = await Promise.all([
+          fetch('./trabalhos_cepex.json'),
+          fetch('./Ensalamento.json')
+        ]);
+        if (!resultsResponse.ok) {
+          throw new Error(`Não foi possível carregar o arquivo de resultados (HTTP ${resultsResponse.status}).`);
+        }
+        if (!scheduleResponse.ok) {
+          throw new Error(`Não foi possível carregar o ensalamento (HTTP ${scheduleResponse.status}).`);
         }
 
-        const data = await response.json();
+        const [data, schedule] = await Promise.all([
+          resultsResponse.json(),
+          scheduleResponse.json()
+        ]);
+        const scheduleKeys = {
+          artigosSimples: 'resumosSimples',
+          trabalhosCompletos: 'trabalhosCompletos'
+        };
+        const scheduledEntries = Object.entries(scheduleKeys).flatMap(([scheduleKey, resultKey]) => {
+          const records = schedule[scheduleKey];
+          if (!Array.isArray(records)) {
+            return [];
+          }
+
+          return records
+            .filter((record) => record && typeof record.titulo === 'string' && Array.isArray(record.autores))
+            .map((record) => ({
+              key: resultKey,
+              title: record.titulo,
+              authors: record.autores.map(String),
+              room: String(record.sala ?? ''),
+              time: String(record.horario ?? '')
+            }));
+        }).sort((a, b) => {
+          const timeOrder = a.time.localeCompare(b.time);
+          return timeOrder || a.room.localeCompare(b.room, 'pt-BR');
+        });
+        const scheduleByWork = new Map();
+        scheduledEntries.forEach((entry, order) => {
+          const workKey = JSON.stringify([
+            entry.key,
+            normalize(entry.title),
+            entry.authors.map(normalize).sort()
+          ]);
+          if (scheduleByWork.has(workKey)) {
+            throw new Error(`Há mais de um ensalamento para o trabalho "${entry.title}".`);
+          }
+          scheduleByWork.set(workKey, { room: entry.room, order });
+        });
+
+        const scheduledResultKeys = new Set(Object.values(scheduleKeys));
         entries = Object.entries(categories).flatMap(([key, category]) => {
           const records = data[key];
           if (!Array.isArray(records)) {
@@ -445,15 +503,26 @@
 
           return records
             .filter((record) => record && typeof record.nome === 'string')
-            .map((record) => ({
-              key,
-              category,
-              status: 'Aprovado',
-              name: record.nome,
-              authors: Array.isArray(record.autores) ? record.autores.map(String) : [],
-              axis: typeof record.eixoTematico === 'string' ? record.eixoTematico : ''
-            }));
-        });
+            .map((record, index) => {
+              const authors = Array.isArray(record.autores) ? record.autores.map(String) : [];
+              const workKey = JSON.stringify([key, normalize(record.nome), authors.map(normalize).sort()]);
+              const scheduledWork = scheduleByWork.get(workKey);
+              if (scheduledResultKeys.has(key) && !scheduledWork) {
+                throw new Error(`Não foi possível localizar a sala do trabalho "${record.nome}".`);
+              }
+              return {
+                key,
+                category,
+                status: 'Aprovado',
+                name: record.nome,
+                authors,
+                axis: typeof record.eixoTematico === 'string' ? record.eixoTematico : '',
+                room: scheduledWork ? scheduledWork.room : '',
+                scheduleOrder: scheduledWork ? scheduledWork.order : Number.MAX_SAFE_INTEGER,
+                resultOrder: index
+              };
+            });
+        }).sort((a, b) => a.scheduleOrder - b.scheduleOrder || a.resultOrder - b.resultOrder);
 
         renderResults();
       } catch (error) {
