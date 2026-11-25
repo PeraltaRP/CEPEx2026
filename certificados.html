@@ -21,7 +21,7 @@
     <button type="button" class="tab active" id="tab-busca" role="tab" aria-controls="sec-busca" aria-selected="true"><span class="icon" aria-hidden="true">📄</span><strong>Buscar certificado</strong><small>Digite seu nome completo e veja seus certificados disponíveis.</small></button>
     <button type="button" class="tab" id="tab-valida" role="tab" aria-controls="sec-valida" aria-selected="false"><span class="icon" aria-hidden="true">✓</span><strong>Validar certificado</strong><small>Informe o código de autenticação para conferir os dados oficiais.</small></button>
   </div>
-  <section class="section" id="sec-busca" role="tabpanel" aria-labelledby="tab-busca"><h2>Buscar meus certificados</h2><p class="hint">A busca considera o nome completo cadastrado no momento da emissão. Não é necessário informar CPF.</p><form id="form-busca"><div class="field"><label for="nome">Nome completo</label><input id="nome" name="nome" required minlength="6" maxlength="120" autocomplete="name" placeholder="Ex.: Maria da Silva Souza"><p class="help">Escreva seu nome completo, conforme consta no certificado.</p></div><button id="btn-busca" class="action" type="submit">Buscar certificados</button></form><div class="results" id="resultado-busca" aria-live="polite"></div></section>
+  <section class="section" id="sec-busca" role="tabpanel" aria-labelledby="tab-busca"><h2>Buscar meus certificados</h2><p class="hint">A busca considera o nome completo cadastrado no momento da emissão. Não é necessário informar CPF.</p><form id="form-busca"><div class="field"><label for="nome">Nome completo</label><input id="nome" name="nome" required minlength="6" maxlength="120" autocomplete="off" list="sugestoes-autores" placeholder="Ex.: Maria da Silva Souza"><datalist id="sugestoes-autores"></datalist><p class="help">Escreva seu nome completo, conforme consta no certificado.</p></div><button id="btn-busca" class="action" type="submit">Buscar certificados</button></form><div class="results" id="resultado-busca" aria-live="polite"></div></section>
   <section class="section" id="sec-valida" role="tabpanel" aria-labelledby="tab-valida" hidden><h2>Verificar autenticidade</h2><p class="hint">Digite ou cole o código de validação impresso no certificado. Você também pode chegar a esta opção pelo QR Code.</p><form id="form-valida"><div class="field"><label for="codigo">Código de autenticação</label><input id="codigo" name="codigo" required maxlength="128" autocomplete="off" spellcheck="false" placeholder="Cole o código do certificado"></div><button id="btn-valida" class="action" type="submit">Validar certificado</button></form><div class="results" id="resultado-valida" aria-live="polite"></div></section>
   <p class="privacy">Os resultados apresentam somente certificados oficiais registrados como emitidos. A busca por nome não comprova identidade; para documentos com restrição de divulgação, solicite atendimento à comissão organizadora.</p>
 </div>
@@ -44,13 +44,40 @@ document.getElementById('tab-busca').addEventListener('click',()=>aba('busca'));
 document.getElementById('tab-valida').addEventListener('click',()=>aba('valida'));
 function status(alvo,mensagem,tipo){alvo.replaceChildren();const p=document.createElement('div');p.className='status '+(tipo||'');p.textContent=mensagem;alvo.appendChild(p)}
 function el(tag,classe,valor){const e=document.createElement(tag);if(classe)e.className=classe;if(valor!==undefined)e.textContent=valor;return e}
+function linkCertificado(valor){
+ if(typeof valor!=='string')return;
+ let url;
+ try{url=new URL(valor.trim())}catch{return}
+ if(url.protocol!=='https:' || url.username || url.password)return;
+ if(url.origin==='https://script.google.com' && url.pathname.startsWith('/macros/s/'))return url.href;
+ if(url.origin==='https://drive.google.com' && (
+  /^\/file\/d\/[\w-]+(?:\/|$)/.test(url.pathname) ||
+  (['/open','/uc'].includes(url.pathname) && /^[\w-]+$/.test(url.searchParams.get('id')||''))
+ ))return url.href;
+}
+function linkDeDownload(cert){
+ const link=linkCertificado(cert.baixar);
+ if(link)return link;
+ const codigo=String(cert.codigo||'').trim();
+ if(!cert.baixar || !/^[a-z0-9-]{8,128}$/i.test(codigo))return;
+ const url=new URL(API_URL);
+ url.searchParams.set('acao','baixar');
+ url.searchParams.set('codigo',codigo);
+ return linkCertificado(url.href);
+}
 function resultadoCert(cert,validacao){
  const box=el('article','cert');box.appendChild(el('div','category',cert.tipo+(cert.modalidade?' · '+cert.modalidade:'')));
  box.appendChild(el('h3','',cert.titulo));box.appendChild(el('p','',cert.nome));
  if(cert.data)box.appendChild(el('p','', 'Emissão: '+cert.data));
  const cod=el('p','');cod.appendChild(document.createTextNode('Autenticação: '));cod.appendChild(el('code','',cert.codigo));box.appendChild(cod);
- if(cert.baixar && /^https:\/\/script\.google\.com\/macros\/s\//.test(cert.baixar)){
-  const a=el('a','download','Baixar certificado PDF');a.href=cert.baixar;a.target='_blank';a.rel='noopener noreferrer';box.appendChild(a);
+ const link=linkDeDownload(cert);
+ if(link){
+  const a=el('a','download','Baixar certificado PDF');a.href=link;a.target='_blank';a.rel='noopener noreferrer';box.appendChild(a);
+ }else{
+  const botao=el('button','action','Baixar certificado PDF');
+  botao.type='button';botao.disabled=true;botao.style.cursor='default';
+  box.appendChild(botao);
+  box.appendChild(el('p','',cert.baixar?'O serviço retornou um link de PDF incompatível.':'O serviço ainda não enviou o link do PDF.'));
  }
  return box;
 }
@@ -69,6 +96,28 @@ function solicitar(params){
   url.searchParams.set('callback',cb);script.src=url.toString();document.head.appendChild(script);
  });
 }
+const campoNome=document.getElementById('nome');
+const sugestoes=document.getElementById('sugestoes-autores');
+let esperaSugestoes;
+let versaoSugestoes=0;
+campoNome.addEventListener('input',()=>{
+ const nome=campoNome.value.trim();
+ const versao=++versaoSugestoes;
+ clearTimeout(esperaSugestoes);
+ sugestoes.replaceChildren();
+ if(nome.length<3)return;
+ esperaSugestoes=setTimeout(async ()=>{
+  try{
+   const dados=await solicitar({acao:'sugerir',nome});
+   if(versao!==versaoSugestoes || !dados.ok || !Array.isArray(dados.nomes))return;
+   sugestoes.replaceChildren(...dados.nomes.map(nome=>{
+    const opcao=el('option','');opcao.value=nome;return opcao;
+   }));
+  }catch{
+   // A busca manual continua disponível se a consulta de sugestões falhar.
+  }
+ },300);
+});
 document.getElementById('form-busca').addEventListener('submit',async e=>{
  e.preventDefault();const r=document.getElementById('resultado-busca');const btn=document.getElementById('btn-busca');btn.disabled=true;
  status(r,'Consultando certificados...');
