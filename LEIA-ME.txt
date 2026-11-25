@@ -11,11 +11,12 @@ A) SERVIÇO GOOGLE APPS SCRIPT (SEPARADO DO EMISSOR)
 1. Acesse script.google.com e crie um NOVO projeto Apps Script, separado do projeto
    que gera os certificados (assim não sobrescrevemos o doGet das oficinas).
 2. Cole o conteúdo de PortalCertificados.gs no novo projeto.
-3. O ID inicial da planilha no arquivo é:
-   1KD4eiFFqc0mVzJB1VqOzIfN6v2bEpoT7CcLJXr-JCF8
-   Confira se essa é a planilha que contém Cert_Emitidos, Cert_Autores,
-   Cert_Trabalhos, Cert_Ministrantes e Oficinas. Se mudou, atualize
-   CEPEX_PUBLIC_SS_ID antes de implantar.
+3. Em Configurações do projeto > Propriedades do script, adicione
+   CEPEX_PUBLIC_SS_ID com o ID da planilha de certificados. A planilha contém
+   Cert_Emitidos, Cert_Autores, Cert_Trabalhos, Cert_Ministrantes e Oficinas.
+   Adicione também CEPEX_AUTORES_JSON com o conteúdo completo do autores.json
+   local. O autocomplete usa essa lista privada e retorna até oito nomes por
+   consulta. Ao atualizar a lista, atualize essa propriedade.
 4. Publicar > Nova implantação > Aplicativo da Web.
    Executar como: Você (proprietário, com acesso aos PDFs).
    Quem tem acesso: Qualquer pessoa (se a organização permitir).
